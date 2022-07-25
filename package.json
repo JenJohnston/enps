@@ -1,0 +1,13 @@
+{
+  "name": "enps",
+  "version": "1.0.0",
+  "description": "home page for the Edmonton Native Plant Society",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "https://jennifer-johnston.netlify.app",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  }
+}
