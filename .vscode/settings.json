@@ -10,5 +10,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
-  "eslint.alwaysShowStatus": true
+  "eslint.alwaysShowStatus": true,
+  "eslint.workingDirectories": ["./client", "./studio"]
 }
