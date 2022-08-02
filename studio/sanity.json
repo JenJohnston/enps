@@ -3,10 +3,6 @@
   "project": {
     "name": "enps"
   },
-  "api": {
-    "projectId": "d59screl",
-    "dataset": "production"
-  },
   "plugins": [
     "@sanity/base",
     "@sanity/default-layout",
