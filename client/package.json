@@ -17,6 +17,8 @@
   "dependencies": {
     "@mdx-js/mdx": "^2.1.2",
     "@mdx-js/react": "^2.1.2",
+    "@portabletext/react": "^1.0.6",
+    "@sanity/asset-utils": "^1.2.3",
     "aos": "^2.3.4",
     "axios": "^0.27.2",
     "clsx": "^1.2.1",
