@@ -11,6 +11,11 @@ import category from "./documents/category";
 import boardMember from "./documents/boardMember";
 import featured from "./documents/featured.js";
 import blogFeatured from "./documents/blogFeatured.js";
+import event from "./documents/event.js";
+import news from "./documents/news.js";
+import newsFeatured from "./documents/newsFeatured.js";
+import productCard from "./documents/productCard.js";
+
 
 // object import
 
@@ -32,8 +37,12 @@ export default createSchema({
     featured,
     blog,
     blogFeatured,
+    news,
+    newsFeatured,
+    event,
     boardMember,
     category,
+    productCard,
     
 
     // object schemas
