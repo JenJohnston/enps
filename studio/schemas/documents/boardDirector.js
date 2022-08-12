@@ -1,8 +1,8 @@
 import { MdPerson } from "react-icons/md";
 
 export default {
-  name: "boardMember",
-  title: "Board Member",
+  name: "boardDirector",
+  title: "Board Director",
   type: "document",
   icon: MdPerson,
   fields: [

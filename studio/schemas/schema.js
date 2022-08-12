@@ -8,13 +8,16 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 
 import blog from "./documents/blog.js";
 import category from "./documents/category";
-import boardMember from "./documents/boardMember";
+import boardExecutive from "./documents/boardExecutive.js";
+import boardDirector from "./documents/boardDirector.js";
 import featured from "./documents/featured.js";
 import blogFeatured from "./documents/blogFeatured.js";
 import event from "./documents/event.js";
 import news from "./documents/news.js";
 import newsFeatured from "./documents/newsFeatured.js";
-import productCard from "./documents/productCard.js";
+import plantCard from "./documents/plantCard.js";
+import aboutSlider from "./documents/aboutSlider.js";
+import volunteer from "./documents/volunteer.js";
 
 
 // object import
@@ -22,6 +25,7 @@ import productCard from "./documents/productCard.js";
 import customImage from "./objects/customImage";
 import normalText from "./objects/normalText";
 import richText from "./objects/richText.js";
+
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -35,15 +39,17 @@ export default createSchema({
     // document schemas
 
     featured,
-    blog,
     blogFeatured,
-    news,
     newsFeatured,
-    event,
-    boardMember,
+    news,
+    blog,
     category,
-    productCard,
-    
+    event,
+    boardExecutive,
+    boardDirector,
+    plantCard,
+    aboutSlider,
+    volunteer,
 
     // object schemas
 

@@ -22,15 +22,14 @@ export default {
       },
     },
     {
-      title: "Published On",
-      name: "publishedOn",
+      title: "Event Date",
+      name: "eventDate",
       type: "datetime",
     },
     {
-      title: "Board Member",
-      name: "boardMember",
-      type: "reference",
-      to: [{ type: "boardMember" }],
+      title: "Location",
+      name: "location",
+      type: "string",
     },
     {
       title: "Cover Image",
@@ -50,26 +49,24 @@ export default {
       description: "All of the main content for your blog post goes here",
     },
     {
-      title:'numLikes',
-      name: 'numLikes',
-      type: 'number',
-      readOnly: true,
-      initialValue: 0,
-
+      title: "Event Price",
+      name: "price",
+      type: "number",
+      description: "The price of the service goes here",
     },
   ],
   preview: {
     select: {
       image: "coverImage",
       title: "title",
-      publishedOn: "publishedOn",
+      eventDate: "eventDate",
     },
-    prepare({ image, title, publishedOn }) {
+    prepare({ image, title, eventDate }) {
       return {
         title,
         media: image,
-        subtitle: publishedOn
-          ? format(new Date(publishedOn), "p, dd/MM/yyy")
+        subtitle: eventDate
+          ? format(new Date(eventDate), "p, dd/MM/yyy")
           : "",
       };
     },

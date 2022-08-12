@@ -38,10 +38,16 @@ export default {
       ],
     },
     {
-      title: "Board Member",
-      name: "boardMember",
+      title: "Board Executive",
+      name: "boardExecutive",
       type: "reference",
-      to: [{ type: "boardMember" }],
+      to: [{ type: "boardExecutive" }],
+    },
+    {
+      title: "Board Director",
+      name: "boardDirector",
+      type: "reference",
+      to: [{ type: "boardDirector" }],
     },
     {
       title: "Cover Image",

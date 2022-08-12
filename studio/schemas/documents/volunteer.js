@@ -1,19 +1,14 @@
-import { TiShoppingCart } from "react-icons/ti";
+import { MdVolunteerActivism } from "react-icons/md";
 
 export default {
-  title: "Products",
-  name: "products",
+  title: "Volunteer",
+  name: "volunteer",
   type: "document",
-  icon: TiShoppingCart,
+  icon: MdVolunteerActivism,
   fields: [
     {
       title: "Title",
       name: "title",
-      type: "string",
-    },
-    {
-      title: "Sub Title",
-      name: "subtitle",
       type: "string",
     },
     {
@@ -31,22 +26,31 @@ export default {
       type: "customImage",
     },
     {
-      title: "Products excerpt",
+      title: "Volunteer Card Excerpt",
       name: "excerpt",
       type: "richText",
-      description: "A short description of the service",
+      description: "A short description of the volunteer event",
     },
     {
-      title: "Products Content",
+      title: "Volunteer Card Body",
       name: "body",
       type: "richText",
-      description: "A full description of the service goes here",
+      description: "A full description of the volunteer event goes here",
     },
     {
-      title: "Products Price",
-      name: "price",
-      type: "number",
-      description: "The price of the service goes here",
+      title: "Project Leader",
+      name: "projectLeader",
+      type: "string",
+    },
+    {
+      title: "Contact Email",
+      name: "contactEmail",
+      type: "string",
+    },
+    {
+      title: "Contact Phone",
+      name: "contactPhone",
+      type: "string",
     },
   ],
   preview: {
@@ -54,16 +58,15 @@ export default {
       image: "coverImage",
       title: "title",
       subtitle: "subtitle",
-      price: "price",
       excerpt: "excerpt",
     },
-    prepare({ image, title, excerpt, price, subtitle }) {
+    prepare({ image, title, excerpt, subtitle }) {
       return {
         title,
         subtitle,
         media: image,
         excerpt,
-        price,
+        
       };
     },
   },
