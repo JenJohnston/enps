@@ -1,12 +1,18 @@
 :root {
-  /* Color Theme Swatches in HSLA */
-  --background-color: hsla(219, 29%, 11%, 1);
-  --color-variant: hsla(22, 30%, 49%, 1);
-  --color-primary: hsla(28, 45%, 72%, 1);
-  --color-secondary: hsla(39, 10%, 61%, 1);
-  --btn-color: hsla(337, 40%, 46%, 1);
+  /* Color Theme Swatches in HSL */
+  --background-color: hsl(60 100% 98% / 1);
+  --background-variant: hsl(60 3% 59% / 1);
+  --background-secondary: hsl(186 14% 58% / 1);
+  --secondary-variant: hsl(91 23% 33% / 1);
+  --accent-color-one: hsl(60 65% 37% / 1);
+  --accent-color-two: hsl(339 41% 55% / 1);
+  --color-primary: hsl(199 63% 28% / 1);
+  --color-primary-lt: hsl(199 51% 78% / 1);
+  --color-primary-dk: hsl(199 64% 10% / 1);
 
   /* Overlays */
+
+  --color-primary-dk-ol: hsl(199 64% 10% / 0.35);
 
   /* Gradients */
 }

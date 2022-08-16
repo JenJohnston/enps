@@ -1,5 +1,13 @@
+:root {
+  --transition-state: all 0.3s ease-in-out;
+}
+
 body {
   background: var(--background-color);
   color: var(--color-primary);
   font-family: var(--primary-font-stack);
+}
+
+.sr-only {
+  display: none;
 }

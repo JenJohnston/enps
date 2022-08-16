@@ -7,6 +7,11 @@ export default {
   icon: RiImageAddFill,
   fields: [
     {
+      title: "Title",
+      name: "title",
+      type: "string",
+    },
+    {
       title: "Gallery Image",
       name: "galleryImage",
       type: "customImage",
@@ -14,10 +19,12 @@ export default {
   ],
   preview: {
     select: {
-      image: "coverImage",
+      title: "title",
+      image: "galleryImage",
     },
-    prepare({ image }) {
+    prepare({ image, title }) {
       return {
+        title: title,
         media: image,
       };
     },

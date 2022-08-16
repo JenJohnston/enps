@@ -7,51 +7,45 @@ export default {
   icon: ImLeaf,
   fields: [
     {
-      title: "Title",
+      title: "Company Name",
       name: "title",
       type: "string",
     },
     {
-      title: "Sub Title",
-      name: "subtitle",
+      title: "Plant Vendor Details",
+      name: "body",
+      type: "richText",
+      description: "A full description of the vendor goes here",
+    },
+    {
+      title: "Email",
+      name: "email",
       type: "string",
     },
     {
-      title: "Slug",
-      name: "slug",
-      type: "slug",
-      options: {
-        source: "title",
-        maxLength: 96,
-      },
+      title: "Phone Number",
+      name: "phoneNumber",
+      type: "string",
     },
     {
-      title: "Cover Image",
-      name: "coverImage",
-      type: "customImage",
+      title: "Location Address",
+      name: "address",
+      type: "string",
     },
     {
-      title: "Plant info Content",
-      name: "body",
-      type: "richText",
-      description: "A full description of the service goes here",
-    },
-    {
-      title: "Products Price",
-      name: "price",
-      type: "number",
-      description: "The price of the service goes here",
+      title: "Website URL",
+      name: "url",
+      type: "string",
     },
   ],
   preview: {
     select: {
-      image: "coverImage",
       title: "title",
     },
-    prepare({ image, title }) {
+    prepare({  title }) {
       return {
         title,
-        media: image,
+        
       };
     },
   },

@@ -3,7 +3,7 @@
 $breakpoints-min: (
   "med": 40em,
   "lg": 56.25em,
-  "xl": 90em,
+  "xl": 80em,
 );
 
 // 639.98px, 899.98px, 1439.98px
@@ -11,7 +11,7 @@ $breakpoints-min: (
 $breakpoints-max: (
   "sm": 39.99875em,
   "med": 56.24875em,
-  "lg": 89.99875em,
+  "lg": 79.99875em,
 );
 
 @mixin breakpoint-min($size) {

@@ -1,0 +1,120 @@
+@use "../utils" as u;
+
+.header {
+  .navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+
+    .logoContainer {
+      max-width: 10rem;
+    }
+
+    .mobileNav__toggle {
+      max-width: fit-content;
+      padding: var(--space-2xs);
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      margin-bottom: var(--space-s);
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+        color: var(--color-primary-dk);
+      }
+
+      @include u.breakpoint-min(xl) {
+        display: none;
+      }
+    }
+
+    .navbar {
+      position: absolute;
+      top: 100%;
+      left: -150%;
+      margin-top: var(--space-s);
+      padding: var(--space-s) 0;
+      transition: var(--transition-state);
+      background-color: var(--color-primary-dk-ol);
+      backdrop-filter: blur(5px);
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-s);
+
+      .navmenu {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2xs);
+        align-items: center;
+
+        .nav__item {
+          padding: var(--space-3xs) 0;
+          transition: var(--transition-state);
+
+          &:hover {
+            color: var(--color-primary-dk);
+          }
+        }
+
+        .menu__link {
+          font-size: var(--step-0);
+          font-weight: 700;
+        }
+
+        &__icons {
+          display: flex;
+          align-items: center;
+          gap: var(--space-2xs);
+
+          .searchIcon {
+            width: 1.75rem;
+            height: 1.75rem;
+            color: var(--color-primary-dk);
+          }
+        }
+      }
+
+      .navMedia {
+        display: flex;
+        gap: var(--space-3xs);
+        color: var(--color-primary-dk);
+
+        svg {
+          width: 1.25rem;
+          height: 1.25rem;
+        }
+      }
+
+      @include u.breakpoint-min(xl) {
+        background-color: transparent;
+        width: fit-content;
+        position: relative;
+        backdrop-filter: none;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        gap: var(--space-3xs);
+
+        .navmenu {
+          flex-direction: row;
+          width: 70rem;
+          gap: var(--space-m);
+          justify-content: flex-end;
+          margin-right: 1rem;
+        }
+
+        .navMedia {
+          margin-right: 1rem;
+        }
+      }
+    }
+
+    .shownav {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

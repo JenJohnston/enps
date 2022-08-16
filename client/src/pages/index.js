@@ -1,11 +1,16 @@
 import * as React from "react"
+import Hero from "../components/homepage/Hero"
+import Seo from "../components/seo"
 
 
 
 // markup
 const IndexPage = () => {
   return (
-    <h1>HELLO WORLD</h1>
+    <>
+      <Seo title="Home"/>
+      <Hero/>
+    </>
   )
 }
 

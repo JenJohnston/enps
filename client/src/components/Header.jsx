@@ -58,22 +58,19 @@ export default function Header() {
                             <Link className='menu__link' to={navItem.path} onClick={handleNavClick}>{navItem.title}</Link>
                         </li>
                     ))}
-                    <li>
-                        <div 
-                            className="searchIcon__wrapper" 
-                            onClick={handleSearchModal} 
-                            onKeyDown={handleSearchModal}
-                            role="button"
-                            tabIndex={0}
-                        >
-                            <MdSearch className='searchIcon'></MdSearch>
-                        </div>
-                        <NavMedia/>
-                    </li>
-                    <li>
-                        
-                    </li>
                 </ul>
+                <div className="navmenu__icons">
+                    <div 
+                        className="searchIcon__wrapper" 
+                        onClick={handleSearchModal} 
+                        onKeyDown={handleSearchModal}
+                        role="button"
+                        tabIndex={0}
+                    >
+                        <MdSearch className='searchIcon'></MdSearch>
+                    </div>
+                    <NavMedia/>
+                </div>
             </nav>
             </div>
         </header>
