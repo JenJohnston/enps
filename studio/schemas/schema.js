@@ -18,6 +18,7 @@ import newsFeatured from "./documents/newsFeatured.js";
 import plantCard from "./documents/plantCard.js";
 import aboutSlider from "./documents/aboutSlider.js";
 import volunteer from "./documents/volunteer.js";
+import wildflowerNews from "./documents/wildflowerNews.js";
 
 
 // object import
@@ -25,6 +26,7 @@ import volunteer from "./documents/volunteer.js";
 import customImage from "./objects/customImage";
 import normalText from "./objects/normalText";
 import richText from "./objects/richText.js";
+import customFile from "./objects/customFile.js";
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -50,9 +52,11 @@ export default createSchema({
     plantCard,
     aboutSlider,
     volunteer,
+    wildflowerNews,
 
     // object schemas
 
+    customFile,
     customImage,
     normalText,
     richText,

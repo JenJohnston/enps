@@ -12,6 +12,36 @@ export default {
       type: "string",
     },
     {
+      name: "news",
+      title: "Featured News",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "news" }],
+        },
+      ],
+      validation: (Rule) => [
+        Rule.error("Every Item should be unique").unique(),
+        Rule.required().error("At least one item is required"),
+      ],
+    },
+    {
+      name: "wildflowerNews",
+      title: "Wildflower News",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "wildflowerNews" }],
+        },
+      ],
+      validation: (Rule) => [
+        Rule.error("Every Item should be unique").unique(),
+        Rule.required().error("At least one item is required"),
+      ],
+    },
+    {
       name: "blogs",
       title: "Featured Blogs",
       type: "array",
@@ -27,13 +57,13 @@ export default {
       ],
     },
     {
-      name: "category",
-      title: "Featured Top category",
+      name: "events",
+      title: "Featured Events",
       type: "array",
       of: [
         {
           type: "reference",
-          to: [{ type: "category" }],
+          to: [{ type: "event" }],
         },
       ],
       validation: (Rule) => [

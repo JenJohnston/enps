@@ -34,6 +34,15 @@ export default function Header() {
 
     return (
         <header className='header'>
+            <div className='header__bgContainer'>
+                <svg viewBox="0 0 1440 320" className='header__background'>
+                    <path fill-opacity="1" d="M0,160L80,160C160,160,320,160,480,149.3C640,139,800,117,960,117.3C1120,117,1280,139,1360,149.3L1440,160L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+                </svg>
+                <svg viewBox="0 0 1440 320"  className='header__background__lt'>
+                    <path  fill-opacity="1" d="M0,160L80,160C160,160,320,160,480,149.3C640,139,800,117,960,117.3C1120,117,1280,139,1360,149.3L1440,160L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+                </svg>
+            </div>
+            
             <div className="container navContainer">
                 <div className="logoContainer">
                     <div className="logoContainer__link">

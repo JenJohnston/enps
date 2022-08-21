@@ -10,7 +10,7 @@ export default function NavMedia() {
     return (
         <ul className='navMedia'>
             <li className="navMedia__link">
-                <a href="https://www.facebook.com/fortheloveofdogCA">
+                <a href="https://www.facebook.com/groups/408066590219/?pnref=lhc">
                     <FaFacebook/>
                 </a>
             </li>
