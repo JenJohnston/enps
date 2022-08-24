@@ -16,6 +16,8 @@ module.exports = {
       }
     }, 
     "gatsby-plugin-sass", 
+    `gatsby-plugin-glslify`,
+    `gatsby-plugin-react-helmet`,
     "gatsby-plugin-image", 
     {
       resolve: 'gatsby-plugin-manifest',

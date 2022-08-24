@@ -1,0 +1,28 @@
+.formInput {
+  width: 100%;
+  height: 3rem;
+  max-width: 80%;
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  font-size: var(--step-0);
+  border-radius: 1.85rem;
+  border: none;
+  margin-top: var(--space-m);
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.formSubmit {
+  padding: 0.5rem 1rem;
+  width: 12rem;
+  height: 3rem;
+  margin-top: var(--space-s);
+  border: none;
+  border-radius: 1.85rem;
+  background-color: var(--color-primary);
+  color: var(--background-color);
+  font-size: var(--step-0);
+}

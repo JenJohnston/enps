@@ -44,12 +44,6 @@ export default {
       to: [{ type: "boardExecutive" }],
     },
     {
-      title: "Board Director",
-      name: "boardDirector",
-      type: "reference",
-      to: [{ type: "boardDirector" }],
-    },
-    {
       title: "Cover Image",
       name: "coverImage",
       type: "customImage",

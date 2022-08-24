@@ -27,6 +27,7 @@ import customImage from "./objects/customImage";
 import normalText from "./objects/normalText";
 import richText from "./objects/richText.js";
 import customFile from "./objects/customFile.js";
+import heroSlider from "./documents/heroSlider.js";
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -51,6 +52,7 @@ export default createSchema({
     boardDirector,
     plantCard,
     aboutSlider,
+    heroSlider,
     volunteer,
     wildflowerNews,
 

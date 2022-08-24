@@ -31,7 +31,7 @@
     grid-row: 1;
     margin-top: 1.2rem;
 
-    @include u.breakpoint-min(md) {
+    @include u.breakpoint-min(med) {
       margin-top: 2rem;
     }
   }
@@ -51,7 +51,7 @@
     .logoContainer {
       max-width: 10rem;
 
-      @include u.breakpoint-min(md) {
+      @include u.breakpoint-min(med) {
         max-width: 12rem;
       }
 
@@ -104,6 +104,7 @@
         .nav__item {
           padding: var(--space-3xs) 0;
           transition: var(--transition-state);
+          color: var(--background-color);
 
           &:hover {
             color: var(--color-primary-dk);
@@ -118,20 +119,20 @@
         &__icons {
           display: flex;
           align-items: center;
-          gap: var(--space-2xs);
+          gap: var(--space-xs);
 
           .searchIcon {
             width: 1.75rem;
             height: 1.75rem;
-            color: var(--color-primary-dk);
+            color: var(--svg-fill);
           }
         }
       }
 
       .navMedia {
         display: flex;
-        gap: var(--space-3xs);
-        color: var(--color-primary-dk);
+        gap: var(--space-2xs);
+        color: var(--svg-fill);
 
         svg {
           width: 1.25rem;
@@ -154,10 +155,20 @@
           gap: var(--space-m);
           justify-content: flex-end;
           margin-right: 1rem;
+
+          &__icons {
+            .searchIcon {
+              color: var(--color-primary);
+            }
+          }
+          .nav__item {
+            color: var(--color-primary);
+          }
         }
 
         .navMedia {
           margin-right: 1rem;
+          color: var(--color-primary-dk);
         }
       }
     }

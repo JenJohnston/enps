@@ -12,6 +12,9 @@
   --step-3: clamp(2.27rem, calc(2.08rem + 0.95vw), 2.93rem);
   --step-4: clamp(2.72rem, calc(2.45rem + 1.34vw), 3.66rem);
   --step-5: clamp(3.27rem, calc(2.89rem + 1.87vw), 4.58rem);
+
+  --txt-shadow-dk: 1px 1px 3px var(--color-primary-dk);
+  --txt-shadow-lt: 1px 1px 3px var(--background-variant);
 }
 
 // default heading stylings
@@ -36,7 +39,7 @@ a:active {
   color: var(--color-secondary);
 }
 
-// resoponsive typography
+// responsive typography
 
 h1 {
   font-size: var(--step-5);

@@ -14,8 +14,8 @@ export default function FooterMedia() {
             <h5>Connect With Us</h5>
             <div className="iconContainer">
                 <a href="https://www.facebook.com/groups/408066590219/?pnref=lhc"><FaFacebook/></a>
-                <a href="#"><FaInstagram/></a>
-                <a href="#"><FaPinterest/></a>
+                <a href="/"><FaInstagram/></a>
+                <a href="/"><FaPinterest/></a>
             </div>
         </div>
     )

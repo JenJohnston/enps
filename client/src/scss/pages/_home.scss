@@ -1,3 +1,163 @@
-.hero p {
-  padding: 20rem 0;
+@use "../utils" as u;
+
+// Hero Section
+
+.hero {
+  display: flex;
+  flex-direction: column-reverse;
+  background: url("/images/meadow.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  color: var(--background-color);
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 4rem;
+    background-color: var(--color-primary-dk-ol);
+    backdrop-filter: blur(10px);
+  }
+
+  &__content {
+    max-width: 36rem;
+    margin-top: var(--space-2xl);
+    text-shadow: var(--txt-shadow-dk);
+    margin-bottom: 6rem;
+    h2 {
+      margin-bottom: var(--space-2xl);
+      font-family: var(--primary-font-stack);
+      font-weight: 200;
+      font-size: var(--step-3);
+      margin-top: 0.35rem;
+    }
+  }
+
+  .heroFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    @include u.breakpoint-min(xl) {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 6rem;
+    }
+  }
+
+  // button styling
+
+  &__button {
+    max-width: 100%;
+    text-transform: uppercase;
+    padding: 1rem;
+    font-weight: bold;
+
+    &:hover {
+      color: var(--color-primary-dk);
+      text-shadow: var(--txt-shadow-lt);
+    }
+  }
+
+  .borderGradient {
+    border: 0.5rem solid;
+    border-image-slice: 1;
+    border-width: 5px;
+  }
+
+  .borderGradientPink {
+    transition: all 0.3s ease-in-out;
+    border-image-source: linear-gradient(
+      to left,
+      var(--color-primary-lt),
+      var(--accent-color-two)
+    );
+
+    &:hover {
+      border-image-source: linear-gradient(
+        to left,
+        var(--accent-color-two),
+        var(--color-primary-lt)
+      );
+    }
+  }
+
+  // about section
+
+  &__about {
+    margin-top: 8rem;
+    text-align: center;
+
+    .hero__aboutHeading {
+      text-align: center;
+      margin-bottom: var(--space-m);
+    }
+
+    .hero__subText {
+      margin: 0 auto;
+      margin-bottom: var(--space-2xl);
+    }
+  }
+
+  &__svg {
+    font-size: 6.45rem;
+    padding: 1.15rem;
+    border-radius: 50%;
+    border: 2px solid var(--background-secondary);
+  }
+
+  .blue {
+    color: var(--color-primary-lt);
+  }
+
+  .green {
+    color: var(--background-secondary);
+  }
+
+  .accentTwo {
+    color: var(--accent-color-two);
+  }
+
+  .accentOne {
+    color: var(--accent-color-one);
+  }
+
+  &__logoBar {
+    display: grid;
+    gap: 8rem;
+    grid-auto-flow: column;
+    grid-auto-columns: 21%;
+    overflow-x: auto;
+
+    @include u.breakpoint-min(med) {
+      grid-auto-columns: 15%;
+      gap: 2rem;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      justify-content: center;
+    }
+  }
+
+  &__logoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 8rem;
+  }
+}
+
+// WFNews
+
+.homeWFNews {
+  color: var(--background-color);
+  padding: 4rem 0;
+  background: rgb(155, 155, 33);
+  background-image: linear-gradient(
+    347deg,
+    rgba(155, 155, 33, 0.93) 0%,
+    rgba(115, 126, 60, 0.97) 26%,
+    rgba(84, 104, 81, 1) 100%
+  );
 }

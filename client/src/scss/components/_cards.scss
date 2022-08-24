@@ -1,0 +1,17 @@
+.homeWFNews {
+  .card {
+    background: transparent;
+    border: none;
+    &__img {
+      width: 20rem;
+    }
+
+    &__content {
+      margin-bottom: 4rem;
+    }
+
+    &__link {
+      margin-top: 4rem;
+    }
+  }
+}
