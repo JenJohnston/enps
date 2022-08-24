@@ -9,7 +9,7 @@ export default function BlogCard({title, path, image, excerpt, publishedOn, cate
 
     return (
         <Link to={path} className='card'>
-            <h3 className="card__title">{title}</h3>
+            <h4 className="card__title">{title}</h4>
             <GatsbyImage
                 className='card__img'
                 image={image.imageData}
@@ -17,9 +17,9 @@ export default function BlogCard({title, path, image, excerpt, publishedOn, cate
             />
            <div className="card_overlay">
                <div className="card__header">
-                    <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>    
+                    <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path d="M 40 80 c 22 0 40 -22 40 -40 v 40 Z" /></svg>    
                     <GatsbyImage
-                        className='card__img'
+                        className='card__thumb'
                         image={authorImage.imageData}
                         alt={authorImage.altText}
                     />
@@ -38,11 +38,12 @@ export default function BlogCard({title, path, image, excerpt, publishedOn, cate
                         {publishedOn && (
                             <p className='card__date'>{format(new Date(publishedOn), 'p, MMMM dd, yyyy')}</p>
                         )}   
-                    </div>
-                    <div className="card__excerpt">
-                        <PortableTextHandler value={excerpt}/>
-                    </div>         
+                    </div>     
+                    <PortableTextHandler className="card__excerpt" value={excerpt}/>
                </div>
+               
+                   
+                
            </div>
         </Link>
     )
