@@ -15,6 +15,9 @@ export default function BlogCard({title, path, image, excerpt, publishedOn, cate
                 image={image.imageData}
                 alt={image.altText}
             />
+            <div className="card__imgOverlay">
+            
+            </div>
            <div className="card_overlay">
                <div className="card__header">
                     <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path d="M 40 80 c 22 0 40 -22 40 -40 v 40 Z" /></svg>    

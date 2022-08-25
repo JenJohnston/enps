@@ -49,9 +49,9 @@ export default function BlogsSection() {
 
     return (
         <section className='homeBlogs'>
-            <div className="container">
+            <div className="">
                 <div className="homeBlogs__header">
-                    <h3>Latest Articles</h3>
+                    <h2>Latest Articles</h2>
                 </div>
                 <div className="flexContainer">
                     <BlogCards blogs={featuredBlogs}/>

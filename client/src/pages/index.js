@@ -4,6 +4,7 @@ import Hero from "../components/homepage/Hero"
 import WildFlowerNews from "../components/homepage/WildFlowerNews"
 import EventSection from "../components/homepage/EventSection"
 import BlogsSection from '../components/homepage/BlogsSection'
+import CommunitySection from "../components/homepage/CommunitySection"
 
 
 
@@ -16,6 +17,7 @@ const IndexPage = () => {
       <WildFlowerNews/>
       <EventSection/>
       <BlogsSection/>
+      <CommunitySection/>
     </>
   )
 }
