@@ -28,7 +28,7 @@ export default function CommunitySection(props) {
                                     <li><FaLeaf/>List Item 2</li>
                                     <li><FaLeaf/>List Item 3</li>
                                 </ul>
-                                <Link className='card__link' to='/membership'>Sign Up</Link>
+                                <Link to="/membership" className='card__link'>Sign Up</Link>
                             </div>
                         </div>
                     </div>
@@ -44,7 +44,7 @@ export default function CommunitySection(props) {
                                     <li><FaLeaf/>List Item 2</li>
                                     <li><FaLeaf/>List Item 3</li>
                                 </ul>
-                                <Link className='card__link' to='/volunteer'>Get Involved</Link>
+                                <Link to="/volunteer" className='card__link'>Get Involved</Link>
                             </div>
                         </div>
                     </div>    

@@ -41,7 +41,7 @@ export default function Footer(props) {
                 </div>
                 <form className="container__subscribe">
                     <h3>Subscribe to Our Newsletter</h3>
-                    <input className='formInput' type="email"  />
+                    <input placeholder="e.g. example@email.com" className='formInput' type="email"  />
                     <input className='formSubmit' type="submit" />
                 </form>
                 <div className="container__contact">

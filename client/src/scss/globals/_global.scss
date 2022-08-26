@@ -9,6 +9,10 @@ body {
   font-family: var(--primary-font-stack);
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .sr-only {
   display: none;
 }

@@ -22,7 +22,7 @@ export const navRouter = [
     {
         id: '04',
         title: 'Plant Info',
-        path: '/plant-info'
+        path: '/plantinfo'
     },
     {
         id: '05',

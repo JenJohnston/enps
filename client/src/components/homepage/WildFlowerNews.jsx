@@ -36,7 +36,7 @@ export default function WildFlowerNews() {
         <section className='homeWFNews'>
             <div className="container">
                 <div className="homeWFNews__header">
-                    <h3>The WildFlower News</h3>
+                    <h2>The WildFlower News</h2>
                 </div>
                 <WFCards wfcards={wfNewsFeature}/>
             </div> 

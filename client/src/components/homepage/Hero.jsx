@@ -26,7 +26,7 @@ export default function Hero() {
                         <HeroSlider/>
                     </div>
                     <aside className="hero__about">
-                        <h3 className='hero__aboutHeading'>Who we Are</h3>
+                        <h2 className='hero__aboutHeading'>Who we Are</h2>
                         <p className='hero__subText'>The Edmonton Native Plant Group is an informal group of people in the Edmonton area who like to grow native plants and promote their use in gardening and landscaping to a wider public. We take part in a number of projects, in cooperation with the appropriate municipal authorities, which aim to enrich the natural flora of various parks and natural areas. </p>
                         <div className="hero__logoBar">
                             <div className="hero__logoContainer">

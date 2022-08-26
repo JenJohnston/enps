@@ -17,6 +17,7 @@ import news from "./documents/news.js";
 import newsFeatured from "./documents/newsFeatured.js";
 import plantCard from "./documents/plantCard.js";
 import aboutSlider from "./documents/aboutSlider.js";
+import aboutBanner from "./documents/aboutBanner"
 import volunteer from "./documents/volunteer.js";
 import wildflowerNews from "./documents/wildflowerNews.js";
 
@@ -52,6 +53,7 @@ export default createSchema({
     boardDirector,
     plantCard,
     aboutSlider,
+    aboutBanner,
     heroSlider,
     volunteer,
     wildflowerNews,
