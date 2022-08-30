@@ -2,7 +2,7 @@ import React from 'react'
 import Seo from "../components/seo"
 
 import { FaLeaf } from 'react-icons/fa'
-import {BsPersonPlusFill} from 'react-icons/bs'
+import {IoIosPeople} from 'react-icons/io'
 
 export default function Membership(props) {
     
@@ -17,6 +17,7 @@ export default function Membership(props) {
                     <div className="dividerBar"></div>
                 </div>
                 <div className="membership__content">
+                    <IoIosPeople className='membership__icon'/>
                     <div className="membership__body">
                         <h3>Be Part of a Growing and Active Community</h3>
                         <p><span>For Only $20</span> Your lifetime membership gets you access to benefits, new friends and new opportunities.  Purchase yours today!</p>
@@ -39,13 +40,15 @@ export default function Membership(props) {
                             <input type="tel" name="phone" required/>
                             <label htmlFor="phone">Enter your Number</label>
                         </div>
-                        <div className="formGroup">
-                            <input type="checkbox" name="volunteer" required/>
-                            <label htmlFor="volunteer">Yes I want to Volunteer!</label>
-                        </div>
-                        <div className="formGroup">
-                            <input type="checkbox" name="newsletter" required/>
-                            <label htmlFor="newsletter">Subscribe to our News Letter</label>
+                        <div className="checkMenu">
+                            <div className="formGroup">
+                                <input type="checkbox" name="volunteer"/>
+                                <label htmlFor="volunteer">Yes I want to Volunteer!</label>
+                            </div>
+                            <div className="formGroup">
+                                <input type="checkbox" name="newsletter"/>
+                                <label htmlFor="newsletter">Subscribe to our News Letter</label>
+                            </div>
                         </div>
                         <div className="formGroup">
                             <input type="submit"  className='formSubmit'/>

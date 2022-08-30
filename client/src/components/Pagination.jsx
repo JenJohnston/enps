@@ -23,7 +23,7 @@ function Pagination({ baseURL, numberOfPages, currentPage }) {
             to={`${baseURL}/${nextPage}`}
             className={clsx(currentPage >= numberOfPages && 'disabled')}
           >
-             <FiChevronRight className='pagination__chevron' />
+             <FiChevronRight className='pagination__chevron' />click me
           </Link>
         </div>
       </div>

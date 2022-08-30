@@ -12,6 +12,11 @@ export default {
         type: "string",
       },
       {
+        title: "Published On",
+        name: "publishedOn",
+        type: "datetime",
+      },
+      {
         title: "Preview Image",
         name: "previewImage",
         type: "customImage",

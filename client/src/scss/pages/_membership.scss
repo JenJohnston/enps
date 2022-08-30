@@ -1,0 +1,96 @@
+@use "../utils" as u;
+
+.membership {
+  margin-top: 4rem;
+  &__header {
+    text-align: center;
+    margin: 4rem 0;
+
+    svg {
+      color: var(--background-secondary);
+      font-size: 6rem;
+      margin-bottom: var(--space-2xs);
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    .dividerBar {
+      height: 4px;
+      width: 6rem;
+      background-color: var(--background-secondary);
+      margin: 0 auto;
+    }
+  }
+
+  &__content {
+    background-color: var(--color-primary-dk);
+    color: var(--background-color);
+    border-radius: 0.65rem;
+    margin-top: 2rem;
+    box-shadow: 3px 3px 6px var(--background-secondary);
+    position: relative;
+
+    @include u.breakpoint-min(xl) {
+      display: flex;
+      justify-content: center;
+      padding: 4rem 0;
+      gap: 4rem;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    left: 0;
+    margin-left: 2rem;
+    font-size: 12rem;
+    fill: var(--background-variant);
+    opacity: 0.3;
+  }
+
+  &__body {
+    padding: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+
+    @include u.breakpoint-min(xl) {
+      align-items: flex-start;
+    }
+
+    h3 {
+      margin-bottom: var(--space-l);
+      text-align: center;
+      margin-top: 2rem;
+      font-family: var(--primary-font-stack);
+
+      @include u.breakpoint-min(xl) {
+        text-align: left;
+        max-width: 36rem;
+      }
+    }
+
+    p {
+      font-size: var(--step-0);
+      font-weight: 300;
+      margin-bottom: 2rem;
+      text-align: center;
+
+      @include u.breakpoint-min(xl) {
+        text-align: left;
+        max-width: 36rem;
+      }
+    }
+  }
+
+  &__form {
+    padding: 0.6rem;
+    width: 100%;
+
+    @include u.breakpoint-min(xl) {
+      width: 42%;
+    }
+  }
+}

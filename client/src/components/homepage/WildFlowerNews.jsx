@@ -1,8 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
-import WFCards
- from '../wfnews/WFCards'
+import WFCards from '../wfnews/WFCards'
 export default function WildFlowerNews() {
     
     const data = useStaticQuery(graphql`
