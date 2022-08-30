@@ -20,6 +20,8 @@ import aboutSlider from "./documents/aboutSlider.js";
 import aboutBanner from "./documents/aboutBanner"
 import volunteer from "./documents/volunteer.js";
 import wildflowerNews from "./documents/wildflowerNews.js";
+import heroSlider from "./documents/heroSlider.js";
+import springSeedGallery from "./documents/springSeedGallery.js";
 
 
 // object import
@@ -28,8 +30,6 @@ import customImage from "./objects/customImage";
 import normalText from "./objects/normalText";
 import richText from "./objects/richText.js";
 import customFile from "./objects/customFile.js";
-import heroSlider from "./documents/heroSlider.js";
-
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -57,6 +57,7 @@ export default createSchema({
     heroSlider,
     volunteer,
     wildflowerNews,
+    springSeedGallery,
 
     // object schemas
 

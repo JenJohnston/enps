@@ -9,7 +9,7 @@ import { IoIosPeople } from 'react-icons/io'
 import { MdOutlineCardMembership } from 'react-icons/md'
 import { MdVolunteerActivism } from 'react-icons/md'
 
-export default function About(props) {
+export default function About() {
 
     const data = useStaticQuery(graphql`
     query aboutQuery {

@@ -27,11 +27,6 @@ export default function HeroSlider() {
         }
     `)
 
-    const Application = PIXI.Application
-    const slideEffect = new Application({
-
-    })
-
     const heroSlider = data.allSanityHeroSlider.nodes
     
     

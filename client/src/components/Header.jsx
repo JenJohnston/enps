@@ -8,13 +8,13 @@ import { CgClose } from 'react-icons/cg'
 
 import { navRouter } from '../constants/navrouter'
 
-import { ModalSearchContext } from '../context/ModalSearchContext'
+import { ModalContext } from '../context/ModalContext'
 import NavMedia from './NavMedia'
 
 export default function Header() {
 
     const [ isNavOpen, setIsNavOpen ] = useState(false)
-    const { openModalSearch } = useContext(ModalSearchContext)
+    const { openSearchModal } = useContext(ModalContext)
     
 
     const toggleNav = () => {
@@ -28,7 +28,7 @@ export default function Header() {
     }
 
     const handleSearchModal = () => {
-        openModalSearch();
+        openSearchModal();
     }
     
 

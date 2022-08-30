@@ -30,3 +30,55 @@
   color: var(--background-color);
   font-size: var(--step-0);
 }
+
+//contact membership forms
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin: 1rem 0;
+
+  input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-primary-lt);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      border-bottom: 1px solid var(--svg-fill);
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid var(--svg-fill);
+    }
+  }
+
+  .formSubmit {
+    border: 2px solid var(--color-primary-lt);
+    border-radius: 0.35rem;
+    margin: 0 auto;
+  }
+}
+
+.textAreaControl {
+  margin: 2rem 0;
+
+  textarea {
+    border-radius: 0.65rem;
+    background-color: transparent;
+    padding: 0.35rem;
+    border: 1px solid var(--color-primary-lt);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      border-color: var(--svg-fill);
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid var(--svg-fill);
+    }
+  }
+}
