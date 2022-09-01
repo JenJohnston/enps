@@ -65,7 +65,7 @@ export default function Volunteer({ data, pageContext }) {
           <h5>Making a difference today and for generations to come.</h5>
           <div className='dividerBar'></div>
         </div>
-        <div className='volunteer__content'>
+        <div className='volunteer__content container'>
           <VolunteerCards volunteercards={volunteerCardData} />
         </div>
         {numberOfPages > 1 && (

@@ -8,7 +8,7 @@ export default function CategoryCard({title, description, slug, image}) {
     
 
     return (
-        <aside className='card'>
+        <Link to={`/categories/${slug.current}`}  className='card'>
             <div className="card__background">
                 <GatsbyImage
                     className='card__img'
@@ -25,7 +25,6 @@ export default function CategoryCard({title, description, slug, image}) {
                     <PortableTextHandler value={description}/>
                 </div>
             </div>
-            <Link to={`/categories/${slug.current}`} className='button__green'>Take A Look</Link>
-        </aside>
+        </Link>
     )
 }

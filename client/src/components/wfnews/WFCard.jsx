@@ -23,9 +23,9 @@ export default function WFCard({path, title, excerpt, image}) {
            <div className="card__content">
                <PortableTextHandler value={excerpt}/>
                <div className='card__link'>
-                <div className="linkbar"></div>
-                <Link to={path} target="_blank">Read This Issue <FaLongArrowAltRight className='arrowIcon'/></Link>
-           </div>
+                    <div className="linkbar"></div>
+                    <Link to={path} target="_blank">Read This Issue <FaLongArrowAltRight className='arrowIcon'/></Link>
+                </div>
            </div>
            
         </aside>
