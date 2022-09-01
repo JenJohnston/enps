@@ -11,8 +11,8 @@ export const navRouter = [
     },
     {
         id: '02',
-        title: 'Blog',
-        path: '/blog'
+        title: 'Blogs',
+        path: '/blogs'
     },
     {
         id: '03',

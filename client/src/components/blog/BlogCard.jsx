@@ -27,16 +27,7 @@ export default function BlogCard({title, path, image, excerpt, publishedOn, cate
                         alt={authorImage.altText}
                     />
                     <div className="card__headerText">
-                        <p className='card__categories'>
-                            {categories.map((item, index) => (
-                                <span key={item.slug.current}>
-                                    <Link className='card__category' to={`/categories/${item.slug.current}`}>
-                                        {item.title}
-                                    </Link>
-                                    {index < categories.length - 1 ? ' | ' : ''}
-                                </span>
-                            ))}
-                        </p>
+                        
                         <h4 className="card__author">{name}</h4>
                         {publishedOn && (
                             <p className='card__date'>{format(new Date(publishedOn), 'p, MMMM dd, yyyy')}</p>

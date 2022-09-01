@@ -77,9 +77,100 @@
   }
 }
 
+.news {
+  .card {
+    background: transparent;
+    position: relative;
+    color: var(--background-color);
+    border: none;
+    &__img {
+      max-width: 28rem;
+      aspect-ratio: 1;
+    }
+
+    &__header {
+      position: relative;
+      width: fit-content;
+      margin-bottom: 2rem;
+    }
+
+    &__title {
+      font-family: var(--primary-font-stack);
+      font-size: var(--step-2);
+      background-color: var(--color-primary);
+      display: block;
+      padding: 0.25rem 1.5rem;
+      position: absolute;
+      bottom: -1rem;
+      right: 5%;
+    }
+
+    &__content {
+      background: rgb(155, 155, 33);
+      background-image: linear-gradient(
+        347deg,
+        rgba(155, 155, 33, 0.93) 0%,
+        rgba(115, 126, 60, 0.97) 26%,
+        rgba(84, 104, 81, 1) 100%
+      );
+      p {
+        font-size: var(--step-0);
+        line-height: 1.15;
+        margin-bottom: 4rem;
+        text-shadow: var(--txt-shadow-dk);
+      }
+    }
+
+    &__link {
+      display: grid;
+      grid-template-columns: 1;
+      grid-template-rows: 1;
+      align-items: center;
+
+      .linkbar {
+        height: var(--step-0);
+        width: 3.4rem;
+        background-color: var(--color-primary);
+        grid-row: 1;
+        grid-column: 1;
+        padding: 1rem;
+      }
+
+      a {
+        grid-row: 1;
+        grid-column: 1;
+        margin-left: 0.5rem;
+        text-shadow: var(--txt-shadow-dk);
+      }
+    }
+
+    @include u.breakpoint-min(xl) {
+      display: grid;
+      grid-template-columns: auto 1fr;
+
+      &__title {
+        top: 3rem;
+        right: -30%;
+        height: fit-content;
+        z-index: 5;
+      }
+
+      &__content {
+        position: relative;
+        padding-left: 2rem;
+        top: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+}
+
 //event cards
 
-.homeEvents {
+.homeEvents,
+.events {
   .card {
     max-width: 42rem;
     background-color: var(--svg-fill);
@@ -177,7 +268,8 @@
 
 //blog cards
 
-.homeBlogs {
+.homeBlogs,
+.blogs {
   .card {
     color: var(--color-primary);
     max-width: 32rem;
@@ -246,18 +338,6 @@
 
     &__headerText {
       margin: 1rem 0;
-    }
-
-    &__category {
-      font-size: 11px;
-
-      @include u.breakpoint-min(med) {
-        font-size: var(--step--2);
-      }
-    }
-
-    &__categories {
-      margin-bottom: 0.35rem;
     }
 
     &__author {

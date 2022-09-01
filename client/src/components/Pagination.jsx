@@ -6,9 +6,10 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 function Pagination({ baseURL, numberOfPages, currentPage }) {
   const prevPage = currentPage - 1 <= 1 ? '' : (currentPage - 1).toString();
   const nextPage = (currentPage + 1).toString();
+
   return (
     <div className="pagination">
-      <div className="pagination__wrapper">
+      <div className="container">
         <div className="pagination__icons">
           <Link
             to={`${baseURL}/${prevPage}`}
@@ -23,7 +24,7 @@ function Pagination({ baseURL, numberOfPages, currentPage }) {
             to={`${baseURL}/${nextPage}`}
             className={clsx(currentPage >= numberOfPages && 'disabled')}
           >
-             <FiChevronRight className='pagination__chevron' />click me
+             <FiChevronRight className='pagination__chevron' />
           </Link>
         </div>
       </div>

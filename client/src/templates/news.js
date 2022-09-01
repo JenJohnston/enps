@@ -1,10 +1,10 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import { graphql } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 import Seo from "../components/seo";
 import Pagination from "../components/Pagination.jsx";
-import PortableTextHandler from "../components/PortableTextHandler";
+import WFCards from "../components/wfnews/WFCards.jsx";
 
 import { FaLeaf } from "react-icons/fa";
 
@@ -61,28 +61,15 @@ export default function News({ data, pageContext }) {
           <div className='news__header'>
             <FaLeaf />
             <h2>Monthly Archives</h2>
+            <h5>
+              Stay current on gardening tips for native plants, up-coming
+              events, news and articles
+            </h5>
             <div className='dividerBar'></div>
           </div>
         </div>
-        <div className='news__content'>
-          {wfNews.map((obj, idx) => {
-            return (
-              <div key={obj.id} className='news__card'>
-                <div className='news__cardHeader'>
-                  <GatsbyImage
-                    className='news__cardImg'
-                    image={obj.previewImage.asset.gatsbyImageData}
-                    alt={obj.previewImage.alt}
-                  />
-                  <h5>{obj.title}</h5>
-                </div>
-                <div className='news__cardBody'>
-                  <PortableTextHandler value={obj._rawExcerpt} />
-                  <Link to={obj.wildflowerpdf.asset.url}>Read This Issue</Link>
-                </div>
-              </div>
-            );
-          })}
+        <div className='news__content container'>
+          <WFCards wfcards={wfNews} />
         </div>
         {numberOfPages > 1 && (
           <Pagination

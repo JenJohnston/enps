@@ -1,6 +1,6 @@
 @use "../utils" as u;
 
-.newsHero {
+.eventsHero {
   width: 100%;
   aspect-ratio: 1.5 / 1;
   display: grid;
@@ -60,7 +60,7 @@
   }
 }
 
-.news {
+.events {
   margin: 4rem 0;
 
   &__header {
@@ -94,6 +94,14 @@
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    align-items: center;
+    gap: 2rem;
+
+    @include u.breakpoint-min(xl) {
+      flex-direction: row;
+      justify-content: space-between;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
   }
 }

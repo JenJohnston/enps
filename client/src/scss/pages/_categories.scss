@@ -1,6 +1,6 @@
 @use "../utils" as u;
 
-.newsHero {
+.categoriesHero {
   width: 100%;
   aspect-ratio: 1.5 / 1;
   display: grid;
@@ -60,7 +60,7 @@
   }
 }
 
-.news {
+.categories {
   margin: 4rem 0;
 
   &__header {
@@ -89,11 +89,5 @@
       margin: 0 auto;
       margin-top: 1rem;
     }
-  }
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
   }
 }

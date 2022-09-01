@@ -4,12 +4,14 @@
   display: grid;
   grid-template-columns: 1;
   grid-template-rows: 1;
+  margin-top: 4rem;
 
   &__bgContainer {
     grid-row: 1;
     grid-column: 1;
     position: relative;
     transform: rotate(180deg);
+    height: fit-content;
 
     .svgContainer {
       display: grid;
