@@ -1,0 +1,112 @@
+@use "../utils" as u;
+
+.volunteerSingleHero {
+  width: 100%;
+  aspect-ratio: 1.5 / 1;
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 1;
+
+  &__img {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  &__overlay {
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 2;
+    background-color: var(--secondary-variant-ol);
+    color: var(--background-color);
+    text-shadow: var(--txt-shadow-dk);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1rem 0;
+  }
+
+  &__content {
+    padding: 0.65rem;
+
+    h1 {
+      font-size: var(--step-3);
+    }
+  }
+
+  &__menu {
+    span {
+      display: flex;
+      gap: 0.35rem;
+      margin-bottom: 0.35rem;
+    }
+
+    svg {
+      font-size: var(--step-1);
+    }
+
+    a,
+    p {
+      font-size: var(--step-0);
+    }
+  }
+
+  @include u.breakpoint-min(med) {
+    h1 {
+      font-size: var(--step-4);
+    }
+  }
+
+  @include u.breakpoint-min(lg) {
+    aspect-ratio: 2.25 / 1;
+  }
+
+  @include u.breakpoint-min(xl) {
+    aspect-ratio: 3.5 / 1;
+
+    h1 {
+      font-size: var(--step-5);
+    }
+  }
+}
+
+.volunteerSingle {
+  margin: 4rem 0;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .bodyImage {
+      max-width: 48rem;
+      aspect-ratio: 1;
+      border-radius: 1.15rem;
+      box-shadow: var(--txt-shadow-dk);
+      margin-bottom: var(--space-s);
+    }
+
+    p {
+      font-size: var(--step-0);
+      margin-bottom: var(--space-m);
+    }
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    svg {
+      color: var(--background-variant);
+      font-size: 6rem;
+      margin-bottom: var(--space-2xs);
+    }
+
+    .dividerBar {
+      height: 4px;
+      width: 6rem;
+      background-color: var(--background-variant);
+      margin: 0 auto;
+      margin-top: 1rem;
+    }
+  }
+}

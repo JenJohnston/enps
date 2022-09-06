@@ -11,7 +11,7 @@ import { FaLeaf } from "react-icons/fa";
 export const VolunteersQuery = graphql`
   query VolunteerQuery($limit: Int!, $offset: Int!) {
     allSanityVolunteer(
-      sort: { fields: _createdAt, order: DESC }
+      sort: { fields: _createdAt, order: ASC }
       limit: $limit
       skip: $offset
     ) {

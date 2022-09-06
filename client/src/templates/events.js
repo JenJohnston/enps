@@ -11,7 +11,7 @@ import { FaLeaf } from "react-icons/fa";
 export const EventsQuery = graphql`
   query EventQuery($limit: Int!, $offset: Int!) {
     allSanityEvent(
-      sort: { fields: eventDate, order: DESC }
+      sort: { fields: eventDate, order: ASC }
       limit: $limit
       skip: $offset
     ) {

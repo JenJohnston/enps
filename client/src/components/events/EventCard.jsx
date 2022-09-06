@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import PortableTextHandler from '../PortableTextHandler'
+import { format } from 'date-fns'
 
 import { MdEventAvailable } from 'react-icons/md'
 import { FaLongArrowAltRight } from 'react-icons/fa'
@@ -18,7 +19,11 @@ export default function EventCard({path, title, excerpt, date, location}) {
                 <div className="card__title">
                     <h4>{title}</h4>
                     <h5><b>Location:</b> {location}</h5>
-                    <p className="date">Date: {date}</p>
+                    {date && (
+                        <p className='card__date'>
+                            Date: {format(new Date(date), "MMMM dd, yyyy, p")}
+                        </p>
+                    )}
                 </div>
                 <div className="card__content">
                     <PortableTextHandler value={excerpt}/>

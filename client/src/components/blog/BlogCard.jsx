@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import { format } from 'date-fns'
 import PortableTextHandler from '../PortableTextHandler'
 
-export default function BlogCard({title, path, image, excerpt, publishedOn, categories, authorImage, name}) {
+export default function BlogCard({title, path, image, excerpt, publishedOn, authorImage, name}) {
     
 
     return (

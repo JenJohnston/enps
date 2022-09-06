@@ -13,7 +13,6 @@ export default function BlogCards({blogs}) {
                     key={blog.id}
                     excerpt={blog._rawExcerpt}
                     publishedOn={blog.publishedOn}
-                    categories={blog.categories}
                     image={{
                         imageData: blog.coverImage.asset.gatsbyImageData,
                         altText: blog.coverImage.alt,
