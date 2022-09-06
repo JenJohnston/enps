@@ -4,6 +4,8 @@ import { Link } from 'gatsby'
 
 import BlogCards from '../blog/BlogCards'
 
+import { GiFallingLeaf } from 'react-icons/gi'
+
 export default function BlogsSection() {
     
     const data = useStaticQuery(graphql`
@@ -49,14 +51,20 @@ export default function BlogsSection() {
 
     return (
         <section className='homeBlogs'>
-            <div className="">
+            <div className="container">
                 <div className="homeBlogs__header">
                     <h2>Latest Articles</h2>
                 </div>
                 <div className="flexContainer">
                     <BlogCards blogs={featuredBlogs}/>
                 </div>
+                <div className="homeBlogs__link">
+                  <Link to='/blogs'>Read Our Articles</Link>
+                  <GiFallingLeaf/>
+                </div>
             </div>
+           
+            
         </section>
     )
 }

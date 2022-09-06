@@ -33,23 +33,6 @@
     }
   }
 
-  &__menu {
-    span {
-      display: flex;
-      gap: 0.35rem;
-      margin-bottom: 0.35rem;
-    }
-
-    svg {
-      font-size: var(--step-1);
-    }
-
-    a,
-    p {
-      font-size: var(--step-0);
-    }
-  }
-
   @include u.breakpoint-min(med) {
     h1 {
       font-size: var(--step-4);
@@ -107,6 +90,61 @@
       background-color: var(--background-variant);
       margin: 0 auto;
       margin-top: 1rem;
+    }
+  }
+
+  &__menu {
+    margin-top: 4rem;
+    background-color: var(--background-secondary);
+    padding: var(--space-m);
+    color: var(--background-color);
+
+    @include u.breakpoint-min(med) {
+      margin-left: -14rem;
+    }
+
+    @include u.breakpoint-min(lg) {
+      margin-left: -28rem;
+    }
+    h5 {
+      margin-bottom: var(--space-m);
+    }
+    svg {
+      font-size: var(--step-0);
+      fill: var(--secondary-variant);
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: var(--step-0);
+      margin-bottom: 0.55rem;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    margin-top: 4rem;
+    align-self: flex-end;
+
+    svg {
+      font-size: var(--step-5);
+      fill: var(--background-secondary);
+      margin-left: -2.7rem;
+    }
+
+    a {
+      z-index: 2;
+      font-size: var(--step-0);
+      text-transform: uppercase;
+      text-shadow: var(--txt-shadow-lt);
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--secondary-variant);
+      }
     }
   }
 }

@@ -1,7 +1,9 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 
 import EventCards from '../events/EventCards'
+
+import { GiFallingLeaf } from 'react-icons/gi'
 
 export default function EventSection() {
     
@@ -34,6 +36,10 @@ export default function EventSection() {
                 </div>
                 <div className="flexContainer">
                     <EventCards events={eventsFeature}/>
+                </div>
+                <div className="homeEvents__link">
+                  <Link to='/events'>View Our Events</Link>
+                  <GiFallingLeaf/>
                 </div>
             </div>
         </section>

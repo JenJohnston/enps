@@ -6,7 +6,8 @@ import { format } from "date-fns";
 import PortableTextHandler from "../components/PortableTextHandler.jsx";
 
 import { FaLeaf } from "react-icons/fa";
-import { CgCalendarDates } from "react-icons/cg";
+import { GiFallingLeaf } from "react-icons/gi";
+import { VscCalendar } from "react-icons/vsc";
 import { BsPersonCircle } from "react-icons/bs";
 import { MdOutlineCategory } from "react-icons/md";
 
@@ -54,7 +55,7 @@ export default function BlogsSingle({ data }) {
             <h1>{blog.title}</h1>
             <div className='blogSingleHero__menu'>
               <span>
-                <CgCalendarDates className='blogSingleHero__icon' />
+                <VscCalendar className='blogSingleHero__icon' />
                 {blog.publishedOn && (
                   <p className='card__date'>
                     {format(new Date(blog.publishedOn), "p, MMMM dd, yyyy")}
@@ -87,6 +88,10 @@ export default function BlogsSingle({ data }) {
             <div className='dividerBar'></div>
           </div>
           <PortableTextHandler value={blog._rawBody} />
+          <div className='blogSingle__link'>
+            <Link to='/blogs'>Return to Blogs Page</Link>
+            <GiFallingLeaf />
+          </div>
         </div>
       </article>
     </>

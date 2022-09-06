@@ -1,12 +1,14 @@
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
+import { format } from "date-fns";
 
 import Seo from "../components/seo";
 import BlogCards from "../components/blog/BlogCards";
 import PortableTextHandler from "../components/PortableTextHandler.jsx";
 
 import { FaLeaf } from "react-icons/fa";
+import { GiFallingLeaf } from "react-icons/gi";
 
 export const eventQuery = graphql`
   query SingleEventQuery($id: String!) {
@@ -36,8 +38,13 @@ export default function EventSingle({ data }) {
         <div className='eventSingleHero__overlay'>
           <div className='container eventSingleHero__content'>
             <h1>{event.title}</h1>
-            <h5>{event.eventDate}</h5>
-            <h5>{event.location}</h5>
+            <h5>
+              <span>When: </span>
+              {format(new Date(event.eventDate), "MMMM dd, yyyy, p")}
+            </h5>
+            <h5>
+              <span>Where:</span> {event.location}
+            </h5>
           </div>
         </div>
       </section>
@@ -48,6 +55,10 @@ export default function EventSingle({ data }) {
             <div className='dividerBar'></div>
           </div>
           <PortableTextHandler value={event._rawBody} />
+          <div className='eventSingle__link'>
+            <Link to='/events'>Return to Events Page</Link>
+            <GiFallingLeaf />
+          </div>
         </div>
       </article>
     </>

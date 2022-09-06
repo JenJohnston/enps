@@ -3,10 +3,11 @@ import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 import Seo from "../components/seo";
-import BlogCards from "../components/blog/BlogCards";
+
 import PortableTextHandler from "../components/PortableTextHandler.jsx";
 
 import { FaLeaf } from "react-icons/fa";
+import { GiFallingLeaf } from "react-icons/gi";
 import { IoMail } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
 
@@ -44,21 +45,29 @@ export default function VolunteerSingle({ data }) {
         <div className='volunteerSingleHero__overlay'>
           <div className='container volunteerSingleHero__content'>
             <h1>{volunteer.title}</h1>
-            <div className='volunteerSingleHero__menu'>
-              <h5>{volunteer.projectLeader}</h5>
-              <Link to={volunteer.contactEmail}>
-                <IoMail />: {volunteer.contactEmail}
-              </Link>
-              <Link to={volunteer.contactPhone}>
-                <FaPhoneAlt />: {volunteer.contactPhone}
-              </Link>
-            </div>
           </div>
         </div>
       </section>
       <article className='volunteerSingle'>
         <div className='container'>
+          <div className='volunteerSingle__header'>
+            <FaLeaf />
+            <div className='dividerBar'></div>
+          </div>
           <PortableTextHandler value={volunteer._rawBody} />
+          <aside className='volunteerSingle__menu'>
+            <h5>Project Leader: {volunteer.projectLeader}</h5>
+            <Link to={volunteer.contactEmail}>
+              <IoMail />: {volunteer.contactEmail}
+            </Link>
+            <Link to={volunteer.contactPhone}>
+              <FaPhoneAlt />: {volunteer.contactPhone}
+            </Link>
+          </aside>
+          <div className='volunteerSingle__link'>
+            <Link to='/volunteer'>Return to Volunteer Page</Link>
+            <GiFallingLeaf />
+          </div>
         </div>
       </article>
     </>

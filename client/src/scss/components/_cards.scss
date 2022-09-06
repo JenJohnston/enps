@@ -56,6 +56,13 @@
         grid-column: 1;
         margin-left: 0.5rem;
         text-shadow: var(--txt-shadow-dk);
+        transition: all 0.3s ease-in-out;
+        padding: 0.29rem 0.29rem 0.29rem 0;
+        max-width: fit-content;
+
+        &:hover {
+          background-color: var(--color-primary);
+        }
       }
     }
 

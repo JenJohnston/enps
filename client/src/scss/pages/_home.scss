@@ -167,6 +167,30 @@
   &__header {
     margin-bottom: 4rem;
   }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    margin-top: 4rem;
+    justify-self: flex-end;
+    svg {
+      font-size: var(--step-5);
+      fill: var(--background-secondary);
+      margin-left: -2.7rem;
+    }
+
+    a {
+      z-index: 2;
+      font-size: var(--step-0);
+      text-transform: uppercase;
+      text-shadow: var(--txt-shadow-dk);
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--svg-fill);
+      }
+    }
+  }
 }
 
 //Events Section
@@ -198,6 +222,30 @@
       justify-content: space-between;
     }
   }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    margin-top: 4rem;
+    justify-self: flex-end;
+    svg {
+      font-size: var(--step-5);
+      fill: var(--background-secondary);
+      margin-left: -2.7rem;
+    }
+
+    a {
+      z-index: 2;
+      font-size: var(--step-0);
+      text-transform: uppercase;
+      text-shadow: var(--txt-shadow-lt);
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--secondary-variant);
+      }
+    }
+  }
 }
 
 //Blogs Section
@@ -216,7 +264,7 @@
   &__header {
     @include u.breakpoint-min(xl) {
       max-width: 1440px;
-      margin: 0 auto;
+
       margin-bottom: 4rem;
     }
   }
@@ -232,6 +280,30 @@
       justify-content: space-between;
       max-width: 1440px;
       margin: 0 auto;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    margin-top: 4rem;
+    justify-self: flex-end;
+    svg {
+      font-size: var(--step-5);
+      fill: var(--background-secondary);
+      margin-left: -2.7rem;
+    }
+
+    a {
+      z-index: 2;
+      font-size: var(--step-0);
+      text-transform: uppercase;
+      text-shadow: var(--txt-shadow-dk);
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--svg-fill);
+      }
     }
   }
 }

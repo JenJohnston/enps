@@ -1,7 +1,10 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 
 import WFCards from '../wfnews/WFCards'
+
+import { GiFallingLeaf } from 'react-icons/gi'
+
 export default function WildFlowerNews() {
     
     const data = useStaticQuery(graphql`
@@ -38,6 +41,10 @@ export default function WildFlowerNews() {
                     <h2>The WildFlower News</h2>
                 </div>
                 <WFCards wfcards={wfNewsFeature}/>
+                <div className="homeWFNews__link">
+                  <Link to='/news'>View Our Archives</Link>
+                  <GiFallingLeaf/>
+                </div>
             </div> 
         </section>
     )
