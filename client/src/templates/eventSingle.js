@@ -4,7 +4,6 @@ import { StaticImage } from "gatsby-plugin-image";
 import { format } from "date-fns";
 
 import Seo from "../components/seo";
-import BlogCards from "../components/blog/BlogCards";
 import PortableTextHandler from "../components/PortableTextHandler.jsx";
 
 import { FaLeaf } from "react-icons/fa";

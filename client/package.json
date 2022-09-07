@@ -34,6 +34,7 @@
     "gatsby-plugin-robots-txt": "^1.7.1",
     "gatsby-plugin-sass": "^5.19.0",
     "gatsby-plugin-sharp": "^4.19.0",
+    "gatsby-plugin-sitemap": "^5.22.0",
     "gatsby-source-filesystem": "^4.19.0",
     "gatsby-source-sanity": "^7.4.2",
     "gatsby-transformer-gitinfo": "^1.1.0",
