@@ -1,3 +1,5 @@
+@use "../utils" as u;
+
 .modalOverlay {
   position: absolute;
   z-index: 10;
@@ -140,9 +142,118 @@
     }
   }
 
+  .search {
+    margin: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .formControl {
+      display: flex;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    &__btn {
+      padding: 0.5rem 1rem;
+      height: 3rem;
+      font-size: var(--step-0);
+      border: none;
+      border-radius: 1.85rem 0 0 1.85rem;
+      background-color: var(--color-primary);
+      color: var(--background-color);
+    }
+
+    &__input {
+      width: 100%;
+      height: 3rem;
+      max-width: 80%;
+      background-color: var(--background-color);
+      color: var(--color-primary-dk);
+      padding: 0.5rem 1rem;
+      font-size: var(--step-0);
+      border-radius: 0 1.85rem 1.85rem 0;
+      border: none;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        color: var(--background-secondary);
+      }
+    }
+  }
+
   &__result {
-    img {
-      width: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+
+    h3 {
+      margin: 4rem 0;
+      color: var(--svg-fill);
+      border-bottom: solid 4px var(--svg-fill);
+      padding-bottom: 0.35rem;
+    }
+
+    .modalSearch {
+      display: flex;
+      align-self: flex-start;
+      align-items: center;
+      gap: var(--space-s);
+      margin-bottom: 2rem;
+      font-family: var(--primary-font-stack);
+
+      &__img {
+        max-width: 4rem;
+        aspect-ratio: 1;
+        border-radius: 0.85rem;
+        box-shadow: var(--txt-shadow-dk);
+      }
+
+      h5 {
+        font-size: var(--step--2);
+        font-family: var(--primary-font-stack);
+        color: var(--color-primary-lt);
+        margin-bottom: 0.35rem;
+
+        @include u.breakpoint-min(med) {
+          font-size: var(--step--1);
+        }
+
+        @include u.breakpoint-min(lg) {
+          font-size: var(--step-0);
+        }
+      }
+
+      .categoryTitle {
+        text-align: center;
+      }
+
+      p {
+        margin-bottom: 0;
+        font-size: var(--step--2);
+        font-weight: 300;
+
+        @include u.breakpoint-min(lg) {
+          font-size: var(--step--1);
+        }
+      }
+    }
+
+    flex-direction: column;
+    align-items: center;
+  }
+  .contentSearch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .categoryTitle {
+      text-align: center;
     }
   }
 }

@@ -143,8 +143,6 @@ export default function SearchModal() {
             </button>
             <div className="modalOverlay__content">
                 <div className="container">
-                    <h3>Trouble Finding Something?</h3>
-                    <p>Maybe We Can Help You Find What You're Looking For</p>
                     <SearchField
                         value={searchQuery}
                         setValue={setSearchQuery}

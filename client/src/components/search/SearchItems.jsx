@@ -11,7 +11,7 @@ function BlogResultItems({ blog }) {
         <Link
             to={`/blogs/${blog.slug.current}`}  
             onClick={() => closeSearchModal()}
-            className="modalSearch__blog"
+            className="modalSearch"
         >
             <GatsbyImage
                 image={blog.coverImage.asset.gatsbyImageData}
@@ -19,7 +19,7 @@ function BlogResultItems({ blog }) {
                 className="modalSearch__img"
             />
             <div className="modalSearch__searchContent">
-                <h3>{blog.title}</h3>
+                <h5>{blog.title}</h5>
                 <p>
                 {format(new Date(blog.publishedOn), 'p, MMMM dd, yyyy')}
                 </p>
@@ -34,10 +34,10 @@ function CategoryResultItems({ category }) {
         <Link
             to={`/category/${category.slug.current}`}  
             onClick={() => closeSearchModal()}
-            className="modalSearch__category"
+            className="modalSearch"
         >
             <div className="modalSearch__searchContent">
-                <h3>{category.title}</h3>
+                <h5 className='categoryTitle'>{category.title}</h5>
             </div>
         </Link>
     )
@@ -49,7 +49,7 @@ function VolunteerResultItems({ volunteer }) {
         <Link
             to={`/volunteer/${volunteer.slug.current}`}  
             onClick={() => closeSearchModal()}
-            className="modalSearch__volunteer"
+            className="modalSearch"
         >
             <GatsbyImage
                 image={volunteer.coverImage.asset.gatsbyImageData}
@@ -57,7 +57,7 @@ function VolunteerResultItems({ volunteer }) {
                 className="modalSearch__img"
             />
             <div className="modalSearch__searchContent">
-                <h3>{volunteer.title}</h3>
+                <h5>{volunteer.title}</h5>
             </div>
         </Link>
     )
@@ -67,9 +67,9 @@ function NewsResultItems({ news }) {
     const { closeSearchModal } = useContext(ModalContext);
     return (
         <Link
-            to={`/news/${news.wildflowerpdf.asset.url}`}  
+            to={news.wildflowerpdf.asset.url}  
             onClick={() => closeSearchModal()}
-            className="modalSearch__news"
+            className="modalSearch"
         >
             <GatsbyImage
                 image={news.previewImage.asset.gatsbyImageData}
@@ -77,7 +77,7 @@ function NewsResultItems({ news }) {
                 className="modalSearch__img"
             />
             <div className="modalSearch__searchContent">
-                <h3>{ news.title}</h3>
+                <h5>{ news.title}</h5>
                 <p>
                 {format(new Date(news.publishedOn), 'p, MMMM dd, yyyy')}
                 </p>
@@ -92,10 +92,10 @@ function EventResultItems({ events }) {
         <Link
             to={`/event/${events.slug.current}`}  
             onClick={() => closeSearchModal()}
-            className="modalSearch__event"
+            className="modalSearch"
         >
             <div className="modalSearch__searchContent">
-                <h3>{ events.title}</h3>
+                <h5>{ events.title}</h5>
             </div>
         </Link>
     )

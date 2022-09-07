@@ -10,7 +10,7 @@ export default function SearchResult({
     categoriesIndexStore,
     newsIndexStore,
     volunteerIndexStore,
-    
+    eventsIndexStore
 }) {
     
     const blogsResult = useFlexSearch(
@@ -33,12 +33,17 @@ export default function SearchResult({
         JSON.stringify(newsIndexStore.index),
         newsIndexStore.store
     )
-    
+    const eventsResult = useFlexSearch(
+        searchQuery,
+        JSON.stringify(eventsIndexStore.index),
+        eventsIndexStore.store
+    )
     if (
         blogsResult.length === 0 &&
         categoriesResult.length === 0 &&
         volunteerResult.length === 0 &&
-        newsResult.length === 0 
+        newsResult.length === 0 &&
+        eventsResult.length === 0
         
     ) {
         return <p>No Result Found.</p>
@@ -47,44 +52,64 @@ export default function SearchResult({
         <>
             {blogsResult.length > 0 && (
                     <>
-                        <h2 className='search__header'>Blogs</h2>
-                        {blogsResult.map((result) => (
-                            <BlogResultItems
-                                key={result.id}
-                                blog={result}
-                            />
-                        ))}
+                        <h3 className='search__header'>Blogs</h3>
+                        <div className="contentSearch">
+                            {blogsResult.map((result) => (
+                                <BlogResultItems
+                                    key={result.id}
+                                    blog={result}
+                                />
+                            ))}
+                        </div>
                     </>
             )}
             {categoriesResult.length > 0 && (
                 <>
-                    <h2 className='search__header'>Categories</h2>
+                    <h3 className='search__header'>Categories</h3>
+                    <div className="contentSearch">
                     {categoriesResult.map((result) => (
                         <CategoryResultItems 
                             key={result.id} 
                             category={result} 
                         />
                     ))}
+                    </div>
+                    
                 </>
             )}
             {newsResult.length > 0 && (
                 <>
-                    <h2 className='search__header'>News</h2>
-                    {newsResult.map((result) => (
-                        <NewsResultItems 
-                            key={result.id} 
-                            news={result} 
-                        />
-                    ))}
+                    <h3 className='search__header'>News</h3>
+                    <div className="contentSearch">
+                        {newsResult.map((result) => (
+                            <NewsResultItems 
+                                key={result.id} 
+                                news={result} 
+                            />
+                        ))}
+                    </div>
                 </>
             )}
             {volunteerResult.length > 0 && (
                 <>
-                    <h2 className='search__header'>Volunteer Opportunities</h2>
-                    {volunteerResult.map((result) => (
-                        <VolunteerResultItems 
+                    <h3 className='search__header'>Volunteer Opportunities</h3>
+                    <div className="contentSearch">
+                        {volunteerResult.map((result) => (
+                            <VolunteerResultItems 
+                                key={result.id} 
+                                volunteer={result} 
+                            />
+                        ))}
+                    </div>
+                </>
+            )}
+            {eventsResult.length > 0 && (
+                <>
+                    <h3 className='search__header'>Upcoming Events</h3>
+                    {eventsResult.map((result) => (
+                        <EventResultItems 
                             key={result.id} 
-                            volunteer={result} 
+                            events={result} 
                         />
                     ))}
                 </>
