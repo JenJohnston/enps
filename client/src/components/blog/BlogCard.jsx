@@ -8,7 +8,7 @@ export default function BlogCard({title, path, image, excerpt, publishedOn, auth
     
 
     return (
-        <Link to={path} className='card'>
+        <Link to={`/blogs/${path}`} className='card'>
             <h4 className="card__title">{title}</h4>
             <GatsbyImage
                 className='card__img'

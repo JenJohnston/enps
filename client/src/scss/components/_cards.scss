@@ -420,6 +420,14 @@
   }
 }
 
+.homeBlogs {
+  .card {
+    &__header {
+      margin: 1.75rem 0;
+    }
+  }
+}
+
 // community cards
 
 .community {
