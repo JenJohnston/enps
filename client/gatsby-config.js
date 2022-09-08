@@ -1,7 +1,7 @@
 require("dotenv").config("./.env");
 
 const sanityConfig = require("./sanity-config");
-const siteUrl = process.env.URL
+const siteUrl = process.env.URL || "https://enps.vercel.app"
 
 module.exports = {
   siteMetadata: {
