@@ -24,6 +24,7 @@
     margin-top: var(--space-2xl);
     text-shadow: var(--txt-shadow-dk);
     margin-bottom: 6rem;
+
     h2 {
       margin-bottom: var(--space-2xl);
       font-family: var(--primary-font-stack);
@@ -41,7 +42,7 @@
 
     @include u.breakpoint-min(xl) {
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: space-around;
       margin-top: 6rem;
     }
   }
@@ -312,6 +313,8 @@
 
 .community {
   margin-top: 4rem;
+  position: relative;
+  z-index: 5;
 
   &__header {
     margin-bottom: 4rem;

@@ -1,12 +1,8 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import * as PIXI from 'pixi.js'
-import gsap from "gsap"
 
 import { Carousel } from 'react-bootstrap'
-
-
 
 export default function HeroSlider() {
 
@@ -28,8 +24,7 @@ export default function HeroSlider() {
     `)
 
     const heroSlider = data.allSanityHeroSlider.nodes
-    
-    
+
     return (
         <div className='imageSlider'>
             <Carousel slide={false} controls={false} indicators={false}>
