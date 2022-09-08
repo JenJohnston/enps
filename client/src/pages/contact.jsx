@@ -1,5 +1,5 @@
 import React from 'react'
-import Seo from "../components/seo"
+import Seo from "../components/seo.js"
 
 import { FaLeaf } from 'react-icons/fa'
 import { FaPhoneAlt } from 'react-icons/fa'
