@@ -6,7 +6,7 @@ import { MdSearch } from 'react-icons/md'
 import { RiMenu5Line } from 'react-icons/ri'
 import { CgClose } from 'react-icons/cg'
 
-import { navRouter } from '../constants/navrouter'
+import { navRouter } from '../constants/navRouter.js'
 
 import { ModalContext } from '../context/ModalContext'
 import NavMedia from './NavMedia'
