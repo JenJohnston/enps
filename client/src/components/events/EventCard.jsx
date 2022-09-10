@@ -30,7 +30,7 @@ export default function EventCard({path, title, excerpt, date, location}) {
                 </div>
                 <div className="card__links">
                     <a href="mailto:enpsvolunteer@gmail.com"><IoMail className='mailIcon'/>Register</a>
-                    <Link to={path}>View Event <FaLongArrowAltRight className='arrowIcon'/></Link>
+                    <Link tto={`/events/${path}`}>View Event <FaLongArrowAltRight className='arrowIcon'/></Link>
                 </div>
             </div>
         </aside>
