@@ -93,6 +93,7 @@
       flex-direction: column;
       align-items: center;
       gap: var(--space-s);
+      z-index: 150;
 
       .navmenu {
         display: flex;
