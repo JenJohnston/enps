@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useForm } from "react-hook-form";
 import Seo from "../components/seo.js"
 
@@ -9,16 +9,9 @@ import { FaFacebook } from 'react-icons/fa'
 
 export default function Contact() {
 
-    const { register, handleSubmit, setValue } = useForm();
+    const { register, handleSubmit } = useForm();
     const [ result, setResult ] = useState('');
-    const [captchatoken, setCaptchaToken] = useState('');
     const [honeyPot, setHoneyPot] = useState('');
-
-    useEffect(() => {
-        setValue("recaptcha_response", captchatoken);
-    });
-
-    
 
     console.log(honeyPot)
 
@@ -104,11 +97,6 @@ export default function Contact() {
                         <div className="formGroup textAreaControl">
                             <textarea className='textArea' name="textarea" {...register("textarea")} id="" cols="30" rows="10" placeholder='please ask your question here'></textarea>
                         </div>
-                        <input
-                            type="hidden"
-                            {...register("recaptcha_response")}
-                            id="recaptchaResponse"
-                        />
                         <div className="formGroup">
                             <span>{result}</span>
                             <input type="submit"  className='formSubmit'/>

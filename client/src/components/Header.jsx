@@ -61,14 +61,14 @@ export default function Header() {
                 {isNavOpen ? ( <CgClose/> ) : ( <RiMenu5Line/> )}
             </button>
             <nav className={isNavOpen ? 'navbar shownav' : 'navbar'} id="navbar">
-                <ul className="navmenu" id="sitenav">
+                <ul className="navMenu" id="sitenav">
                     {navRouter.map(navItem => (
-                        <li key={navItem.path} className="nav__item">
-                            <Link className='menu__link' to={navItem.path} onClick={handleNavClick}>{navItem.title}</Link>
+                        <li key={navItem.path} className="navMenu__item">
+                            <Link className='navMenu__link' to={navItem.path} onClick={handleNavClick}>{navItem.title}</Link>
                         </li>
                     ))}
                 </ul>
-                <div className="navmenu__icons">
+                <div className="navMenu__icons">
                     <div 
                         className="searchIcon__wrapper" 
                         onClick={handleSearchModal} 

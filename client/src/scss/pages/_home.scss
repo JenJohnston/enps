@@ -54,10 +54,12 @@
     text-transform: uppercase;
     padding: 1rem;
     font-weight: bold;
+    transition: all 0.3s ease-in-out;
 
     &:hover {
       color: var(--color-primary-dk);
       text-shadow: var(--txt-shadow-lt);
+      background-color: var(--color-primary-lt-ol);
     }
   }
 
@@ -243,7 +245,8 @@
       transition: all 0.3s ease-in-out;
 
       &:hover {
-        color: var(--secondary-variant);
+        color: var(--svg-fill);
+        text-shadow: var(--txt-shadow-dk);
       }
     }
   }
@@ -345,6 +348,12 @@
       a {
         position: relative;
         z-index: 10;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background-color: var(--color-primary-dk-ol-v);
+          color: var(--color-primary-lt);
+        }
       }
     }
   }

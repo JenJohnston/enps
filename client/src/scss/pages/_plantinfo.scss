@@ -101,6 +101,11 @@
     max-width: 7.65rem;
     aspect-ratio: 1;
     font-size: var(--step-0);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: var(--color-primary-lt);
+    }
 
     svg {
       font-size: 4rem;

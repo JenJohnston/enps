@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import { useForm } from "react-hook-form";
@@ -9,14 +9,11 @@ import FooterContact from './FooterContact'
 
 export default function Footer() {
 
-    const { register, handleSubmit, setValue } = useForm();
+    const { register, handleSubmit } = useForm();
     const [ result, setResult ] = useState('');
-    const [captchatoken, setCaptchaToken] = useState('');
     const [honeyPot, setHoneyPot] = useState('');
 
-    useEffect(() => {
-        setValue("recaptcha_response", captchatoken);
-    });
+    
 
     const onSubmit = async (data) => {
 
@@ -84,14 +81,14 @@ export default function Footer() {
                     </div>
                 </div>
                 <form  onSubmit={handleSubmit(onSubmit)} className="container__subscribe">
-                    <h3>Subscribe to Our Newsletter</h3>
+                    <h4>Subscribe to Our Newsletter</h4>
                     <div className="formGroup honeyPot">
                         <input className='honeyPot' type="text" name="honey" id="honeyPot" value={honeyPot} onChange={event => setHoneyPot(event.target.value)}/>
                         <label className='honeyPot' htmlFor="honey"  aria-label='hidden' aria-hidden="true"></label>
                     </div>
                     <input placeholder="e.g. example@email.com" className='formInput' type="email" {...register("email")} required/>
-                    <div className="formGroup">
-                        <span>{result}</span>
+                    <div className="formGroup footerSubmit">
+                        
                         <input className='formSubmit' type="submit" aria-label='Submit Button' />
                     </div>   
                 </form>

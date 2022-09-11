@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useForm } from "react-hook-form";
 
 import Seo from "../components/seo"
@@ -7,51 +7,50 @@ import {IoIosPeople} from 'react-icons/io'
 
 export default function Membership() {
 
-    const { register, handleSubmit, setValue } = useForm();
+    const { register, handleSubmit } = useForm();
     const [ result, setResult ] = useState('');
-    const [captchatoken, setCaptchaToken] = useState('');
+   
     const [honeyPot, setHoneyPot] = useState('');
 
-    useEffect(() => {
-        setValue("recaptcha_response", captchatoken);
-    });
 
-    
-
-    console.log(honeyPot)
 
     const onSubmit = async (data) => {
+
+        const form = document.querySelector('#membershipForm')
 
         if ( honeyPot === '' || honeyPot === null){
 
             setResult("Sending...");
 
-        const formData = new FormData()
+            const formData = new FormData()
 
-        formData.append("access_key", process.env.GATSBY_WEB_THREE_ACCESS_KEY)
+            formData.append("access_key", process.env.GATSBY_WEB_THREE_ACCESS_KEY)
 
-        for ( const key in data ) {
-            if (key === "file" ) {
-                formData.append(key, data[key][0]);
-            } else {
-                formData.append(key, data[key]);
+            for ( const key in data ) {
+                if (key === "file" ) {
+                    formData.append(key, data[key][0]);
+                } else {
+                    formData.append(key, data[key]);
+                }
             }
-        }
 
-        const res = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData
-        }).then((res) => res.json());
+            const res = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            }).then((res) => res.json());
 
-        if (res.success) {
-            console.log("Success", res);
-            setResult(res.message);
-          } else {
-            console.log("Error", res);
-            setResult(res.message);
-          }
+            if (res.success) {
+                console.log("Success", res);
+                setResult(res.message);
+            } else {
+                console.log("Error", res);
+                setResult(res.message);
+            }
+
+            form.action="https://web3forms.com/success"
 
         } else {
+            form.action="https://web3forms.com/success"
             return false
         }    
     }
@@ -77,13 +76,14 @@ export default function Membership() {
                         </ul>
                     </div>
                     <form id="membershipForm" onSubmit={handleSubmit(onSubmit)} className="membership__form">
-                        <div className="formGroup">
-                            <input type="text" name="name" {...register("name")} required/>
-                            <label htmlFor="name">Enter your Name</label>
-                        </div>
                         <div className="formGroup honeyPot">
                             <input className='honeyPot' type="text" name="honey" id="honeyPot" value={honeyPot} onChange={event => setHoneyPot(event.target.value)}/>
                             <label className='honeyPot' htmlFor="honey"  aria-label='hidden' aria-hidden="true"></label>
+                        </div>
+                        <input type="hidden" name="redirect" value="https://web3forms.com/success"></input>
+                        <div className="formGroup">
+                            <input type="text" name="name" {...register("name")} required/>
+                            <label htmlFor="name">Enter your Name</label>
                         </div>
                         <div className="formGroup">
                             <input type="email" name="email" {...register("email")} required/>
@@ -103,11 +103,6 @@ export default function Membership() {
                                 <label htmlFor="newsletter">Subscribe to our Newsletter</label>
                             </div>
                         </div>
-                        <input
-                            type="hidden"
-                            {...register("recaptcha_response")}
-                            id="recaptchaResponse"
-                        />
                         <div className="formGroup">
                             <span>{result}</span>
                             <input type="submit"  className='formSubmit'/>

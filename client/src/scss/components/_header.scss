@@ -95,20 +95,31 @@
       gap: var(--space-s);
       z-index: 150;
 
-      .navmenu {
+      .navMenu {
         display: flex;
         flex-direction: column;
         gap: var(--space-2xs);
         align-items: center;
         max-width: 60rem;
 
-        .nav__item {
+        &__item {
           padding: var(--space-3xs) 0;
           transition: var(--transition-state);
           color: var(--background-color);
+          text-shadow: var(--txt-shadow-dk);
 
           &:hover {
-            color: var(--color-primary-dk);
+            color: var(--color-primary-lt);
+          }
+
+          &__link {
+            transition: var(--transition-state);
+            color: var(--background-color);
+            text-shadow: var(--txt-shadow-dk);
+
+            &:hover {
+              color: var(--color-primary-lt) !important;
+            }
           }
         }
 
@@ -125,7 +136,11 @@
           .searchIcon {
             width: 1.75rem;
             height: 1.75rem;
-            color: var(--svg-fill);
+            fill: var(--color-primary);
+
+            &:hover {
+              fill: var(--svg-fill-dk);
+            }
           }
         }
       }
@@ -134,10 +149,15 @@
         display: flex;
         gap: var(--space-2xs);
         color: var(--svg-fill);
+        margin-bottom: 0.25rem;
 
         svg {
           width: 1.25rem;
           height: 1.25rem;
+
+          &:hover {
+            color: var(--svg-fill-dk);
+          }
         }
       }
 
@@ -150,7 +170,7 @@
         align-items: flex-end;
         gap: var(--space-3xs);
 
-        .navmenu {
+        .navMenu {
           flex-direction: row;
           width: 70rem;
           gap: var(--space-m);
@@ -162,8 +182,24 @@
               color: var(--color-primary);
             }
           }
-          .nav__item {
+
+          &__item {
             color: var(--color-primary);
+            text-shadow: var(--txt-shadow-lt);
+
+            &:hover {
+              color: var(--svg-fill-dk);
+            }
+          }
+
+          &__link {
+            transition: var(--transition-state);
+            color: var(--color-primary);
+            text-shadow: var(--txt-shadow-lt);
+
+            &:hover {
+              color: var(--svg-fill-dk);
+            }
           }
         }
 

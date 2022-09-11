@@ -26,8 +26,8 @@ export default function VolunteerCard({title, path, image, excerpt, email, phone
                 </div>
                 <div className="card__media">
                     <p>Contact: {contact}</p>
-                    <a href={email}><IoMail/>: {email}</a>
-                    <a href={phoneNumber}><FaPhoneAlt/>: {phoneNumber}</a>
+                    <a href={`mailto:${email}`}><IoMail/>: {email}</a>
+                    <a href={`tel:${phoneNumber}`}><FaPhoneAlt/>: {phoneNumber}</a>
                 </div>
                 <div className="card__link">
                     <div className="linkbar"></div>

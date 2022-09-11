@@ -255,11 +255,18 @@
     &__links {
       display: flex;
       justify-content: space-between;
+
       a {
         display: flex;
         align-items: center;
         gap: 0.35rem;
         font-size: var(--step--2);
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: var(--background-color);
+          text-shadow: var(--txt-shadow-dk);
+        }
 
         @include u.breakpoint-min(med) {
           font-size: var(--step-0);
@@ -637,6 +644,13 @@
         align-items: center;
         gap: 0.35rem;
 
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: var(--background-color);
+          text-shadow: var(--txt-shadow-dk);
+        }
+
         svg {
           font-size: var(--step--1);
         }
@@ -703,6 +717,11 @@
         align-items: center;
         gap: 0.35rem;
         margin-bottom: var(--space-3xs);
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: var(--svg-fill);
+        }
 
         svg {
           fill: var(--color-primary);
@@ -731,6 +750,13 @@
         grid-column: 1;
         margin-left: 0.5rem;
         text-shadow: var(--txt-shadow-dk);
+        transition: all 0.3s ease-in-out;
+        padding: 0.29rem 0.29rem 0.29rem 0;
+        max-width: fit-content;
+
+        &:hover {
+          background-color: var(--color-primary);
+        }
       }
     }
 
