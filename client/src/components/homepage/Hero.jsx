@@ -8,8 +8,6 @@ import {MdNaturePeople} from 'react-icons/md'
 import {IoIosPeople} from 'react-icons/io'
 
 import HeroSlider from './HeroSlider'
-import PixiSlider from './PixiSlider'
-
 
 export default function Hero() {
     

@@ -128,8 +128,6 @@ export default function SearchModal() {
         })
     }
 
-    console.log(newsIndexStore)
-
     if(!isSearchModalOpen) return null
     return (
         <div className='modalOverlay'>

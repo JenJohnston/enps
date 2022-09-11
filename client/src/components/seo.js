@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery, withPrefix } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
@@ -30,7 +30,6 @@ export default function Seo({title, description, keywords, author}) {
            <title>{seo.title}</title>
            <meta name="description" content={seo.description} />
            <meta name="author" content={seo.author} />
-           <script src={withPrefix('rgbKineticSlider.js')} type="text/javascript" />
         </Helmet>
     )
 }

@@ -38,6 +38,14 @@ module.exports = {
       __key: "images"
     },
     {
+      resolve: `gatsby-plugin-recaptcha`,
+      options: {
+         async: false,
+         defer: false,
+         args: `?onload=onloadCallback&render=explicit`,
+      },
+   },
+    {
       resolve: 'gatsby-plugin-local-search',
       options: {
         name: 'categories',

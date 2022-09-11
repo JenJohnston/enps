@@ -1,14 +1,58 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
+import { useForm } from "react-hook-form";
 
 import { MdOutlineCopyright }  from 'react-icons/md'
 import FooterMedia from './FooterMedia'
 import FooterContact from './FooterContact'
 
-export default function Footer(props) {
+export default function Footer() {
 
-    
+    const { register, handleSubmit, setValue } = useForm();
+    const [ result, setResult ] = useState('');
+    const [captchatoken, setCaptchaToken] = useState('');
+    const [honeyPot, setHoneyPot] = useState('');
+
+    useEffect(() => {
+        setValue("recaptcha_response", captchatoken);
+    });
+
+    const onSubmit = async (data) => {
+
+        if ( honeyPot === '' || honeyPot === null){
+
+            setResult("Sending...");
+
+        const formData = new FormData()
+
+        formData.append("access_key", process.env.GATSBY_WEB_THREE_ACCESS_KEY)
+
+        for ( const key in data ) {
+            if (key === "file" ) {
+                formData.append(key, data[key][0]);
+            } else {
+                formData.append(key, data[key]);
+            }
+        }
+
+        const res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        }).then((res) => res.json());
+
+        if (res.success) {
+            console.log("Success", res);
+            setResult(res.message);
+          } else {
+            console.log("Error", res);
+            setResult(res.message);
+          }
+
+        } else {
+            return false
+        }    
+    }
     
 
     return (
@@ -39,10 +83,17 @@ export default function Footer(props) {
                         </Link>
                     </div>
                 </div>
-                <form className="container__subscribe">
+                <form  onSubmit={handleSubmit(onSubmit)} className="container__subscribe">
                     <h3>Subscribe to Our Newsletter</h3>
-                    <input placeholder="e.g. example@email.com" className='formInput' type="email"  />
-                    <input className='formSubmit' type="submit" />
+                    <div className="formGroup honeyPot">
+                        <input className='honeyPot' type="text" name="honey" id="honeyPot" value={honeyPot} onChange={event => setHoneyPot(event.target.value)}/>
+                        <label className='honeyPot' htmlFor="honey"  aria-label='hidden' aria-hidden="true"></label>
+                    </div>
+                    <input placeholder="e.g. example@email.com" className='formInput' type="email" {...register("email")} required/>
+                    <div className="formGroup">
+                        <span>{result}</span>
+                        <input className='formSubmit' type="submit" aria-label='Submit Button' />
+                    </div>   
                 </form>
                 <div className="container__contact">
                     <FooterMedia/>
