@@ -38,13 +38,59 @@ module.exports = {
       __key: "images"
     },
     {
-      resolve: `gatsby-plugin-recaptcha`,
+      resolve: "gatsby-plugin-sitemap",
       options: {
-         async: false,
-         defer: false,
-         args: `?onload=onloadCallback&render=explicit`,
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+          allFile(filter: {sourceInstanceName: {eq: "pages"}}) {
+            edges {
+              node {
+                fields {
+                  gitLogLatestDate
+                }
+                name
+              }
+            }
+          }
+        }
+        `,
+        resolveSiteUrl: () => siteUrl,
+        resolvePages: ({
+          allSitePage: { nodes: allPages},
+          allFile: { edges: pageFiles }
+        }) => {
+          return allPages.map(page => {
+            const pageFile = pageFiles.find(({ node }) => {
+              const fileName = node.name === 'index' ? '/' : `/${node.name}/`
+              return page.path === fileName
+            })
+
+            return {...page, ...pageFile?.node?.fields}
+          })
+        },
+        serialize: ({ path, gitLogLatestDate }) => {
+          return {
+            url: path,
+            lastmod: gitLogLatestDate,
+          }
+        },
+        createLinkInHead: true,
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: `https://enps.vercel.app/`,
+        sitemap: `https://enps.vercel.app/sitemap/sitemap-0.xml`,
+        policy: [{userAgent: '*', allow: '/'}],
+
       },
-   },
+    },
     {
       resolve: 'gatsby-plugin-local-search',
       options: {
