@@ -57,9 +57,9 @@ export default function Header() {
                     </div>
                 </div>
                 <button className='mobileNav__toggle' id="mobileNav__toggle" aria-controls='site__nav' aria-expanded="false" onClick={toggleNav}>
-                <span className='sr-only'>Menu</span>
-                {isNavOpen ? ( <CgClose/> ) : ( <RiMenu5Line/> )}
-            </button>
+                    <span className='sr-only'>Menu</span>
+                    {isNavOpen ? ( <CgClose/> ) : ( <RiMenu5Line/> )}
+                </button>
             <nav className={isNavOpen ? 'navbar shownav' : 'navbar'} id="navbar">
                 <ul className="navMenu" id="sitenav">
                     {navRouter.map(navItem => (

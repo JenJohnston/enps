@@ -9,7 +9,7 @@ export default function WFCard({path, title, excerpt, image}) {
     
 
     return (
-        <aside className='card'>
+        <article className='card'>
             <div className="card__header">
                 <GatsbyImage
                     className='card__img'
@@ -28,6 +28,6 @@ export default function WFCard({path, title, excerpt, image}) {
                 </div>
            </div>
            
-        </aside>
+        </article>
     )
 }

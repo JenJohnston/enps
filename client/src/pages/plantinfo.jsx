@@ -142,7 +142,7 @@ export default function Plantinfo() {
             </section>
             <section className="plantCards">
                 <div className="container">
-                <div className="plantCards__header">
+                    <div className="plantCards__header">
                         <FaLeaf/>
                         <h2>Where To Buy</h2>
                         <div className="dividerBar"></div>

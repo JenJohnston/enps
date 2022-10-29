@@ -1,8 +1,8 @@
 export const navRouter = [
     {
         id: '00',
-        title: 'News',
-        path: '/news'
+        title: 'Home',
+        path: '/'
     },
     {
         id: '01',
@@ -11,17 +11,17 @@ export const navRouter = [
     },
     {
         id: '02',
-        title: 'Blogs',
-        path: '/blogs'
+        title: 'News',
+        path: '/news'
     },
     {
         id: '03',
-        title: 'Categories',
-        path: '/categories'
+        title: 'Plant Index',
+        path: '/wfindex'
     },
     {
         id: '04',
-        title: 'Plant Info',
+        title: 'Plant Tips',
         path: '/plantinfo'
     },
     {

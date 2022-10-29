@@ -12,6 +12,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const eventSingleTemplate = require.resolve('./src/templates/eventSingle.js')
     const volunteersTemplate = require.resolve('./src/templates/volunteer.js')
     const volunteerSingleTemplate = require.resolve('./src/templates/volunteerSingle.js')
+    const indexModalTemplate = require.resolve('./src/templates/indexModal.js')
 
     const { createPage } = actions
     const result = await graphql(`{
@@ -52,6 +53,14 @@ exports.createPages = async ({ graphql, actions }) => {
               }
             }
           }
+          allSanityWfIndex {
+            nodes {
+              id
+              slug {
+                current
+              }
+            }
+          }
         }
     `)
 
@@ -62,7 +71,9 @@ exports.createPages = async ({ graphql, actions }) => {
     const categories = result.data.allSanityCategory.nodes
     const events = result.data.allSanityEvent.nodes
     const volunteers = result.data.allSanityVolunteer.nodes
+    const wfindex = result.data.allSanityWfIndex.nodes
 
+    console.log(wfindex)
     // single blog page
 
     blogs.forEach((blog) => {
@@ -101,6 +112,16 @@ exports.createPages = async ({ graphql, actions }) => {
             component: volunteerSingleTemplate,
             context: { id: volunteer.id }
         })
+    })
+
+    // single index modal pages
+
+    wfindex.forEach((indexModal) => {
+      createPage({
+        path: `/wfindex/${indexModal.slug.current}`,
+        component: indexModalTemplate,
+        context: { id: indexModal.id }
+      })
     })
 
 

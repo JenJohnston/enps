@@ -22,6 +22,8 @@ import volunteer from "./documents/volunteer.js";
 import wildflowerNews from "./documents/wildflowerNews.js";
 import heroSlider from "./documents/heroSlider.js";
 import springSeedGallery from "./documents/springSeedGallery.js";
+import wfIndex from "./documents/wfIndex.js";
+
 
 
 // object import
@@ -57,6 +59,7 @@ export default createSchema({
     heroSlider,
     volunteer,
     wildflowerNews,
+    wfIndex,
     springSeedGallery,
 
     // object schemas

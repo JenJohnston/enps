@@ -10,6 +10,8 @@ const ModalContextProvider = ({children}) => {
     const [isSeedGrowModalOpen, setIsSeedGrowModalOpen] = useState(false)
     const [isSpringSeedModalOpen, setIsSpringSeedModalOpen] = useState(false)
     const [isNativeSeedModalOpen, setIsNativeSeedModalOpen] = useState(false)
+    const [isCommonModalOpen, setIsCommonModalOpen] = useState(false)
+    const [isBotanicalModalOpen, setIsBotanicalModalOpen] = useState(false)
 
     const initValue = useMemo(
         () => ({
@@ -55,8 +57,22 @@ const ModalContextProvider = ({children}) => {
           closeNativeSeedModal: () => {
             setIsNativeSeedModalOpen(false);
           },
+          isCommonModalOpen,
+          openCommonModal: () => {
+            setIsCommonModalOpen(true);
+          },
+          closeCommonModal: () => {
+            setIsCommonModalOpen(false);
+          },
+          isBotanicalModalOpen,
+          openBotanicalModal: () => {
+            setIsBotanicalModalOpen(true);
+          },
+          closeBotanicalModal: () => {
+            setIsBotanicalModalOpen(false);
+          }
         }),
-        [isSearchModalOpen, isPlantDrModalOpen, isSeedGrowModalOpen, isSeedCollModalOpen, isSpringSeedModalOpen, isNativeSeedModalOpen]
+        [isSearchModalOpen, isPlantDrModalOpen, isSeedGrowModalOpen, isSeedCollModalOpen, isSpringSeedModalOpen, isNativeSeedModalOpen, isCommonModalOpen, isBotanicalModalOpen]
       );
 
     return (

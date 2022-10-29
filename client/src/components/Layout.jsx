@@ -8,6 +8,8 @@ import SeedGuideModal from "./modals/SeedGuideModal";
 import SeedCollModal from "./modals/SeedCollModal";
 import SpringSeedModal from "./modals/SpringSeedModal";
 import NativeSeedModal from "./modals/NativeSeedModal";
+import CommonModal from "./modals/CommonModal";
+import BotanicalModal from "./modals/BotanicalModal";
 
 
 export default function Layout({ children }) {
@@ -19,6 +21,8 @@ export default function Layout({ children }) {
                 <SeedCollModal/>
                 <SpringSeedModal/>
                 <NativeSeedModal/>
+                <CommonModal/>
+                <BotanicalModal/>
                 <Header/>
                 {children}
                 <Footer/>
