@@ -9,7 +9,10 @@ export default function CommonModal() {
 
     const data = useStaticQuery(graphql`
         query CommonIndexQuery {
-            allSanityWfIndex(filter: {indexID: {eq: "pi"}}) {
+            allSanityWfIndex(
+                filter: { indexID: {eq: "pi"} }
+                sort: { fields: commonName, order: DESC }
+          ) {
             nodes {
                 commonName
                 slug {
