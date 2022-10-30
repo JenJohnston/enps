@@ -11,7 +11,7 @@ export default function CommonModal() {
         query CommonIndexQuery {
             allSanityWfIndex(
                 filter: { indexID: {eq: "pi"} }
-                sort: { fields: commonName, order: DESC }
+                sort: { fields: commonName, order: ASC }
           ) {
             nodes {
                 commonName

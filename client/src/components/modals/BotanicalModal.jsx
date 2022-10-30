@@ -10,7 +10,10 @@ export default function BotanicalModal() {
 
     const data = useStaticQuery(graphql`
         query BotanicalIndexQuery {
-            allSanityWfIndex(filter: {indexID: {eq: "pi"}}) {
+            allSanityWfIndex(
+                filter: { indexID: {eq: "pi"} }
+                sort: { fields: commonName, order: ASC }
+          ) {
             nodes {
                 botanicalName
                 slug {
