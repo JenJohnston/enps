@@ -77,6 +77,11 @@
     svg {
       font-size: 2.35rem;
       fill: var(--svg-fill);
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        fill: var(--color-primary-lt);
+      }
     }
   }
 

@@ -30,23 +30,23 @@ export default function Hero() {
                         <div className="hero__logoBar">
                             <div className="hero__logoContainer">
                                 <GiPlantWatering className="hero__svg blue" />
-                                <p>Value Item 1</p>
+                                <p>Native Plant Preservation</p>
                             </div>
                             <div className="hero__logoContainer">
                                 <GiPlantSeed className="hero__svg green"/>
-                                <p>Value Item 2</p>
+                                <p>Community Growth</p>
                             </div>
                             <div className="hero__logoContainer">
                                 <GiEarthAmerica className="hero__svg"/>
-                                <p>Value Item 3</p>
+                                <p>Responsible Stewardship</p>
                             </div>
                             <div className="hero__logoContainer">
                                 <MdNaturePeople className="hero__svg accentTwo"/>
-                                <p>Value Item 4</p>
+                                <p>Plant Education</p>
                             </div>
                             <div className="hero__logoContainer">
                                 <IoIosPeople className="hero__svg accentOne"/>
-                                <p>Value Item 5</p>
+                                <p>Community Outreach</p>
                             </div>
                         </div>
                     </aside>
