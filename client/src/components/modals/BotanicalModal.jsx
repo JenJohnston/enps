@@ -12,7 +12,7 @@ export default function BotanicalModal() {
         query BotanicalIndexQuery {
             allSanityWfIndex(
                 filter: { indexID: {eq: "pi"} }
-                sort: { fields: commonName, order: ASC }
+                sort: { fields: botanicalName, order: ASC }
           ) {
             nodes {
                 botanicalName
