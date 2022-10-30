@@ -70,7 +70,7 @@ export default function Membership() {
                         <h3>Be Part of a Growing and Active Community</h3>
                         <p><span>For Only $20</span> Your lifetime membership gets you access to benefits, new friends and new opportunities.  Purchase yours today!</p>
                         <ul className="membership__list">
-                            <li><FaLeaf/> Item 1</li>
+                            <li><FaLeaf/> Make New Friends</li>
                             <li><FaLeaf/> Item 2</li>
                             <li><FaLeaf/> Item 3</li>
                         </ul>
