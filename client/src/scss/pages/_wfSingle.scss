@@ -71,7 +71,6 @@
     @include u.breakpoint-min(med) {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr;
     }
 
     @include u.breakpoint-min(lg) {
@@ -87,7 +86,7 @@
     aspect-ratio: 1;
     max-width: 28rem;
     grid-column: 1;
-    grid-row: 1;
+
     align-self: center;
     box-shadow: var(--txt-shadow-dk);
 
@@ -104,11 +103,9 @@
     background-color: var(--svg-fill);
     padding: 0.85rem;
     grid-column: 2;
-    grid-row: 1;
 
     @include u.breakpoint-min(lg) {
       margin-top: 8rem;
-      max-height: 80%;
       padding-bottom: 4rem;
     }
   }
