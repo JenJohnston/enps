@@ -101,12 +101,35 @@ function EventResultItems({ events }) {
     )
 }
 
+function WfIndexResultItems({ wfindex }) {
+    const { closeSearchModal } = useContext(ModalContext);
+    return (
+        <Link
+        to={`/wfindex/${wfindex.slug.current}`}
+        onClick={() => closeSearchModal()}
+        className="modalSearch"
+        >
+            <GatsbyImage
+                image={wfindex.wildflowerImage.asset.gatsbyImageData}
+                alt={wfindex.wildflowerImage.alt}
+                className="modalSearch__img"
+            />
+            <div className="modalSearch__searchContent">
+                <h5 className='modalSearch__wfIndexName'>{wfindex.commonName}</h5>
+                <p>{wfindex.botanicalName}</p>
+            </div>
+        </Link>
+    )
+    
+}
+
 export {
     BlogResultItems,
     CategoryResultItems,
     NewsResultItems,
     VolunteerResultItems,
-    EventResultItems
+    EventResultItems,
+    WfIndexResultItems
 }
 
 

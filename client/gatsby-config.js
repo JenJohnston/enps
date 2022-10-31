@@ -1,14 +1,15 @@
 require("dotenv").config("./.env");
 
 const sanityConfig = require("./sanity-config");
-const siteUrl = process.env.URL || "https://enps.vercel.app"
+const siteUrl = process.env.URL || "https://www.edmontonnativeplantsociety.ca/"
 
 module.exports = {
   siteMetadata: {
     title: `Edmonton Native Plant Society`,
     siteUrl: `https://www.yourdomain.tld`,
-    description: `this is the website for the Edmonton Native Plant society`,
+    description: `Home page for Edmonton’s Native Plant Society keeping you up to date with news, events, native plants and growing tips for our local gardening community.`,
     author: `https://jennifer-johnston.netlify.app/`,
+    keywords: `Edmonton, Edmonton Plants, Native Plants, Plant Society, Wild Geranium, Wildflower, Wildflower News, Plants in Edmonton, Volunteer in Edmonton `
   },
   plugins: [{
     resolve: 'gatsby-source-sanity',
@@ -85,8 +86,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: `https://enps.vercel.app/`,
-        sitemap: `https://enps.vercel.app/sitemap/sitemap-0.xml`,
+        host: `https://www.edmontonnativeplantsociety.ca/`,
+        sitemap: `https://www.edmontonnativeplantsociety.ca/sitemap/sitemap-0.xml`,
         policy: [{userAgent: '*', allow: '/'}],
 
       },
@@ -294,7 +295,51 @@ module.exports = {
           ))
       }
     },
-    
+    {
+      resolve: 'gatsby-plugin-local-search',
+      options: {
+        name: 'wfindex',
+        engine: 'flexsearch',
+        engineOptions: {
+          tokenize: 'forward',
+        },
+        query: `
+        {
+          allSanityWfIndex(filter: { indexID: {eq: "pi"} }) {
+            nodes {
+              id
+              commonName
+              botanicalName
+              indexID
+              slug {
+                current
+              }
+              wildflowerImage {
+                alt
+                asset {
+                  gatsbyImageData
+                }
+              }
+            }
+          }
+        }
+        `,
+        ref: 'id',
+        index: ['commonName'],
+        store: ['id', 'commonName', 'botanicalName', 'slug', 'wildflowerImage', 'indexID'],
+        normalizer: ({data}) => 
+          data.allSanityWfIndex.nodes.map((node) => (
+            {
+              id: node.id,
+              commonName: node.commonName,
+              botanicalName: node.botanicalName,
+              slug: node.slug,
+              wildflowerImage: node.wildflowerImage,
+              indexID: node.indexID
+            }
+          ))
+      }
+    },
     
 
   ]

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useFlexSearch } from 'react-use-flexsearch'
-import { BlogResultItems, CategoryResultItems, NewsResultItems, VolunteerResultItems, EventResultItems } from './SearchItems'
+import { BlogResultItems, CategoryResultItems, NewsResultItems, VolunteerResultItems, EventResultItems, WfIndexResultItems } from './SearchItems'
 
 
 
@@ -10,19 +10,20 @@ export default function SearchResult({
     categoriesIndexStore,
     newsIndexStore,
     volunteerIndexStore,
-    eventsIndexStore
+    eventsIndexStore,
+    wfIndexStore
 }) {
     
-    const blogsResult = useFlexSearch(
-        searchQuery,
-        JSON.stringify(blogsIndexStore.index),
-        blogsIndexStore.store
-    )
-    const categoriesResult = useFlexSearch(
-        searchQuery,
-        JSON.stringify(categoriesIndexStore.index),
-        categoriesIndexStore.store
-    )
+    // const blogsResult = useFlexSearch(
+    //     searchQuery,
+    //     JSON.stringify(blogsIndexStore.index),
+    //     blogsIndexStore.store
+    // )
+    // const categoriesResult = useFlexSearch(
+    //     searchQuery,
+    //     JSON.stringify(categoriesIndexStore.index),
+    //     categoriesIndexStore.store
+    // )
     const volunteerResult = useFlexSearch(
         searchQuery,
         JSON.stringify(volunteerIndexStore.index),
@@ -38,19 +39,25 @@ export default function SearchResult({
         JSON.stringify(eventsIndexStore.index),
         eventsIndexStore.store
     )
+    const wfIndexResult = useFlexSearch(
+        searchQuery,
+        JSON.stringify(wfIndexStore.index),
+        wfIndexStore.store
+    )
     if (
-        blogsResult.length === 0 &&
-        categoriesResult.length === 0 &&
+        // blogsResult.length === 0 &&
+        // categoriesResult.length === 0 &&
         volunteerResult.length === 0 &&
         newsResult.length === 0 &&
-        eventsResult.length === 0
+        eventsResult.length === 0 &&
+        wfIndexResult.length === 0
         
     ) {
         return <p>No Result Found.</p>
       }
     return (
         <>
-            {blogsResult.length > 0 && (
+            {/* {blogsResult.length > 0 && (
                     <>
                         <h3 className='search__header'>Blogs</h3>
                         <div className="contentSearch">
@@ -76,7 +83,7 @@ export default function SearchResult({
                     </div>
                     
                 </>
-            )}
+            )} */}
             {newsResult.length > 0 && (
                 <>
                     <h3 className='search__header'>News</h3>
@@ -111,6 +118,17 @@ export default function SearchResult({
                             key={result.id} 
                             events={result} 
                         />
+                    ))}
+                </>
+            )}
+            {wfIndexResult.length > 0 && (
+                <>
+                    <h3 className="search__header">Native Plant Index</h3>
+                    {wfIndexResult.map((result) => (
+                        <WfIndexResultItems 
+                        key={result.id} 
+                        wfindex={result} 
+                    />
                     ))}
                 </>
             )}

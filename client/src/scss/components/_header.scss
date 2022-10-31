@@ -136,7 +136,11 @@
           .searchIcon {
             width: 1.75rem;
             height: 1.75rem;
-            fill: var(--color-primary);
+            fill: var(--color-primary-lt);
+
+            @include u.breakpoint-min(xl) {
+              fill: var(--color-primary-dk);
+            }
 
             &:hover {
               fill: var(--svg-fill-dk);

@@ -71,8 +71,8 @@ export default function Membership() {
                         <p><span>For Only $20</span> Your lifetime membership gets you access to benefits, new friends and new opportunities.  Purchase yours today!</p>
                         <ul className="membership__list">
                             <li><FaLeaf/> Make New Friends</li>
-                            <li><FaLeaf/> Item 2</li>
-                            <li><FaLeaf/> Item 3</li>
+                            <li><FaLeaf/> Learn New Skills</li>
+                            <li><FaLeaf/> Join Our Community</li>
                         </ul>
                     </div>
                     <form id="membershipForm" onSubmit={handleSubmit(onSubmit)} className="membership__form">

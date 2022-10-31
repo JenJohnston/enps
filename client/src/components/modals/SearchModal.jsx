@@ -30,6 +30,10 @@ const query = graphql`
         publicStoreURL
         publicIndexURL
     }
+    localSearchWfindex {
+        publicStoreURL
+        publicIndexURL
+    }
 }
 `
 
@@ -48,6 +52,7 @@ export default function SearchModal() {
     const [newsIndexStore, setNewsIndexStore] = useState(null);
     const [eventsIndexStore, setEventsIndexStore] = useState(null);
     const [volunteerIndexStore, setVolunteerIndexStore] = useState(null);
+    const [wfIndexStore, setWfIndexStore] = useState(null);
     const data = useStaticQuery(query)
 
     const {
@@ -70,6 +75,10 @@ export default function SearchModal() {
         publicStoreURL: volunteerPublicStoreURL,
         publicIndexURL: volunteerPublicIndexURL,
     } = data.localSearchVolunteer;
+    const {
+        publicStoreURL: wfIndexPublicStoreUrl,
+        publicIndexURL: wfIndexPublicIndexURL,
+    } = data.localSearchWfindex;
 
     useEffect(() => {
         if (isModalSearchOpen) {
@@ -81,7 +90,7 @@ export default function SearchModal() {
     }, [isModalSearchOpen]);
 
     const handleOnFocus = async () => {
-        if(blogsIndexStore && categoriesIndexStore && newsIndexStore && eventsIndexStore && volunteerIndexStore) return
+        if(blogsIndexStore && categoriesIndexStore && newsIndexStore && eventsIndexStore && volunteerIndexStore && wfIndexStore) return
 
         const [
             {data: blogsIndex},
@@ -94,6 +103,8 @@ export default function SearchModal() {
             {data: eventsStore},
             {data: volunteerIndex},
             {data: volunteerStore},
+            {data: wfindexIndex},
+            {data: wfindexStore}
         ] = await Promise.all([
             axios.get(blogsPublicIndexURL),
             axios.get(blogsPublicStoreURL),
@@ -105,6 +116,8 @@ export default function SearchModal() {
             axios.get(eventsPublicStoreURL),
             axios.get(volunteerPublicIndexURL),
             axios.get(volunteerPublicStoreURL),
+            axios.get(wfIndexPublicIndexURL),
+            axios.get(wfIndexPublicStoreUrl)
         ])
         setBlogsIndexStore({
             index: blogsIndex,
@@ -125,6 +138,10 @@ export default function SearchModal() {
         setVolunteerIndexStore({
             index: volunteerIndex,
             store: volunteerStore,
+        })
+        setWfIndexStore({
+            index: wfindexIndex,
+            store: wfindexStore,
         })
     }
 
@@ -153,6 +170,7 @@ export default function SearchModal() {
                         && newsIndexStore
                         && volunteerIndexStore
                         && eventsIndexStore
+                        && wfIndexStore
                         && (
                             <div className='modalOverlay__result'>
                            <SearchResult
@@ -162,6 +180,8 @@ export default function SearchModal() {
                                 newsIndexStore={newsIndexStore}
                                 eventsIndexStore={eventsIndexStore}
                                 volunteerIndexStore={volunteerIndexStore}
+                                wfIndexStore=
+                                {wfIndexStore}
                            />
                        </div> 
                         )
