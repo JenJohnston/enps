@@ -14,16 +14,16 @@ export default function EventCard({path, title, excerpt, date, location}) {
         <aside className='card'>
             <div className="card__header">
                 <MdEventAvailable/>
+                {date && (
+                        <p className='card__date'>
+                            {format(new Date(date), "MMMM dd, yyyy, p")}
+                        </p>
+                    )}
             </div>
             <div className="card__body">
                 <div className="card__title">
                     <h4>{title}</h4>
                     <h5><b>Location:</b> {location}</h5>
-                    {date && (
-                        <p className='card__date'>
-                            Date: {format(new Date(date), "MMMM dd, yyyy, p")}
-                        </p>
-                    )}
                 </div>
                 <div className="card__content">
                     <PortableTextHandler value={excerpt}/>
