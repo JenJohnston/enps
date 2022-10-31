@@ -134,6 +134,12 @@
       background-color: var(--background-variant);
       margin: 0 auto;
     }
+
+    p {
+      margin: 0 auto;
+      margin-top: 2rem;
+      font-size: var(--step-0);
+    }
   }
 
   &__content {

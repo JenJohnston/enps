@@ -146,6 +146,7 @@ export default function Plantinfo() {
                         <FaLeaf/>
                         <h2>Where To Buy</h2>
                         <div className="dividerBar"></div>
+                        <p>Below is a list of some vendors in and around the Edmonton area where you can purchase wildflower seeds and products.  The Edmonton Native Plant Society does not endorse these vendors nor do we have any agreement with them. </p>
                     </div>
                     <div className="plantCards__content">
                         {plantCards.map((obj, index) => {
