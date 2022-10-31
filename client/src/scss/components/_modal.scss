@@ -307,7 +307,7 @@
       align-items: center;
       gap: 0.35rem;
       transition: all 0.3s ease-in-out;
-
+      cursor: pointer;
       &:hover {
         color: var(--color-primary-lt);
       }

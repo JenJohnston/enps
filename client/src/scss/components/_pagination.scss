@@ -9,6 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     a {
       cursor: pointer;
       padding: 1rem;
@@ -18,5 +19,12 @@
       opacity: 0.2;
       pointer-events: none;
     }
+  }
+
+  &__chevron {
+    width: 2.35rem;
+    height: 2.35rem;
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
   }
 }

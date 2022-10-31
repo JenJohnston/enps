@@ -31,14 +31,18 @@ export default function HeroSlider() {
                 {heroSlider.map((obj, index) => {
 
                     return(
-                        <Carousel.Item key={obj.id}>
-                        <GatsbyImage 
-                            image={obj.nativePlantImage.asset.gatsbyImageData}
-                            alt={obj.nativePlantImage.alt}
-                            className="slide__img"
-                        />
-                        <p>{obj.title}</p>
-                    </Carousel.Item>      
+                        <Carousel.Item 
+                            key={obj.id}
+                            interval={3000}
+                            className='imageSlider__imgContainer'
+                        >
+                            <GatsbyImage 
+                                image={obj.nativePlantImage.asset.gatsbyImageData}
+                                alt={obj.nativePlantImage.alt}
+                                className="imageSlider__img"
+                            />
+                            <p>{obj.title}</p>
+                        </Carousel.Item>      
                     )
                                
                 })}
