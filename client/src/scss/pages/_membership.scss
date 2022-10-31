@@ -85,6 +85,18 @@
     }
   }
 
+  &__list {
+    li {
+      font-size: var(--step--1);
+      margin-bottom: 0.35rem;
+    }
+    svg {
+      fill: var(--svg-fill);
+      margin-left: 0.85rem;
+      margin-right: 0.35rem;
+    }
+  }
+
   &__form {
     padding: 0.6rem;
     width: 100%;

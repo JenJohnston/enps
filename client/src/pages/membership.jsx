@@ -69,6 +69,7 @@ export default function Membership() {
                     <div className="membership__body">
                         <h3>Be Part of a Growing and Active Community</h3>
                         <p><span>For Only $20</span> Your lifetime membership gets you access to benefits, new friends and new opportunities.  Purchase yours today!</p>
+                        <p>Please e-transfer your payment to engedmonton@gmail.com or provide payment at an event.</p>
                         <ul className="membership__list">
                             <li><FaLeaf/> Make New Friends</li>
                             <li><FaLeaf/> Learn New Skills</li>
