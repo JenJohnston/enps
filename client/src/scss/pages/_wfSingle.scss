@@ -108,6 +108,14 @@
       margin-top: 8rem;
       padding-bottom: 4rem;
     }
+
+    .bodyImage {
+      max-width: 20rem;
+      aspect-ratio: 1;
+      margin: 1rem 0;
+      border-radius: 0.85rem;
+      box-shadow: var(--txt-shadow-dk);
+    }
   }
 
   &__contentHeader {
