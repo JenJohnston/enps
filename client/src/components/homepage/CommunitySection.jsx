@@ -24,9 +24,9 @@ export default function CommunitySection(props) {
                             <div className="card__inner card-l-innerBG">
                                 <p>Become a <span>Life Time</span> Member</p>
                                 <ul className='card__list'>
-                                    <li><FaLeaf/>List Item 1</li>
-                                    <li><FaLeaf/>List Item 2</li>
-                                    <li><FaLeaf/>List Item 3</li>
+                                    <li><FaLeaf/>Meet New Friends</li>
+                                    <li><FaLeaf/>Learn About Gardening</li>
+                                    <li><FaLeaf/>Attend Cool Events</li>
                                 </ul>
                                 <Link to="/membership" className='card__link'>Sign Up</Link>
                             </div>
@@ -40,9 +40,9 @@ export default function CommunitySection(props) {
                             <div className="card__inner card-r-innerBG">
                             <p>Get Involved, Be a <span>Volunteer</span></p>
                                 <ul className='card__list'>
-                                    <li><FaLeaf/>List Item 1</li>
-                                    <li><FaLeaf/>List Item 2</li>
-                                    <li><FaLeaf/>List Item 3</li>
+                                    <li><FaLeaf/>Gain Life Satisfaction</li>
+                                    <li><FaLeaf/>Learn Valuable Skills</li>
+                                    <li><FaLeaf/>Join a Fun Community</li>
                                 </ul>
                                 <Link to="/volunteer" className='card__link'>Get Involved</Link>
                             </div>
