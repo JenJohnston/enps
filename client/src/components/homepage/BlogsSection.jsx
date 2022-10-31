@@ -58,7 +58,7 @@ export default function BlogsSection() {
                 <div className="flexContainer">
                     <BlogCards blogs={featuredBlogs}/>
                 </div>
-                <div className="homeBlogs__link">
+                <div className="homeBlogs__link" data-aos="zoom-in-up">
                   <Link to='/blogs'>Read Our Articles</Link>
                   <GiFallingLeaf/>
                 </div>

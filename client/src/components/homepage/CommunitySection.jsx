@@ -16,7 +16,7 @@ export default function CommunitySection(props) {
                     <h5>Join our growing community by purchasing a low cost lifetime membership {'(Only $20!!)'} or get involved and volunteer in some of our many projects.</h5>
                 </div>
                 <div className="flexContainer">
-                    <div className="card card-l">
+                    <div className="card card-l" data-aos="fade-right">
                         <div className="card__wrapper">
                             <div className="card__logoWrapper card-l-logoBG">
                                 <BsPersonPlusFill className='card__logo'/>
@@ -32,7 +32,7 @@ export default function CommunitySection(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="card card-r">
+                    <div className="card card-r" data-aos="fade-left">
                         <div className="card__wrapper">
                             <div className="card__logoWrapper card-r-logoBG">
                                 <MdVolunteerActivism className='card__logo'/> 

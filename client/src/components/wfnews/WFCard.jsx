@@ -10,7 +10,7 @@ export default function WFCard({path, title, excerpt, image}) {
 
     return (
         <article className='card'>
-            <div className="card__header">
+            <div className="card__header" data-aos="fade-right">
                 <GatsbyImage
                     className='card__img'
                     image={image.imageData}
@@ -20,7 +20,7 @@ export default function WFCard({path, title, excerpt, image}) {
             </div>
            
 
-           <div className="card__content">
+           <div className="card__content" data-aos="fade-left">
                <PortableTextHandler value={excerpt}/>
                <div className='card__link'>
                     <div className="linkbar"></div>

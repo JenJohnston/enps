@@ -34,6 +34,7 @@ export default {
       title: "Index ID",
       name: "indexID",
       type: "string",
+      description: "please use pi for plant index"
     },
     {
         title: "Spread",

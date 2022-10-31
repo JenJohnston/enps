@@ -41,7 +41,7 @@ export default function WildFlowerNews() {
                     <h2>The WildFlower News</h2>
                 </div>
                 <WFCards wfcards={wfNewsFeature}/>
-                <div className="homeWFNews__link">
+                <div className="homeWFNews__link" data-aos="zoom-in-up">
                   <Link to='/news'>View Our Archives</Link>
                   <GiFallingLeaf/>
                 </div>

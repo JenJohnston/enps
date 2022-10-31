@@ -26,7 +26,7 @@ export default function HeroSlider() {
     const heroSlider = data.allSanityHeroSlider.nodes
 
     return (
-        <div className='imageSlider'>
+        <div className='imageSlider' data-aos="zoom-in">
             <Carousel slide={false} controls={false} indicators={false}>
                 {heroSlider.map((obj, index) => {
 

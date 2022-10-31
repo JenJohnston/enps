@@ -37,7 +37,7 @@ export default function EventSection() {
                 <div className="flexContainer">
                     <EventCards events={eventsFeature}/>
                 </div>
-                <div className="homeEvents__link">
+                <div className="homeEvents__link" data-aos="zoom-in-up">
                   <Link to='/events'>View Our Events</Link>
                   <GiFallingLeaf/>
                 </div>

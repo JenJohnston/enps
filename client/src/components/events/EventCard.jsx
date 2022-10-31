@@ -11,7 +11,7 @@ export default function EventCard({path, title, excerpt, date, location}) {
     
 
     return (
-        <aside className='card'>
+        <aside className='card' data-aos="flip-up">
             <div className="card__header">
                 <MdEventAvailable/>
                 {date && (
