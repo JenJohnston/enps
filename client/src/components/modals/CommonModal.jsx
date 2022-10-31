@@ -41,7 +41,7 @@ export default function CommonModal() {
     return (
         <div className='modalOverlay'>
             <button 
-                className='modalOverlay__toggle'
+                className='modalOverlay__toggle indexToggle'
                 onClick={handleCommonModal} 
                 onKeyDown={handleCommonModal}
                 tabIndex={0}
@@ -50,6 +50,12 @@ export default function CommonModal() {
             </button>
             <div className="commonIndexContent">
                 <div className="container">
+                <div className='commonIndexContent__header'>
+                    <FaLeaf />
+                    <h2>Common Name Index</h2>
+                    <h5>Click On The Plant Link to Bring Up More Detailed Information</h5>
+                    <div className='dividerBar'></div>
+                </div>
                     {commonIndex.map((obj, index) => {
                         return (
                             

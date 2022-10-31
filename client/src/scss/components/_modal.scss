@@ -24,6 +24,8 @@
     float: right;
     box-shadow: 2px 2px 4px var(--color-primary-dk);
     transition: all 0.3s ease-in-out;
+    position: sticky;
+    top: 2rem;
 
     &:hover {
       color: var(--btn-color-two);
@@ -269,6 +271,34 @@
       flex-direction: column;
       gap: 1rem;
       align-items: center;
+    }
+
+    &__header {
+      text-align: center;
+      margin-bottom: 4rem;
+
+      svg {
+        color: var(--background-variant);
+        font-size: 6rem;
+        margin-bottom: var(--space-2xs);
+      }
+
+      .dividerBar {
+        height: 4px;
+        width: 6rem;
+        background-color: var(--background-variant);
+        margin: 0 auto;
+      }
+
+      h2 {
+        text-shadow: var(--txt-shadow-dk);
+      }
+
+      h5 {
+        margin-bottom: 1rem;
+        color: var(--color-primary-lt);
+        text-shadow: var(--txt-shadow-dk);
+      }
     }
 
     &__link {

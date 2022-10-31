@@ -52,6 +52,12 @@ export default function BotanicalModal() {
             </button>
             <div className="commonIndexContent">
                 <div className="container">
+                    <div className='commonIndexContent__header'>
+                        <FaLeaf />
+                        <h2>Botanical Name Index</h2>
+                        <h5>Click On The Plant Link to Bring Up More Detailed Information</h5>
+                        <div className='dividerBar'></div>
+                    </div>
                     {botanicalIndex.map((obj, index) => {
                         return (
                             <Link 
