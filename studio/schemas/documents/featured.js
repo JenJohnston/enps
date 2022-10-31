@@ -12,21 +12,6 @@ export default {
       type: "string",
     },
     {
-      name: "news",
-      title: "Featured News",
-      type: "array",
-      of: [
-        {
-          type: "reference",
-          to: [{ type: "news" }],
-        },
-      ],
-      validation: (Rule) => [
-        Rule.error("Every Item should be unique").unique(),
-        Rule.required().error("At least one item is required"),
-      ],
-    },
-    {
       name: "wildflowerNews",
       title: "Wildflower News",
       type: "array",

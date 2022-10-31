@@ -1,8 +1,8 @@
 import { ImLeaf } from "react-icons/im";
 
 export default {
-  title: "Plant Info",
-  name: "plantInfo",
+  title: "Vendor Info",
+  name: "vendorInfo",
   type: "document",
   icon: ImLeaf,
   fields: [

@@ -22,7 +22,7 @@ export default function Plantinfo() {
 
     const data = useStaticQuery(graphql`
         query plantCardQuery {
-            allSanityPlantInfo {
+            allSanityVendorInfo {
             nodes {
                 url
                 title

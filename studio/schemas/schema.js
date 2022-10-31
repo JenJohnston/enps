@@ -11,11 +11,8 @@ import category from "./documents/category";
 import boardExecutive from "./documents/boardExecutive.js";
 import boardDirector from "./documents/boardDirector.js";
 import featured from "./documents/featured.js";
-import blogFeatured from "./documents/blogFeatured.js";
 import event from "./documents/event.js";
-import news from "./documents/news.js";
-import newsFeatured from "./documents/newsFeatured.js";
-import plantCard from "./documents/plantCard.js";
+import vendorCard from "././documents/vendorCard.js";
 import aboutSlider from "./documents/aboutSlider.js";
 import aboutBanner from "./documents/aboutBanner"
 import volunteer from "./documents/volunteer.js";
@@ -45,22 +42,19 @@ export default createSchema({
     // document schemas
 
     featured,
-    blogFeatured,
-    newsFeatured,
-    news,
-    blog,
-    category,
+    heroSlider,
+    aboutBanner,
+    aboutSlider,
+    springSeedGallery,
+    wildflowerNews,
     event,
+    volunteer,
+    vendorCard,
+    wfIndex,
     boardExecutive,
     boardDirector,
-    plantCard,
-    aboutSlider,
-    aboutBanner,
-    heroSlider,
-    volunteer,
-    wildflowerNews,
-    wfIndex,
-    springSeedGallery,
+    blog,
+    category,
 
     // object schemas
 
