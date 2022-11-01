@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import Seo from "../components/seo.js"
 
 import { FaLeaf } from 'react-icons/fa'
-import { FaPhoneAlt } from 'react-icons/fa'
 import { IoMail } from 'react-icons/io5'
 import { FaFacebook } from 'react-icons/fa'
 
@@ -71,9 +70,6 @@ export default function Contact() {
                             </a>
                             <a href="mailto:engedmonton@gmail.com">
                                 <IoMail/>
-                            </a>
-                            <a href="tel:7804567890">
-                                <FaPhoneAlt/>
                             </a>
                         </div>
                     </div>

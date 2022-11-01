@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { FaFacebook } from 'react-icons/fa'
-import { FaPhoneAlt } from 'react-icons/fa'
 import { IoMail } from 'react-icons/io5'
 
 export default function NavMedia() {
@@ -17,11 +16,6 @@ export default function NavMedia() {
             <li className="navMedia__link">
                 <a href="mailto:example@email.com">
                     <IoMail/>
-                </a>
-            </li>
-            <li className="navMedia__link">
-                <a href="tel:7801234567">
-                    <FaPhoneAlt/>
                 </a>
             </li>
         </ul>
