@@ -36,7 +36,7 @@ export default function Plantinfo() {
         }
     `)
 
-    const plantCards = data.allSanityPlantInfo.nodes
+    const vendorCards = data.allSanityVendorInfo.nodes
     
     const { openPlantDrModal } = useContext(ModalContext)
     const { openSeedGrowModal } = useContext(ModalContext)
@@ -149,7 +149,7 @@ export default function Plantinfo() {
                         <p>Below is a list of some vendors in and around the Edmonton area where you can purchase wildflower seeds and products.  The Edmonton Native Plant Society does not endorse these vendors nor do we have any agreement with them. </p>
                     </div>
                     <div className="plantCards__content">
-                        {plantCards.map((obj, index) => {
+                        {vendorCards.map((obj, index) => {
                             return (
                                 <div className="plantCard" key={obj.id}>
                                     <div className="plantCard__img">
