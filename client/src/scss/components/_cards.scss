@@ -182,7 +182,7 @@
 .homeEvents,
 .events {
   .card {
-    max-width: 42rem;
+    max-width: 24rem;
     background-color: var(--svg-fill);
     box-shadow: 1px 1px 3px var(--background-variant);
     display: flex;
@@ -199,11 +199,11 @@
       align-items: center;
       justify-content: center;
       border-radius: 0.35rem;
-      height: 10rem;
+      padding: 2rem 1rem;
       justify-self: flex-start;
 
       svg {
-        font-size: 4.8rem;
+        font-size: 2.8rem;
       }
     }
 

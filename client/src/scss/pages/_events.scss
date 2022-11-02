@@ -96,11 +96,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 4rem;
 
     @include u.breakpoint-min(xl) {
       flex-direction: row;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      justify-content: center;
       max-width: 1440px;
       margin: 0 auto;
     }
