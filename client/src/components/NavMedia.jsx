@@ -14,7 +14,7 @@ export default function NavMedia() {
                 </a>
             </li>
             <li className="navMedia__link">
-                <a href="mailto:example@email.com">
+                <a href="mailto:engedmonton@gmail.com">
                     <IoMail/>
                 </a>
             </li>

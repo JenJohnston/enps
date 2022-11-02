@@ -97,7 +97,7 @@ export default function Footer() {
                     <FooterContact/>
                 </div>
                 <div className="container__footnotes">
-                    <p className='container__copywrite'><MdOutlineCopyright/> Copywrite 2022 Edmonton Native Plant Society. All Rights Reserved.</p>
+                    <p className='container__copywrite'><MdOutlineCopyright/> Copyright 2022 Edmonton Native Plant Society. All Rights Reserved.</p>
                     <a href="https://jennifer-johnston.netlify.app/" rel="no-follow">Designed by | Illure Design</a>
                     <p>Powered by <a href="https://www.sanity.io/" rel="no-follow">Sanity.io</a></p>
                 </div>

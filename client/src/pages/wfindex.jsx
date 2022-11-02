@@ -77,7 +77,7 @@ export default function Wfindex({data}) {
                 />
                 <div className="plantIndexHero__overlay">
                     <div className="container">
-                        <h1>Wildflower Index</h1>
+                        <h1>Plant Index</h1>
                         <h5>Exploring native plants in Edmonton</h5>
                     </div>
                 </div>

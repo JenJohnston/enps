@@ -11,7 +11,7 @@ export const navRouter = [
     },
     {
         id: '02',
-        title: 'News',
+        title: 'Newsletter',
         path: '/news'
     },
     {

@@ -20,7 +20,7 @@ export default function Hero() {
                         <div className="hero__content" data-aos="zoom-in">
                             <h1>Edmonton Native Plant Society</h1>
                             <h2>Native Plant Stewards</h2>
-                            <Link className='hero__button borderGradient borderGradientPink' to='/membership'>Buy a Membership</Link>
+                            <Link className='hero__button borderGradient borderGradientPink' to='/membership'>Become a Member</Link>
                         </div>
                         <HeroSlider/>
                     </div>
