@@ -46,6 +46,10 @@ export default function WfIndexSingle({ data, pageContext }) {
       }
     : null;
 
+  const handleScroll = e => {
+    window[`scrollTo`](50, 50);
+  };
+
   return (
     <div className='modalOverlay'>
       <Seo title={wfIndex.botanicalName} />
@@ -54,6 +58,22 @@ export default function WfIndexSingle({ data, pageContext }) {
       </Link>
       <section className='wfIndexSingle'>
         <div className='container'>
+          <div className='pageScroll'>
+            {prev && (
+              <Link to={prev.url}>
+                <span>Prev</span>
+              </Link>
+            )}
+            {next && (
+              <Link
+                to={next.url}
+                onClick={handleScroll}
+                onKeyDown={handleScroll}
+              >
+                <span>Next</span>
+              </Link>
+            )}
+          </div>
           <div className='wfIndexSingle__card'>
             <GatsbyImage
               image={wfIndex.wildflowerImage.asset.gatsbyImageData}
@@ -87,22 +107,6 @@ export default function WfIndexSingle({ data, pageContext }) {
                 value={wfIndex._rawBody}
               />
             </div>
-          </div>
-          <div className='pageScroll'>
-            {prev && (
-              <Link to={prev.url}>
-                <span>Previous</span>
-              </Link>
-            )}
-            {next && (
-              <Link to={next.url}>
-                <span>Next</span>
-              </Link>
-            )}
-          </div>
-          <div className='wfIndexSingle__link'>
-            <Link to='/wfindex'>Return to Plant Index</Link>
-            <GiFallingLeaf />
           </div>
         </div>
       </section>

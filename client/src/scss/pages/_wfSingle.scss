@@ -73,6 +73,10 @@
     justify-content: center;
     gap: 4rem;
     margin-top: 4rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 
     a {
       transition: all 0.3s ease-in-out;
@@ -156,30 +160,5 @@
     height: 2px;
     background-color: var(--accent-color-two);
     margin-bottom: 1rem;
-  }
-
-  &__link {
-    display: flex;
-    align-items: center;
-    margin-top: 4rem;
-    justify-self: flex-end;
-
-    svg {
-      font-size: var(--step-5);
-      fill: var(--background-secondary);
-      margin-left: -2.7rem;
-    }
-
-    a {
-      z-index: 2;
-      font-size: var(--step-0);
-      text-transform: uppercase;
-      text-shadow: var(--txt-shadow-lt);
-      transition: all 0.3s ease-in-out;
-
-      &:hover {
-        color: var(--secondary-variant);
-      }
-    }
   }
 }
