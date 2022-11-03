@@ -84,15 +84,15 @@ export default function Membership() {
                         <input type="hidden" name="redirect" value="https://web3forms.com/success"></input>
                         <div className="formGroup">
                             <input type="text" name="name" {...register("name")} required/>
-                            <label htmlFor="name">Enter your Name</label>
+                            <label htmlFor="name">Name (First, Last) </label>
                         </div>
                         <div className="formGroup">
                             <input type="email" name="email" {...register("email")} required/>
-                            <label htmlFor="email">Enter your Email</label>
+                            <label htmlFor="email">Email</label>
                         </div>
                         <div className="formGroup">
                             <input type="tel" name="phone" {...register("phone")} required/>
-                            <label htmlFor="phone">Enter your Number</label>
+                            <label htmlFor="phone">Phone Number</label>
                         </div>
                         <div className="checkMenu">
                             <div className="formGroup">
