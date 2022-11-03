@@ -61,10 +61,25 @@
 }
 
 .wfIndexSingle {
-  margin-top: 4rem;
+  margin-top: 6rem;
 
   .container {
     padding: 0;
+  }
+
+  .pageScroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 4rem;
+
+    a {
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        color: var(--color-primary-lt);
+      }
+    }
   }
 
   &__card {
@@ -115,6 +130,10 @@
       margin: 1rem 0;
       border-radius: 0.85rem;
       box-shadow: var(--txt-shadow-dk);
+    }
+
+    p {
+      color: var(--color-primary);
     }
   }
 

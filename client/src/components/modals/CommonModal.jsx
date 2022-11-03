@@ -42,9 +42,9 @@ export default function CommonModal() {
         <div className='modalOverlay'>
             <button 
                 className='modalOverlay__toggle indexToggle'
+                tabIndex={0}
                 onClick={handleCommonModal} 
                 onKeyDown={handleCommonModal}
-                tabIndex={0}
             >
                 <CgClose/>
             </button>
@@ -62,8 +62,6 @@ export default function CommonModal() {
                              <Link 
                                 to={`/wfindex/${obj.slug.current}`} 
                                 className="commonIndexContent__link" key={index}
-                                onClick={handleCommonModal} 
-                                onKeyDown={handleCommonModal}
                                 tabIndex={0}
                             >
                                 <GatsbyImage

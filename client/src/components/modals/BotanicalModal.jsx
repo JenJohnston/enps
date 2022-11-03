@@ -5,6 +5,7 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import { CgClose } from 'react-icons/cg'
 import { FaLeaf } from 'react-icons/fa'
 import { ModalContext } from '../../context/ModalContext'
+import { nextDay } from 'date-fns'
 
 export default function BotanicalModal() {
 
@@ -32,7 +33,6 @@ export default function BotanicalModal() {
     
     const botanicalIndex = data.allSanityWfIndex.nodes;
 
-    console.log(botanicalIndex)
     const { isBotanicalModalOpen, closeBotanicalModal } = useContext(ModalContext)
 
     const handleBotanicalModal = () => {
@@ -63,8 +63,6 @@ export default function BotanicalModal() {
                             <Link 
                                 to={`/wfindex/${obj.slug.current}`} 
                                 className="commonIndexContent__link" key={index}
-                                onClick={handleBotanicalModal} 
-                                onKeyDown={handleBotanicalModal}
                                 tabIndex={0}
                             >
                                 <GatsbyImage

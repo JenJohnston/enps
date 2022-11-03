@@ -23,6 +23,12 @@ module.exports = {
     `gatsby-transformer-gitinfo`,
     "gatsby-plugin-image", 
     {
+      resolve: `gatsby-plugin-modal-routing`,
+      options: {
+        appElement: '#___gatsby',
+      }
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         "icon": "src/images/icon.png"

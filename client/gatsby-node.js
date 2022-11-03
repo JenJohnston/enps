@@ -53,11 +53,32 @@ exports.createPages = async ({ graphql, actions }) => {
               }
             }
           }
-          allSanityWfIndex {
+          allSanityWfIndex(
+            filter: { indexID: {eq: "pi"} }
+            sort: { fields: commonName, order: ASC }
+          ) {
             nodes {
               id
               slug {
                 current
+              }
+            }
+            edges {
+              node {
+                id
+                slug {
+                  current
+                }
+              }
+              next {
+                slug {
+                  current
+                }
+              }
+              previous {
+                slug {
+                  current
+                }
               }
             }
           }
@@ -71,7 +92,8 @@ exports.createPages = async ({ graphql, actions }) => {
     const categories = result.data.allSanityCategory.nodes
     const events = result.data.allSanityEvent.nodes
     const volunteers = result.data.allSanityVolunteer.nodes
-    const wfindex = result.data.allSanityWfIndex.nodes
+    const wfindex = result.data.allSanityWfIndex.edges
+
 
     console.log(wfindex)
     // single blog page
@@ -116,14 +138,17 @@ exports.createPages = async ({ graphql, actions }) => {
 
     // single index modal pages
 
-    wfindex.forEach((indexModal) => {
+    wfindex.forEach(({ node }, index) => {
       createPage({
-        path: `/wfindex/${indexModal.slug.current}`,
+        path: `/wfindex/${node.slug.current}`,
         component: indexModalTemplate,
-        context: { id: indexModal.id }
+        context: { 
+          id: node.id,
+          previous: index === 0 ? null : wfindex[index - 1].node,
+          next: index === wfindex.length - 1 ? null : wfindex[index + 1].node,
+         }
       })
     })
-
 
     // news home page
 

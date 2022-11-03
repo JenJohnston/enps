@@ -1,17 +1,23 @@
-import React from "react";
-import { graphql, Link } from "gatsby";
+import React, { useState, useContext } from "react";
+import { graphql, Link, PageRenderer } from "gatsby";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
-
+import Modal from "react-modal";
+import { CgClose } from "react-icons/cg";
 import PortableTextHandler from "../components/PortableTextHandler.jsx";
 import Seo from "../components/seo";
-
+import { ModalContext } from "../context/ModalContext";
 import { GiFallingLeaf } from "react-icons/gi";
 import { FaLeaf } from "react-icons/fa";
+
+Modal.setAppElement(`#___gatsby`);
 
 export const wfQuery = graphql`
   query SingleWfQuery($id: String!) {
     sanityWfIndex(id: { eq: $id }) {
       id
+      slug {
+        current
+      }
       commonName
       botanicalName
       plantFamily
@@ -26,28 +32,29 @@ export const wfQuery = graphql`
   }
 `;
 
-export default function WfIndexSingle({ data }) {
+export default function WfIndexSingle({ data, pageContext }) {
   const wfIndex = data.sanityWfIndex;
+
+  const next = pageContext.next
+    ? {
+        url: `/wfindex/${pageContext.next.slug.current}`,
+      }
+    : null;
+  const prev = pageContext.previous
+    ? {
+        url: `/wfindex/${pageContext.previous.slug.current}`,
+      }
+    : null;
+
   return (
-    <>
+    <div className='modalOverlay'>
       <Seo title={wfIndex.botanicalName} />
-      <section className='wfIndexHero'>
-        <StaticImage
-          src='../images/wfindex-banner.jpg'
-          alt='an autumn photo of the Walterdale Bridge in Edmonton'
-          className='wfIndexHero__img'
-        />
-        <div className='wfIndexHero__overlay'>
-          <div className='container'>
-            <h1>Wildflower Index</h1>
-            <h5>Exploring native plants in Edmonton</h5>
-          </div>
-        </div>
-      </section>
+      <Link className='modalOverlay__toggle indexToggle' to='/wfindex'>
+        <CgClose />
+      </Link>
       <section className='wfIndexSingle'>
         <div className='container'>
           <div className='wfIndexSingle__card'>
-            <div className='wfIndexSingle__rectangle'></div>
             <GatsbyImage
               image={wfIndex.wildflowerImage.asset.gatsbyImageData}
               alt={wfIndex.wildflowerImage.alt}
@@ -75,8 +82,23 @@ export default function WfIndexSingle({ data }) {
                 </h5>
               </div>
               <div className='dividerBar'></div>
-              <PortableTextHandler value={wfIndex._rawBody} />
+              <PortableTextHandler
+                className='wfIndexSingle__body'
+                value={wfIndex._rawBody}
+              />
             </div>
+          </div>
+          <div className='pageScroll'>
+            {prev && (
+              <Link to={prev.url}>
+                <span>Previous</span>
+              </Link>
+            )}
+            {next && (
+              <Link to={next.url}>
+                <span>Next</span>
+              </Link>
+            )}
           </div>
           <div className='wfIndexSingle__link'>
             <Link to='/wfindex'>Return to Plant Index</Link>
@@ -84,6 +106,6 @@ export default function WfIndexSingle({ data }) {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
