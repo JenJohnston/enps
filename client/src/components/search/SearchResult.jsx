@@ -1,6 +1,6 @@
 import React from 'react'
 import { useFlexSearch } from 'react-use-flexsearch'
-import { BlogResultItems, CategoryResultItems, NewsResultItems, VolunteerResultItems, EventResultItems, WfIndexResultItems } from './SearchItems'
+import { BlogResultItems, CategoryResultItems, NewsResultItems, VolunteerResultItems, EventResultItems, WfIndexResultItems, PlantCardResultItems } from './SearchItems'
 
 
 
@@ -11,7 +11,8 @@ export default function SearchResult({
     newsIndexStore,
     volunteerIndexStore,
     eventsIndexStore,
-    wfIndexStore
+    wfIndexStore,
+    plantCardIndexStore
 }) {
     
     // const blogsResult = useFlexSearch(
@@ -44,13 +45,19 @@ export default function SearchResult({
         JSON.stringify(wfIndexStore.index),
         wfIndexStore.store
     )
+    // const plantCardResult = useFlexSearch(
+    //     searchQuery,
+    //     JSON.stringify(plantCardIndexStore.index),
+    //     plantCardIndexStore.store
+    // )
     if (
         // blogsResult.length === 0 &&
         // categoriesResult.length === 0 &&
+        // plantCardResult.length === 0 &&
         volunteerResult.length === 0 &&
         newsResult.length === 0 &&
         eventsResult.length === 0 &&
-        wfIndexResult.length === 0
+        wfIndexResult.length === 0 
         
     ) {
         return <p>No Result Found.</p>
@@ -132,6 +139,17 @@ export default function SearchResult({
                     ))}
                 </>
             )}
+            {/* {plantCardResult.length > 0 && (
+                <>
+                    <h3 className="search__header">Native Plant Index</h3>
+                    {plantCardResult.map((result) => (
+                        <PlantCardResultItems 
+                        key={result.id} 
+                        plantCard={result} 
+                    />
+                    ))}
+                </>
+            )} */}
         </>
     )
 }

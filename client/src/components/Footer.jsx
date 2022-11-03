@@ -75,7 +75,7 @@ export default function Footer() {
                                 className='header__logo'
                                 src="../images/enps-logo.png"
                                 alt="logo image for for the love of dog"
-                                
+                                placeholder='none'
                             />
                         </Link>
                     </div>

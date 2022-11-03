@@ -34,6 +34,10 @@ const query = graphql`
         publicStoreURL
         publicIndexURL
     }
+    localSearchPlantCard {
+        publicIndexURL
+        publicStoreURL
+    }
 }
 `
 
@@ -53,6 +57,7 @@ export default function SearchModal() {
     const [eventsIndexStore, setEventsIndexStore] = useState(null);
     const [volunteerIndexStore, setVolunteerIndexStore] = useState(null);
     const [wfIndexStore, setWfIndexStore] = useState(null);
+    const [plantCardIndexStore, setPlantCardIndexStore] = useState(null);
     const data = useStaticQuery(query)
 
     const {
@@ -76,9 +81,13 @@ export default function SearchModal() {
         publicIndexURL: volunteerPublicIndexURL,
     } = data.localSearchVolunteer;
     const {
-        publicStoreURL: wfIndexPublicStoreUrl,
+        publicStoreURL: wfIndexPublicStoreURL,
         publicIndexURL: wfIndexPublicIndexURL,
     } = data.localSearchWfindex;
+    const {
+        publicStoreURL: plantCardPublicStoreURL,
+        publicIndexURL: plantCardPublicIndexURL,
+    } = data.localSearchPlantCard;
 
     useEffect(() => {
         if (isModalSearchOpen) {
@@ -90,7 +99,7 @@ export default function SearchModal() {
     }, [isModalSearchOpen]);
 
     const handleOnFocus = async () => {
-        if(blogsIndexStore && categoriesIndexStore && newsIndexStore && eventsIndexStore && volunteerIndexStore && wfIndexStore) return
+        if(blogsIndexStore && categoriesIndexStore && newsIndexStore && eventsIndexStore && volunteerIndexStore && wfIndexStore && plantCardIndexStore) return
 
         const [
             {data: blogsIndex},
@@ -104,7 +113,9 @@ export default function SearchModal() {
             {data: volunteerIndex},
             {data: volunteerStore},
             {data: wfindexIndex},
-            {data: wfindexStore}
+            {data: wfindexStore},
+            {data: plantCardIndex},
+            {data: plantCardStore},
         ] = await Promise.all([
             axios.get(blogsPublicIndexURL),
             axios.get(blogsPublicStoreURL),
@@ -117,7 +128,9 @@ export default function SearchModal() {
             axios.get(volunteerPublicIndexURL),
             axios.get(volunteerPublicStoreURL),
             axios.get(wfIndexPublicIndexURL),
-            axios.get(wfIndexPublicStoreUrl)
+            axios.get(wfIndexPublicStoreURL),
+            axios.get(plantCardPublicIndexURL),
+            axios.get(plantCardPublicStoreURL),
         ])
         setBlogsIndexStore({
             index: blogsIndex,
@@ -142,6 +155,10 @@ export default function SearchModal() {
         setWfIndexStore({
             index: wfindexIndex,
             store: wfindexStore,
+        })
+        setPlantCardIndexStore({
+            index: plantCardIndex,
+            store: plantCardStore
         })
     }
 
@@ -171,6 +188,7 @@ export default function SearchModal() {
                         && volunteerIndexStore
                         && eventsIndexStore
                         && wfIndexStore
+                        && plantCardIndexStore 
                         && (
                             <div className='modalOverlay__result'>
                            <SearchResult
@@ -180,8 +198,8 @@ export default function SearchModal() {
                                 newsIndexStore={newsIndexStore}
                                 eventsIndexStore={eventsIndexStore}
                                 volunteerIndexStore={volunteerIndexStore}
-                                wfIndexStore=
-                                {wfIndexStore}
+                                wfIndexStore={wfIndexStore}
+                                plantCardIndexStore={plantCardIndexStore}
                            />
                        </div> 
                         )

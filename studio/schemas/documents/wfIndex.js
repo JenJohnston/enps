@@ -51,7 +51,7 @@ export default {
         title: "WildFlower Image",
         name: "wildflowerImage",
         type: "customImage",
-      },
+    },
   ],
   preview: {
     select: {

@@ -28,6 +28,24 @@ export default function CommonModal() {
             }
         }
     `)
+
+    /** Query for new plant index
+     
+        allSanityPlantIndexCard(sort: {fields: commonName, order: ASC}) {
+            nodes {
+                commonName
+                slug {
+                current
+                }
+                featureImage {
+                alt
+                asset {
+                    gatsbyImageData
+                }
+                }
+            }
+            } 
+    */
     
     const commonIndex = data.allSanityWfIndex.nodes;
 

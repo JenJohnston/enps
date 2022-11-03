@@ -13,6 +13,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const volunteersTemplate = require.resolve('./src/templates/volunteer.js')
     const volunteerSingleTemplate = require.resolve('./src/templates/volunteerSingle.js')
     const indexModalTemplate = require.resolve('./src/templates/indexModal.js')
+    const plantIndexCardTemplate = require.resolve('./src/templates/plantIndexCard.js')
 
     const { createPage } = actions
     const result = await graphql(`{
@@ -82,6 +83,32 @@ exports.createPages = async ({ graphql, actions }) => {
               }
             }
           }
+          allSanityPlantIndexCard(sort: {fields: commonName, order: ASC}) {
+            nodes {
+              id
+              slug {
+                current
+              }
+            }
+            edges {
+              next {
+                slug {
+                  current
+                }
+              }
+              node {
+                id
+                slug {
+                  current
+                }
+              }
+              previous {
+                slug {
+                  current
+                }
+              }
+            }
+          }
         }
     `)
 
@@ -93,7 +120,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const events = result.data.allSanityEvent.nodes
     const volunteers = result.data.allSanityVolunteer.nodes
     const wfindex = result.data.allSanityWfIndex.edges
-
+    const plantCardIndex = result.data.allSanityPlantIndexCard.edges    
 
     console.log(wfindex)
     // single blog page
@@ -146,6 +173,20 @@ exports.createPages = async ({ graphql, actions }) => {
           id: node.id,
           previous: index === 0 ? null : wfindex[index - 1].node,
           next: index === wfindex.length - 1 ? null : wfindex[index + 1].node,
+         }
+      })
+    })
+
+    // single index modal pages
+
+    plantCardIndex.forEach(({ node }, index) => {
+      createPage({
+        path: `/wfindex/${node.slug.current}`,
+        component: plantIndexCardTemplate,
+        context: { 
+          id: node.id,
+          previous: index === 0 ? null : plantCardIndex[index - 1].node,
+          next: index === plantCardIndex.length - 1 ? null : plantCardIndex[index + 1].node,
          }
       })
     })

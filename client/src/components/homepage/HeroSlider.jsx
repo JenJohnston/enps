@@ -41,6 +41,7 @@ export default function HeroSlider() {
                                 image={obj.nativePlantImage.asset.gatsbyImageData}
                                 alt={obj.nativePlantImage.alt}
                                 className="imageSlider__img"
+                                placeholder='none'
                             />
                             <div className="imageSlider__content">
                                 <p>{obj.title}</p>

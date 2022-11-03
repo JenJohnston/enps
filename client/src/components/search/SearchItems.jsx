@@ -123,13 +123,36 @@ function WfIndexResultItems({ wfindex }) {
     
 }
 
+function PlantCardResultItems({ plantCard }) {
+    const { closeSearchModal } = useContext(ModalContext);
+    return (
+        <Link
+        to={`/wfindex/${plantCard.slug.current}`}
+        onClick={() => closeSearchModal()}
+        className="modalSearch"
+        >
+            <GatsbyImage
+                image={plantCard.featureImage.asset.gatsbyImageData}
+                alt={plantCard.featureImage.alt}
+                className="modalSearch__img"
+            />
+            <div className="modalSearch__searchContent">
+                <h5 className='modalSearch__wfIndexName'>{plantCard.commonName}</h5>
+                <p>{plantCard.botanicalName}</p>
+            </div>
+        </Link>
+    )
+    
+}
+
 export {
     BlogResultItems,
     CategoryResultItems,
     NewsResultItems,
     VolunteerResultItems,
     EventResultItems,
-    WfIndexResultItems
+    WfIndexResultItems,
+    PlantCardResultItems,
 }
 
 

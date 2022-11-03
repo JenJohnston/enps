@@ -20,6 +20,7 @@ import wildflowerNews from "./documents/wildflowerNews.js";
 import heroSlider from "./documents/heroSlider.js";
 import springSeedGallery from "./documents/springSeedGallery.js";
 import wfIndex from "./documents/wfIndex.js";
+import plantIndexCard from "./documents/plantIndexCard.js";
 
 
 
@@ -51,6 +52,7 @@ export default createSchema({
     volunteer,
     vendorCard,
     wfIndex,
+    plantIndexCard,
     boardExecutive,
     boardDirector,
     blog,

@@ -347,6 +347,50 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-plugin-local-search',
+      options: {
+        name: 'plantCard',
+        engine: 'flexsearch',
+        engineOptions: {
+          tokenize: 'forward',
+        },
+        query: `
+        {
+          allSanityPlantIndexCard {
+            nodes {
+              id
+              commonName
+              botanicalName
+              slug {
+                current
+              }
+              featureImage {
+                alt
+                asset {
+                  gatsbyImageData
+                }
+              }
+            }
+          }
+        }
+        `,
+        ref: 'id',
+        index: ['commonName'],
+        store: ['id', 'commonName', 'botanicalName', 'slug', 'featureImage', 'indexID'],
+        normalizer: ({data}) => 
+          data.allSanityPlantIndexCard.nodes.map((node) => (
+            {
+              id: node.id,
+              commonName: node.commonName,
+              botanicalName: node.botanicalName,
+              slug: node.slug,
+              featureImage: node.featureImage,
+              indexID: node.indexID
+            }
+          ))
+      }
+    },
+    {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.

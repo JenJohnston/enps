@@ -1,0 +1,170 @@
+@use "../utils" as u;
+
+.plantIndexCard {
+  .container {
+    padding: 0;
+    margin-top: 2rem;
+  }
+
+  .pageScroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: fit-content;
+    gap: 4rem;
+
+    padding: 1.45rem;
+    border-radius: 2.85rem;
+    margin: 0 auto;
+    margin-top: -2rem;
+    position: sticky;
+    top: 2rem;
+    z-index: 10;
+    background: var(--modal-bg);
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    a {
+      transition: all 0.3s ease-in-out;
+      border: 2px solid var(--accent-color-two);
+      border-radius: 50%;
+      padding: 0.35rem;
+      &:hover {
+        color: var(--color-primary-lt);
+      }
+    }
+  }
+
+  &__card {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  &__img {
+    border-radius: 0.85rem;
+    aspect-ratio: 1;
+    max-width: 12rem;
+
+    transition: all 0.3s ease-in-out;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    .plantIndexCard__img {
+      border-radius: 50%;
+      border: 4px solid var(--accent-color-two);
+    }
+
+    @include u.breakpoint-min(lg) {
+      flex-direction: row;
+    }
+  }
+
+  &__title {
+    align-self: center;
+    text-align: center;
+
+    h5 {
+      font-size: var(--step-0);
+      margin-bottom: 0.35rem;
+      color: var(--color-primary-lt);
+
+      @include u.breakpoint-min(med) {
+        font-size: var(--step-1);
+      }
+
+      @include u.breakpoint-min(lg) {
+        font-size: var(--step-2);
+      }
+    }
+
+    .plantFamily {
+      font-size: var(--step-0);
+
+      svg {
+        @include u.breakpoint-min(lg) {
+          margin-right: 1.35rem;
+        }
+      }
+    }
+
+    svg {
+      fill: var(--svg-fill);
+      margin-bottom: 0.2rem;
+      margin-right: 0.35rem;
+    }
+    .dividerBar {
+      width: 12rem;
+      height: 2px;
+      background-color: var(--color-primary-lt);
+      margin: 0 auto;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+
+    img {
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(125%);
+      }
+    }
+
+    @include u.breakpoint-min(med) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 80vw;
+    margin: 0 auto;
+
+    .dataset {
+      p {
+        margin-bottom: 0.25rem;
+
+        span {
+          text-transform: uppercase;
+          color: var(--color-primary-lt);
+          margin-right: 0.4rem;
+          font-weight: bold;
+        }
+      }
+    }
+
+    @include u.breakpoint-min(lg) {
+      margin: 0;
+    }
+  }
+}
