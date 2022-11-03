@@ -82,7 +82,7 @@ export default function Plantinfo() {
                 <div className="plantinfoHero__overlay">
                     <div className="container">
                         <h1>All About Native Plants</h1>
-                        <h5>A Resource Guide for Buying, Growing and Caring for Local Native Plants</h5>
+                        <h5>A resource guide for identifying, growing and sourcing local native plants</h5>
                     </div>
                 </div>
             </section>
