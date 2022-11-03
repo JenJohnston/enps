@@ -54,6 +54,10 @@ export default function VolunteerSingle({ data }) {
             <FaLeaf />
             <div className='dividerBar'></div>
           </div>
+          <div className='volunteerSingle__link volunteerSingle__top'>
+            <Link to='/volunteer'>Return to Volunteer Page</Link>
+            <GiFallingLeaf />
+          </div>
           <PortableTextHandler value={volunteer._rawBody} />
           <aside className='volunteerSingle__menu'>
             <h5>Project Leader: {volunteer.projectLeader}</h5>

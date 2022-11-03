@@ -147,4 +147,14 @@
       }
     }
   }
+
+  &__top {
+    align-self: flex-start;
+    margin-bottom: 4rem;
+    flex-direction: row-reverse;
+    svg {
+      margin-right: -2.7rem;
+      transform: rotate(180deg);
+    }
+  }
 }

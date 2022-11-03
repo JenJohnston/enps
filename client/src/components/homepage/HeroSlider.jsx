@@ -11,6 +11,7 @@ export default function HeroSlider() {
             allSanityHeroSlider {
             nodes {
                 title
+                botanicalName
                 id
                 nativePlantImage {
                 alt
@@ -41,7 +42,10 @@ export default function HeroSlider() {
                                 alt={obj.nativePlantImage.alt}
                                 className="imageSlider__img"
                             />
-                            <p>{obj.title}</p>
+                            <div className="imageSlider__content">
+                                <p>{obj.title}</p>
+                                <p className='botanicalName'>{obj.botanicalName}</p>
+                            </div>
                         </Carousel.Item>      
                     )
                                

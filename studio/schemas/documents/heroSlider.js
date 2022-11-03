@@ -12,6 +12,11 @@ export default {
       type: "string",
     },
     {
+      title: "Botanical Name",
+      name: "botanicalName",
+      type: "string",
+    },
+    {
       title: "Native Plant Image",
       name: "nativePlantImage",
       type: "customImage",
@@ -21,11 +26,13 @@ export default {
     select: {
       title: "title",
       image: "nativePlantImage",
+      botanicalName: "botanicalName"
     },
-    prepare({ image, title }) {
+    prepare({ image, title, botanicalName }) {
       return {
         title: title,
         media: image,
+        botanicalName: botanicalName,
       };
     },
   },

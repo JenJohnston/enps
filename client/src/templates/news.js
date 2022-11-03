@@ -68,6 +68,13 @@ export default function News({ data, pageContext }) {
             <div className='dividerBar'></div>
           </div>
         </div>
+        {numberOfPages > 1 && (
+          <Pagination
+            currentPage={currentPage}
+            numberOfPages={numberOfPages}
+            baseURL='/news'
+          />
+        )}
         <div className='news__content container'>
           <WFCards wfcards={wfNews} />
         </div>

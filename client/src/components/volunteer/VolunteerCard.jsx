@@ -31,7 +31,7 @@ export default function VolunteerCard({title, path, image, excerpt, email, phone
                 </div>
                 <div className="card__link">
                     <div className="linkbar"></div>
-                    <Link to={path}>Get Involved <FaLongArrowAltRight/></Link>
+                    <Link to={path}>Explore More <FaLongArrowAltRight/></Link>
                 </div>
             </div>
         </aside>

@@ -15,22 +15,29 @@ export default function BlogsSection() {
                     <h5>Whether its discovering new plants or learning about plant care, we have you covered.</h5>
                 </div>
                 <div className="flexContainer">
-                    <div className="plantInfo__images" data-aos="rotate-c"
-                    data-aos-duration="2100">
+                    <div className="plantInfo__images" >
                         <StaticImage 
                             src="../../images/homepage-plants/golden-aster.jpg"
                             alt="Image of a Golden Aster"
-                            className="plantInfo__img img1" 
+                            className="plantInfo__img img1"
+                            data-aos="fade-right" 
+                            data-aos-duration="500"
                         />
                         <StaticImage 
                             src="../../images/homepage-plants/doellingeria-umbellata.jpg"
                             alt="Image of a doellingeria umbellata"
                             className="plantInfo__img img2"
+                            data-aos="fade-left" 
+                            data-aos-duration="500"
+                            data-aos-delay="50"
                         />
                         <StaticImage 
                             src="../../images/homepage-plants/sisyrinchium-montanum.jpg"
                             alt="Image of a Sisyrinchium Montanum"
                             className="plantInfo__img img3"
+                            data-aos="fade-right" 
+                            data-aos-duration="500"
+                            data-aos-delay="100"
                         />
                     </div>
                     <div className="plantInfo__content">
