@@ -3,6 +3,7 @@ import { graphql, Link, PageRenderer } from "gatsby";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import Modal from "react-modal";
 import { CgClose } from "react-icons/cg";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import PortableTextHandler from "../components/PortableTextHandler.jsx";
 import Seo from "../components/seo";
 import { ModalContext } from "../context/ModalContext";
@@ -46,34 +47,27 @@ export default function WfIndexSingle({ data, pageContext }) {
       }
     : null;
 
-  const handleScroll = e => {
-    window[`scrollTo`](50, 50);
-  };
-
   return (
     <div className='modalOverlay'>
       <Seo title={wfIndex.botanicalName} />
-      <Link className='modalOverlay__toggle indexToggle' to='/wfindex'>
-        <CgClose />
-      </Link>
+
       <section className='wfIndexSingle'>
+        <div className='pageScroll'>
+          {prev && (
+            <Link to={prev.url}>
+              <FiChevronLeft className='pageScroll__chevron' />
+            </Link>
+          )}
+          {next && (
+            <Link to={next.url}>
+              <FiChevronRight className='pageScroll__chevron' />
+            </Link>
+          )}
+          <Link className='pageScroll__toggle' to='/wfindex'>
+            <CgClose />
+          </Link>
+        </div>
         <div className='container'>
-          <div className='pageScroll'>
-            {prev && (
-              <Link to={prev.url}>
-                <span>Prev</span>
-              </Link>
-            )}
-            {next && (
-              <Link
-                to={next.url}
-                onClick={handleScroll}
-                onKeyDown={handleScroll}
-              >
-                <span>Next</span>
-              </Link>
-            )}
-          </div>
           <div className='wfIndexSingle__card'>
             <GatsbyImage
               image={wfIndex.wildflowerImage.asset.gatsbyImageData}
