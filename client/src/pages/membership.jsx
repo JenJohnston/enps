@@ -78,12 +78,38 @@ export default function Membership() {
                     </div>
                     <form id="membershipForm" onSubmit={handleSubmit(onSubmit)} className="membership__form">
                         <div className="formGroup honeyPot">
-                            <input className='honeyPot' type="text" name="honey" id="honeyPot" value={honeyPot} onChange={event => setHoneyPot(event.target.value)}/>
-                            <label className='honeyPot' htmlFor="honey"  aria-label='hidden' aria-hidden="true"></label>
+                            <input 
+                                className='honeyPot' 
+                                type="text" 
+                                name="honey" 
+                                id="honeyPot" 
+                                value={honeyPot} 
+                                onChange={event => setHoneyPot(event.target.value)}
+                            />
+                            <label 
+                                className='honeyPot' 
+                                htmlFor="honey"  
+                                aria-label='hidden' aria-hidden="true">
+                            </label>
                         </div>
-                        <input type="hidden" name="redirect" value="https://web3forms.com/success"></input>
+                        <input 
+                            type="hidden" 
+                            name="redirect" 
+                            value="https://web3forms.com/success">
+                        </input>
+                        <input 
+                            type="hidden" 
+                            name="subject" 
+                            {...register("subject")}
+                            value="New Membership Submission"
+                        />
                         <div className="formGroup">
-                            <input type="text" name="name" {...register("name")} required/>
+                            <input 
+                                type="text" 
+                                name="name" 
+                                {...register("name")} 
+                                required
+                            />
                             <label htmlFor="name">Name (First, Last) </label>
                         </div>
                         <div className="formGroup">
@@ -96,11 +122,11 @@ export default function Membership() {
                         </div>
                         <div className="checkMenu">
                             <div className="formGroup">
-                                <input type="checkbox" name="volunteer"/>
+                                <input type="checkbox" name="volunteer" {...register("volunteer")}/>
                                 <label htmlFor="volunteer">Yes I want to Volunteer!</label>
                             </div>
                             <div className="formGroup">
-                                <input type="checkbox" name="newsletter"/>
+                                <input type="checkbox" name="newsletter" {...register("newsletter")}/>
                                 <label htmlFor="newsletter">Subscribe to our Newsletter</label>
                             </div>
                         </div>

@@ -5,7 +5,7 @@ import { format } from 'date-fns'
 
 import { MdEventAvailable } from 'react-icons/md'
 import { FaLongArrowAltRight } from 'react-icons/fa'
-import { IoMail } from 'react-icons/io5'
+import { AiOutlineForm } from 'react-icons/ai'
 
 export default function EventCard({path, title, excerpt, date, location}) {
     
@@ -29,7 +29,7 @@ export default function EventCard({path, title, excerpt, date, location}) {
                     <PortableTextHandler value={excerpt}/>
                 </div>
                 <div className="card__links">
-                    <a href="mailto:enpsvolunteer@gmail.com"><IoMail className='mailIcon'/>Register</a>
+                    <Link to={`/events/${path}#eventForm`}><AiOutlineForm className='mailIcon'/>Register</Link>
                     <Link to={`/events/${path}`}>View Event <FaLongArrowAltRight className='arrowIcon'/></Link>
                 </div>
             </div>

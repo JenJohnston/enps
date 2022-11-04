@@ -144,7 +144,7 @@ export default function Plantinfo() {
                 <div className="container">
                     <div className="plantCards__header">
                         <FaLeaf/>
-                        <h2>Where To Buy</h2>
+                        <h3>Where To Buy</h3>
                         <div className="dividerBar"></div>
                         <p>Below is a list of some vendors in and around the Edmonton area where you can purchase wildflower seeds and products.  The Edmonton Native Plant Society does not endorse these vendors nor do we have any agreement with them. </p>
                     </div>
@@ -152,9 +152,6 @@ export default function Plantinfo() {
                         {vendorCards.map((obj, index) => {
                             return (
                                 <div className="plantCard" key={obj.id}>
-                                    <div className="plantCard__img">
-                                        <GiVineLeaf/>
-                                    </div>
                                     <div className="plantCard__body">
                                         <div className="plantCard__header">
                                             <h4>{obj.title}</h4>
@@ -162,11 +159,6 @@ export default function Plantinfo() {
                                         </div>
                                         <div className="plantCard__content">
                                             <PortableTextHandler value={obj._rawBody}/>
-                                        </div>
-                                        <div className="plantCard__contact">
-                                            <h5>Contact</h5>
-                                            <a href={`mailto:${obj.email}`}><IoMail/>{obj.email}</a>
-                                            <a href={`tel:${obj.phoneNumber}`}><FaPhoneAlt/>{obj.phoneNumber}</a>
                                         </div>
                                         <a href={obj.url} className='plantCard__url'>View Company Site <FaLongArrowAltRight/></a>
                                     </div>

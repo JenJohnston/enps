@@ -78,6 +78,12 @@ export default function Contact() {
                             <input className='honeyPot' type="text" name="honey" id="honeyPot" value={honeyPot} onChange={event => setHoneyPot(event.target.value)}/>
                             <label aria-label='hidden' className='honeyPot' htmlFor="honey" aria-hidden="true"></label>
                         </div>
+                        <input
+                            type='hidden'
+                            name='subject'
+                            {...register("subject")}
+                            value="New Message from Contact Form"
+                        />
                         <div className="formGroup">
                             <input type="text" name="name" {...register("name")} required/>
                             <label htmlFor="name">Name</label>

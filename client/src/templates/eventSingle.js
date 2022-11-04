@@ -1,5 +1,6 @@
 import { graphql, Link } from "gatsby";
-import React from "react";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { StaticImage } from "gatsby-plugin-image";
 import { format } from "date-fns";
 
@@ -25,6 +26,49 @@ export const eventQuery = graphql`
 export default function EventSingle({ data }) {
   const event = data.sanityEvent;
 
+  const { register, handleSubmit } = useForm();
+  const [result, setResult] = useState("");
+
+  const [honeyPot, setHoneyPot] = useState("");
+
+  const onSubmit = async data => {
+    const form = document.querySelector("#eventForm");
+
+    if (honeyPot === "" || honeyPot === null) {
+      setResult("Sending...");
+
+      const formData = new FormData();
+
+      formData.append("access_key", process.env.GATSBY_WEB_THREE_ACCESS_KEY);
+
+      for (const key in data) {
+        if (key === "file") {
+          formData.append(key, data[key][0]);
+        } else {
+          formData.append(key, data[key]);
+        }
+      }
+
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      }).then(res => res.json());
+
+      if (res.success) {
+        console.log("Success", res);
+        setResult(res.message);
+      } else {
+        console.log("Error", res);
+        setResult(res.message);
+      }
+
+      form.action = "https://web3forms.com/success";
+    } else {
+      form.action = "https://web3forms.com/success";
+      return false;
+    }
+  };
+
   return (
     <>
       <Seo title={event.title} />
@@ -47,19 +91,86 @@ export default function EventSingle({ data }) {
           </div>
         </div>
       </section>
-      <article className='eventSingle'>
-        <div className='container'>
+      <div className='eventSingle'>
+        <article className='container'>
           <div className='eventSingle__header'>
             <FaLeaf />
             <div className='dividerBar'></div>
           </div>
           <PortableTextHandler value={event._rawBody} />
-          <div className='eventSingle__link'>
-            <Link to='/events'>Return to Events Page</Link>
-            <GiFallingLeaf />
+        </article>
+        <form
+          id='eventForm'
+          onSubmit={handleSubmit(onSubmit)}
+          className='membership__form'
+        >
+          <div className='formGroup honeyPot'>
+            <input
+              className='honeyPot'
+              type='text'
+              name='honey'
+              id='honeyPot'
+              value={honeyPot}
+              onChange={event => setHoneyPot(event.target.value)}
+            />
+            <label
+              className='honeyPot'
+              htmlFor='honey'
+              aria-label='hidden'
+              aria-hidden='true'
+            ></label>
           </div>
+          <input
+            type='hidden'
+            name='redirect'
+            value='https://web3forms.com/success'
+          ></input>
+          <input
+            type='hidden'
+            name='subject'
+            {...register("subject")}
+            value={`Registration For: ${event.title}`}
+          />
+          <div className='formGroup'>
+            <input type='text' name='name' {...register("name")} required />
+            <label htmlFor='name'>Name (First, Last) </label>
+          </div>
+          <div className='formGroup'>
+            <input type='email' name='email' {...register("email")} required />
+            <label htmlFor='email'>Email</label>
+          </div>
+          <div className='formGroup'>
+            <input type='tel' name='phone' {...register("phone")} required />
+            <label htmlFor='phone'>Phone Number</label>
+          </div>
+          <div className='checkMenu'>
+            <div className='formGroup'>
+              <input
+                type='checkbox'
+                name='volunteer'
+                {...register("volunteer")}
+              />
+              <label htmlFor='volunteer'>Yes I want to Volunteer!</label>
+            </div>
+            <div className='formGroup'>
+              <input
+                type='checkbox'
+                name='newsletter'
+                {...register("newsletter")}
+              />
+              <label htmlFor='newsletter'>Subscribe to our Newsletter</label>
+            </div>
+          </div>
+          <div className='formGroup'>
+            <span>{result}</span>
+            <input type='submit' className='formSubmit' />
+          </div>
+        </form>
+        <div className='eventSingle__link container'>
+          <Link to='/events'>Return to Events Page</Link>
+          <GiFallingLeaf />
         </div>
-      </article>
+      </div>
     </>
   );
 }

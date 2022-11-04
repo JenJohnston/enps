@@ -127,3 +127,12 @@
     }
   }
 }
+
+#eventForm {
+  background-color: var(--color-primary-dk);
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 0.85rem;
+  color: var(--background-color);
+  max-width: 40rem;
+}

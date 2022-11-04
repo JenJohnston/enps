@@ -556,56 +556,24 @@
   &__content {
     .plantCard {
       border: none;
-      max-width: 32rem;
+      max-width: 24rem;
+      aspect-ratio: 1;
       background-color: transparent;
-
-      @include u.breakpoint-min(med) {
-      }
-
-      @include u.breakpoint-min(lg) {
-        display: grid;
-        max-width: 100%;
-        position: relative;
-        grid-template-columns: 1fr 1fr;
-      }
-
-      @include u.breakpoint-min(xl) {
-        grid-template-columns: 0.75fr 1fr;
-      }
-
-      &__img {
-        aspect-ratio: 1;
-        background-color: var(--color-primary-dk);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        svg {
-          font-size: 12rem;
-          color: var(--color-primary-lt);
-        }
-
-        @include u.breakpoint-min(lg) {
-          margin-bottom: 4rem;
-          width: 100%;
-          grid-column: 1;
-        }
-      }
 
       &__body {
         padding: 1rem;
         background-color: var(--svg-fill);
         h4 {
           font-size: var(--step-1);
-          background-color: var(--secondary-variant);
+          background-color: var(--color-primary);
           color: var(--background-color);
-          padding: 0.35rem;
+          padding: 1rem 2rem;
           margin-top: -2rem;
-          margin-right: -2rem;
+          margin-left: -2rem;
+          max-width: fit-content;
           margin-bottom: var(--space-xs);
 
           @include u.breakpoint-min(lg) {
-            margin-right: 2rem;
-            margin-left: -2rem;
           }
         }
 
@@ -623,18 +591,6 @@
 
       &__content {
         margin: var(--space-s) 0;
-      }
-
-      &__contact {
-        margin-bottom: var(--space-m);
-        h5 {
-          font-family: var(--primary-font-stack);
-          margin-bottom: var(--space-xs);
-        }
-
-        a {
-          margin-bottom: var(--space-3xs);
-        }
       }
 
       a {
