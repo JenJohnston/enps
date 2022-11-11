@@ -21,7 +21,7 @@ export const navRouter = [
     },
     {
         id: '04',
-        title: 'Plant Tips',
+        title: 'Plant Info',
         path: '/plantinfo'
     },
     {
