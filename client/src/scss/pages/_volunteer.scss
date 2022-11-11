@@ -78,8 +78,14 @@
     }
 
     h5 {
-      max-width: 42rem;
+      max-width: 60rem;
       margin: 0 auto;
+      margin-top: 2rem;
+      font-size: var(--step-1);
+    }
+
+    a {
+      font-size: var(--step-1);
     }
 
     .dividerBar {

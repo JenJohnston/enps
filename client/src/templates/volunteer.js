@@ -70,6 +70,11 @@ export default function Volunteer({ data, pageContext }) {
             Also, we do have a gas allowance for projects outside of Edmonton
             for those who need it.
           </h5>
+          <h5>
+            Please email us at{" "}
+            <a href='mailto:enpsvolunteer@gmail.com'>enpsvolunteer@gmail.com</a>{" "}
+            for more information and to be added to our email list.
+          </h5>
           <div className='dividerBar'></div>
         </div>
         <div className='volunteer__content container'>

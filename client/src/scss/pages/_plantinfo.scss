@@ -75,6 +75,20 @@
   &__header {
     text-align: center;
     margin-bottom: 4rem;
+
+    svg {
+      color: var(--color-primary-lt);
+      font-size: 5rem;
+      margin-bottom: var(--space-2xs);
+    }
+
+    .dividerBar {
+      height: 4px;
+      width: 6rem;
+      background-color: var(--color-primary-lt);
+      margin: 0 auto;
+      margin-top: 1rem;
+    }
   }
 
   &__content {
@@ -115,6 +129,129 @@
   }
 }
 
+.additionalInfo,
+.plantIdentity {
+  padding: 4rem 0;
+  color: var(--background-color);
+  text-shadow: var(--txt-shadow-dk);
+  background-color: var(--color-primary-dk);
+
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+
+    @include u.breakpoint-min(lg) {
+      justify-content: space-between;
+    }
+
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 12rem;
+      text-align: center;
+      gap: 1rem;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--color-primary-lt);
+      }
+
+      svg {
+        font-size: 4rem;
+        color: var(--svg-fill);
+        filter: drop-shadow(1px 1px 3px var(--color-primary-dk));
+      }
+    }
+  }
+}
+
+.plantIdentity__header {
+  h3 {
+    color: var(--accent-color-two-lt);
+  }
+}
+
+.plantIdentity__content {
+  justify-content: center;
+  gap: 6rem;
+}
+
+.links {
+  padding: 4rem 0;
+  color: var(--background-color);
+  text-shadow: var(--txt-shadow-dk);
+  background: rgb(155, 155, 33);
+  background-image: linear-gradient(
+    347deg,
+    rgba(155, 155, 33, 0.93) 0%,
+    rgba(115, 126, 60, 0.97) 26%,
+    rgba(84, 104, 81, 1) 100%
+  );
+
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    svg {
+      color: var(--color-primary-lt);
+      font-size: 4rem;
+      margin-bottom: var(--space-2xs);
+    }
+
+    .dividerBar {
+      height: 4px;
+      width: 6rem;
+      background-color: var(--color-primary-lt);
+      margin: 0 auto;
+      margin-top: 1rem;
+    }
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-items: center;
+    a {
+      display: flex;
+
+      flex-direction: column;
+      align-items: center;
+      max-width: 14rem;
+      text-align: center;
+      gap: 1rem;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--color-primary-lt);
+      }
+
+      svg {
+        width: 4rem;
+        height: 4rem;
+        color: var(--svg-fill);
+        filter: drop-shadow(1px 1px 3px var(--color-primary-dk));
+      }
+    }
+
+    @include u.breakpoint-min(med) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include u.breakpoint-min(xl) {
+      grid-template-columns: repeat(6, 1fr);
+      row-gap: 4rem;
+    }
+  }
+}
+
 .plantCards {
   margin: 4rem 0;
 
@@ -124,7 +261,7 @@
 
     svg {
       color: var(--background-variant);
-      font-size: 5rem;
+      font-size: 4rem;
       margin-bottom: var(--space-2xs);
     }
 
@@ -148,6 +285,7 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    z-index: 18;
 
     @include u.breakpoint-min(lg) {
       flex-direction: row;

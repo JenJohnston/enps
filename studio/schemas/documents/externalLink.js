@@ -12,6 +12,11 @@ export default {
       type: "string",
     },
     {
+        name: "Description",
+        title: "description",
+        type: "normalText",
+      },
+    {
         title: "Link URL",
         name: "linkUrl",
         type: "url",

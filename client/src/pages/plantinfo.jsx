@@ -12,16 +12,14 @@ import { GiSeedling } from 'react-icons/gi'
 import { RiSeedlingFill } from 'react-icons/ri'
 import { GiPlantRoots } from 'react-icons/gi'
 import { FaLeaf } from 'react-icons/fa'
-import { GiVineLeaf } from 'react-icons/gi'
-
-import { FaPhoneAlt } from 'react-icons/fa'
-import { IoMail } from 'react-icons/io5'
 import { FaLongArrowAltRight } from 'react-icons/fa'
+import { MdOutlinePictureAsPdf } from 'react-icons/md'
+import { SiChainlink } from 'react-icons/si'
 
 export default function Plantinfo() {
 
     const data = useStaticQuery(graphql`
-        query plantCardQuery {
+        query plantInfoQuery {
             allSanityVendorInfo {
             nodes {
                 url
@@ -33,10 +31,45 @@ export default function Plantinfo() {
                 _rawBody
             }
             }
+            allSanityGrowSubDocuments {
+                nodes {
+                  id
+                  title
+                  growSubDocumentPdfUpload {
+                    asset {
+                      url
+                    }
+                  }
+                }
+              }
+              allSanityPlantIdentityPdf {
+                nodes {
+                  plantIdentityPdf
+                  id
+                  idendityPdfUpload {
+                    asset {
+                      url
+                    }
+                  }
+                }
+              }
+              allSanityExternalLink {
+                nodes {
+                  id
+                  linkName
+                  linkUrl
+                  _rawDescription
+                }
+              }
         }
     `)
 
     const vendorCards = data.allSanityVendorInfo.nodes
+    const additionalReadingDocs = data.allSanityGrowSubDocuments.nodes
+    const plantIdentification = data.allSanityPlantIdentityPdf.nodes
+    const links = data.allSanityExternalLink.nodes
+
+    console.log(links)
     
     const { openPlantDrModal } = useContext(ModalContext)
     const { openSeedGrowModal } = useContext(ModalContext)
@@ -89,7 +122,9 @@ export default function Plantinfo() {
             <section className="modalMenu">
                 <div className="container">
                     <div className="modalMenu__header">
+                        <FaLeaf/>
                         <h2>Growing Tips</h2>
+                        <div className="dividerBar"></div>
                     </div>
                     <div className="modalMenu__content">
                         <button 
@@ -140,18 +175,86 @@ export default function Plantinfo() {
                     </div>
                 </div>
             </section>
+            <section className="additionalInfo">
+                <div className="container">
+                    <div className="additionalInfo__header">
+                        <h3>Additional Reading</h3>
+                    </div>
+                    <div className="additionalInfo__content">
+                        {additionalReadingDocs.map((obj, idx) => {
+                            return (
+                                <a 
+                                    href={obj.growSubDocumentPdfUpload.asset.url}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    key={obj.id}
+                                >
+                                    <MdOutlinePictureAsPdf/>
+                                    {obj.title}
+                                </a>
+                            )
+                        })}
+                    </div>
+                </div>
+            </section>
+            <section className="plantIdentity">
+                <div className="container">
+                    <div className="plantIdentity__header">
+                        <h3>Plant Identification</h3>
+                    </div>
+                    <div className="plantIdentity__content">
+                        {plantIdentification.map((obj, idx) => {
+                            return (
+                                <a
+                                    href={obj.idendityPdfUpload.asset.url}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    key={obj.id}
+                                >
+                                    <MdOutlinePictureAsPdf/>
+                                    {obj.plantIdentityPdf}
+                                </a>
+                            )
+                        })}    
+                    </div>   
+                </div>
+            </section>
+            <section className="links">
+                <div className="container">
+                    <div className="links__header">
+                        <FaLeaf/>
+                        <h3>Links</h3>
+                        <div className="dividerBar"></div>
+                    </div>
+                    <div className="links__content">
+                        {links.map((obj, idx) => {
+                           return (
+                                <a 
+                                    href={obj.linkUrl}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    key={obj.id}
+                                >            
+                                    <SiChainlink/>
+                                    {obj.linkName}
+                                </a>
+                           )
+                        })}
+                    </div>
+                </div>
+            </section>
             <section className="plantCards">
                 <div className="container">
                     <div className="plantCards__header">
                         <FaLeaf/>
-                        <h3>Where To Buy</h3>
+                        <h3>Where To Source</h3>
                         <div className="dividerBar"></div>
                         <p>Below is a list of some vendors in and around the Edmonton area where you can purchase wildflower seeds and products.  The Edmonton Native Plant Society does not endorse these vendors nor do we have any agreement with them. </p>
                     </div>
                     <div className="plantCards__content">
                         {vendorCards.map((obj, index) => {
                             return (
-                                <div className="plantCard" key={obj.id}>
+                                <article className="plantCard" key={obj.id}>
                                     <div className="plantCard__body">
                                         <div className="plantCard__header">
                                             <h4>{obj.title}</h4>
@@ -160,9 +263,13 @@ export default function Plantinfo() {
                                         <div className="plantCard__content">
                                             <PortableTextHandler value={obj._rawBody}/>
                                         </div>
-                                        <a href={obj.url} className='plantCard__url'>View Company Site <FaLongArrowAltRight/></a>
+                                        <a 
+                                            target="_blank"
+                                            rel="noreferrer" 
+                                            href={obj.url} className='plantCard__url'
+                                        >View Company Site <FaLongArrowAltRight/></a>
                                     </div>
-                                </div>
+                                </article>
                             )
                         })}
                     </div>
