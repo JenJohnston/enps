@@ -21,6 +21,11 @@ import heroSlider from "./documents/heroSlider.js";
 import springSeedGallery from "./documents/springSeedGallery.js";
 import wfIndex from "./documents/wfIndex.js";
 import plantIndexCard from "./documents/plantIndexCard.js";
+import externalLink from "./documents/externalLink.js";
+import additionalReading from "./documents/additionalReading.js";
+import plantIdentityDocuments from "./documents/plantIdentityDocuments.js";
+import growSubDocuments from "./documents/growSubDocuments.js";
+
 
 
 
@@ -57,6 +62,10 @@ export default createSchema({
     boardDirector,
     blog,
     category,
+    externalLink,
+    plantIdentityDocuments,
+    additionalReading,
+    growSubDocuments,
 
     // object schemas
 

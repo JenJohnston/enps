@@ -62,7 +62,14 @@ export default function Volunteer({ data, pageContext }) {
         <div className='volunteer__header'>
           <FaLeaf />
           <h2>Get Involved</h2>
-          <h5>Making a difference today and for generations to come.</h5>
+          <h5>
+            We hope that you will join us in projects that will promote the
+            conservation of plants native to the Edmonton area. These projects
+            provide opportunities to learn lots about plants, hang out with a
+            lovely bunch of people and possibly take home free seedlings/seeds.
+            Also, we do have a gas allowance for projects outside of Edmonton
+            for those who need it.
+          </h5>
           <div className='dividerBar'></div>
         </div>
         <div className='volunteer__content container'>
