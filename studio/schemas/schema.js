@@ -6,9 +6,10 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 
 // document import
 
-
+import blog from "./documents/blog.js";
+import category from "./documents/category";
 import boardExecutive from "./documents/boardExecutive.js";
-import boardReports from "./documents/boardReports.js";
+import boardDirector from "./documents/boardDirector.js";
 import featured from "./documents/featured.js";
 import event from "./documents/event.js";
 import vendorCard from "././documents/vendorCard.js";
@@ -33,6 +34,7 @@ import customImage from "./objects/customImage";
 import normalText from "./objects/normalText";
 import richText from "./objects/richText.js";
 import customFile from "./objects/customFile.js";
+import boardReports from "./documents/boardReports.js";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -57,10 +59,13 @@ export default createSchema({
     wfIndex,
     plantIndexCard,
     boardExecutive,
+    boardReports,
     externalLink,
     plantIdentityDocuments,
     growSubDocuments,
-    boardReports,
+    blog,
+    category,
+    boardDirector,
 
     // object schemas
 

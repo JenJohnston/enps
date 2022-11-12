@@ -8,7 +8,8 @@ import SearchResult from '../search/SearchResult'
 
 import { CgClose } from 'react-icons/cg'
 
-/*
+const query = graphql`
+{
     localSearchBlogs {
         publicStoreURL
         publicIndexURL
@@ -17,10 +18,6 @@ import { CgClose } from 'react-icons/cg'
         publicStoreURL
         publicIndexURL
     }
-*/
-
-const query = graphql`
-{
     localSearchNews {
         publicStoreURL
         publicIndexURL
@@ -54,8 +51,8 @@ export default function SearchModal() {
 
     const { isModalSearchOpen } = useContext(ModalContext);
     const [ searchQuery, setSearchQuery ] = useState('')
-    // const [blogsIndexStore, setBlogsIndexStore] = useState(null);
-    // const [categoriesIndexStore, setCategoriesIndexStore] = useState(null);
+    const [blogsIndexStore, setBlogsIndexStore] = useState(null);
+    const [categoriesIndexStore, setCategoriesIndexStore] = useState(null);
     const [newsIndexStore, setNewsIndexStore] = useState(null);
     const [eventsIndexStore, setEventsIndexStore] = useState(null);
     const [volunteerIndexStore, setVolunteerIndexStore] = useState(null);
@@ -63,14 +60,14 @@ export default function SearchModal() {
     const [plantCardIndexStore, setPlantCardIndexStore] = useState(null);
     const data = useStaticQuery(query)
 
-    // const {
-    //     publicStoreURL: blogsPublicStoreURL,
-    //     publicIndexURL: blogsPublicIndexURL,
-    // } = data.localSearchBlogs;
-    // const {
-    //     publicStoreURL: categoriesPublicStoreURL,
-    //     publicIndexURL: categoriesPublicIndexURL,
-    // } = data.localSearchCategories;
+    const {
+        publicStoreURL: blogsPublicStoreURL,
+        publicIndexURL: blogsPublicIndexURL,
+    } = data.localSearchBlogs;
+    const {
+        publicStoreURL: categoriesPublicStoreURL,
+        publicIndexURL: categoriesPublicIndexURL,
+    } = data.localSearchCategories;
     const {
         publicStoreURL: newsPublicStoreURL,
         publicIndexURL: newsPublicIndexURL,
@@ -102,14 +99,13 @@ export default function SearchModal() {
     }, [isModalSearchOpen]);
 
     const handleOnFocus = async () => {
-        // blogsIndexStore && categoriesIndexStore &&
-        if(newsIndexStore && eventsIndexStore && volunteerIndexStore && wfIndexStore && plantCardIndexStore) return
+        if(blogsIndexStore && categoriesIndexStore && newsIndexStore && eventsIndexStore && volunteerIndexStore && wfIndexStore && plantCardIndexStore) return
 
         const [
-            // {data: blogsIndex},
-            // {data: blogsStore},
-            // {data: categoriesIndex},
-            // {data: categoriesStore},
+            {data: blogsIndex},
+            {data: blogsStore},
+            {data: categoriesIndex},
+            {data: categoriesStore},
             {data: newsIndex},
             {data: newsStore},
             {data: eventsIndex},
@@ -121,10 +117,10 @@ export default function SearchModal() {
             {data: plantCardIndex},
             {data: plantCardStore},
         ] = await Promise.all([
-            // axios.get(blogsPublicIndexURL),
-            // axios.get(blogsPublicStoreURL),
-            // axios.get(categoriesPublicIndexURL),
-            // axios.get(categoriesPublicStoreURL),
+            axios.get(blogsPublicIndexURL),
+            axios.get(blogsPublicStoreURL),
+            axios.get(categoriesPublicIndexURL),
+            axios.get(categoriesPublicStoreURL),
             axios.get(newsPublicIndexURL),
             axios.get(newsPublicStoreURL),
             axios.get(eventsPublicIndexURL),
@@ -136,14 +132,14 @@ export default function SearchModal() {
             axios.get(plantCardPublicIndexURL),
             axios.get(plantCardPublicStoreURL),
         ])
-        // setBlogsIndexStore({
-        //     index: blogsIndex,
-        //     store: blogsStore,
-        // })
-        // setCategoriesIndexStore({
-        //     index: categoriesIndex,
-        //     store: categoriesStore,
-        // })
+        setBlogsIndexStore({
+            index: blogsIndex,
+            store: blogsStore,
+        })
+        setCategoriesIndexStore({
+            index: categoriesIndex,
+            store: categoriesStore,
+        })
         setNewsIndexStore({
             index: newsIndex,
             store: newsStore,
@@ -186,8 +182,8 @@ export default function SearchModal() {
                     />
                     {
                         searchQuery
-                        // && blogsIndexStore
-                        // && categoriesIndexStore
+                        && blogsIndexStore
+                        && categoriesIndexStore
                         && newsIndexStore
                         && volunteerIndexStore
                         && eventsIndexStore
@@ -197,8 +193,8 @@ export default function SearchModal() {
                             <div className='modalOverlay__result'>
                            <SearchResult
                                 searchQuery={searchQuery}
-                                // blogsIndexStore={blogsIndexStore}
-                                // categoriesIndexStore={categoriesIndexStore}
+                                blogsIndexStore={blogsIndexStore}
+                                categoriesIndexStore={categoriesIndexStore}
                                 newsIndexStore={newsIndexStore}
                                 eventsIndexStore={eventsIndexStore}
                                 volunteerIndexStore={volunteerIndexStore}

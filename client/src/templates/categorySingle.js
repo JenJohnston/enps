@@ -1,4 +1,4 @@
-{% comment %} import { graphql } from "gatsby";
+import { graphql } from "gatsby";
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 
@@ -89,4 +89,4 @@ export default function CategorySingle({ data }) {
       </section>
     </>
   );
-} {% endcomment %}
+}
