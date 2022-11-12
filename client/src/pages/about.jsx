@@ -34,18 +34,6 @@ export default function About() {
             id
           }
         }
-        allSanityBoardDirector {
-          nodes {
-            name
-            profileImage {
-              alt
-              asset {
-                gatsbyImageData
-              }
-            }
-            id
-          }
-        }
         allSanityBoardExecutive {
           nodes {
             id
@@ -65,8 +53,7 @@ export default function About() {
     const aboutBanner = data.allSanityAboutBanner.nodes[0].bannerImage
     const aboutGallery = data.allSanityAboutSlider.nodes
     const boardExecutive = data.allSanityBoardExecutive.nodes
-    const boardDirector = data.allSanityBoardDirector.nodes
-
+    
     return (
         <>
             <Seo title="About"/>
@@ -97,98 +84,13 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-            </section>
-            <section className="gallery">
-                <div className="gallery-slider">
-                    {aboutGallery.map((obj, index)=> {
-                        return (
-                            <GatsbyImage 
-                                image={obj.galleryImage.asset.gatsbyImageData}
-                                alt={obj.galleryImage.alt}
-                                className="gallery__img"
-                            />
-                        )
-                    })}
-                </div>           
-            </section>    
-           <section className="boardmembers">
-               <div className="boardmembers__header">
-                    <StaticImage
-                        className='boardmembers__img'
-                        src="../images/walterdale-bridge.jpg"
-                        alt="an autumn photo of the Walterdale Bridge in Edmonton"
-                    />
-                    <div className="boardmembers__overlay">
-                        <h2>Our Community</h2>
-                       
-                    </div>
-               </div>
-              <div className="container">
-                    <aside className="boardmembers__executive">
-                        <h3>ENPS Board Executive</h3>
-                        <div className="boardmembers__container">
-                            {boardExecutive.map((obj, index) => {
-                                return (
-                                    <div className="profilecard" key={obj.id}>
-                                        <div className="img__container">
-                                        <GatsbyImage 
-                                            image={obj.profileImage.asset.gatsbyImageData}
-                                            alt={obj.profileImage.alt}
-                                            className="profilecard__img"
-                                        />
-                                        </div>
-                                        <div className="profilecard__body">
-                                            <h5>{obj.title}</h5>
-                                            <p>{obj.name}</p>
-                                        </div>
-                                    </div>
-                                )
-                            })}
-                        </div>
-                    </aside>
-                    <aside className="boardmembers__directors">
-                            <h3>ENPS Board Directors</h3>
-                            <div className="boardmembers__container">
-                            {boardDirector.map((obj, index) => {
-                                return (
-                                    <div className="profilecard" key={obj.id}>
-                                        <GatsbyImage 
-                                            image={obj.profileImage.asset.gatsbyImageData}
-                                            alt={obj.profileImage.alt}
-                                            className="profilecard__img"
-                                        />
-                                        <div className="profilecard__body">
-                                            <p>{obj.name}</p>
-                                        </div>
-                                    </div>
-                                )
-                            })}
-                            </div>
-                    </aside>
-                    <aside className="boardmembers__icons">
-                        <div className="boardmembers__iconsHeader">
-                            <h4>Interested in Joining Our Community?</h4>
-                            <IoIosPeople/>              
-                        </div>
-                        <div className="boardmembers__iconMenu">
-                            <Link to='/membership' className="boardmembers__iconContainer">
-                                <MdOutlineCardMembership/>
-                                Become a Member
-                            </Link>
-                            <Link to='/volunteer' className="boardmembers__iconContainer">
-                                <MdVolunteerActivism/>
-                                Be a Volunteer
-                            </Link>
-                        </div>
-                    </aside>
-              </div>
-           </section>
-           <section className="history">
+            </section> 
+            <section className="history">
               <div className="container">
                   <div className="history__content">
                         <div className="history__header">
                             <FaLeaf/>
-                            <h2>Our History</h2>
+                            <h3>Our History</h3>
                             <div className="dividerBar"></div>
                         </div>
                         <div className="history__body">
@@ -210,6 +112,72 @@ export default function About() {
                         </div>
                   </div>
               </div>                     
+           </section>
+           <section className="boardmembers">
+               <div className="boardmembers__header">
+                    <StaticImage
+                        className='boardmembers__img'
+                        src="../images/walterdale-bridge.jpg"
+                        alt="an autumn photo of the Walterdale Bridge in Edmonton"
+                    />
+                    <div className="boardmembers__overlay">
+                        <h2>Our Community</h2>
+                       
+                    </div>
+               </div>
+               <aside className="gallery">
+                <div className="gallery-slider">
+                    {aboutGallery.map((obj, index)=> {
+                        return (
+                            <GatsbyImage 
+                                image={obj.galleryImage.asset.gatsbyImageData}
+                                alt={obj.galleryImage.alt}
+                                className="gallery__img"
+                            />
+                        )
+                    })}
+                </div>           
+            </aside>   
+              <div className="container">
+                    <aside className="boardmembers__executive">
+                        <h3>Our ENPS Board</h3>
+                        <div className="boardmembers__container">
+                            {boardExecutive.map((obj, index) => {
+                                return (
+                                    <div className="profilecard" key={obj.id}>
+                                        <div className="img__container">
+                                        <GatsbyImage 
+                                            image={obj.profileImage.asset.gatsbyImageData}
+                                            alt={obj.profileImage.alt}
+                                            className="profilecard__img"
+                                        />
+                                        </div>
+                                        <div className="profilecard__body">
+                                            <h5>{obj.title}</h5>
+                                            <p>{obj.name}</p>
+                                        </div>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </aside>
+                    <aside className="boardmembers__icons">
+                        <div className="boardmembers__iconsHeader">
+                            <h4>Interested in Joining Our Community?</h4>
+                            <IoIosPeople/>              
+                        </div>
+                        <div className="boardmembers__iconMenu">
+                            <Link to='/membership' className="boardmembers__iconContainer">
+                                <MdOutlineCardMembership/>
+                                Become a Member
+                            </Link>
+                            <Link to='/volunteer' className="boardmembers__iconContainer">
+                                <MdVolunteerActivism/>
+                                Be a Volunteer
+                            </Link>
+                        </div>
+                    </aside>
+              </div>
            </section>
         </>
     )
