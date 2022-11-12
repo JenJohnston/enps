@@ -3,6 +3,7 @@ import { graphql, useStaticQuery, Link } from 'gatsby'
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 
 import Seo from "../components/seo"
+import PortableTextHandler from "../components/PortableTextHandler.jsx";
 
 import { FaLeaf } from 'react-icons/fa'
 import { IoIosPeople } from 'react-icons/io'
@@ -50,12 +51,20 @@ export default function About() {
             }
           }
         }
+        allSanityBoardReport {
+            nodes {
+              title
+              id
+              _rawBody
+            }
+          }
       }
     `)
 
     const aboutBanner = data.allSanityAboutBanner.nodes[0].bannerImage
     const aboutGallery = data.allSanityAboutSlider.nodes
     const boardExecutive = data.allSanityBoardExecutive.nodes
+    const boardReport = data.allSanityBoardReport.nodes
     
     return (
         <>
@@ -187,13 +196,25 @@ export default function About() {
                             </Link>
                         </div>
                     </aside>
-                    <section className="reports">
-                        <div className="reports__header">
-                            <h3>Reports from the Board</h3>
-                        </div>
-                    </section>
               </div>
            </section>
+           <section className="reports">
+               <div className="container">
+                    <div className="reports__header">
+                        <h3>Reports from the Board</h3>
+                    </div>
+                    <div className="reports__content">
+                        {boardReport.map((obj, idx) => {
+                            return (
+                                <article key={idx}>
+                                    <h5>{obj.title}</h5>
+                                    <PortableTextHandler value={obj._rawBody} />
+                                </article>
+                            )
+                        })}
+                    </div>
+               </div>
+            </section>
         </>
     )
 }
