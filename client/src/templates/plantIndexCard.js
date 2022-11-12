@@ -1,13 +1,11 @@
-import React, { useState, useContext } from "react";
-import { graphql, Link, PageRenderer } from "gatsby";
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import React from "react";
+import { graphql, Link } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
 import Modal from "react-modal";
 import Seo from "../components/seo";
 
 import { CgClose } from "react-icons/cg";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { ModalContext } from "../context/ModalContext";
-import { GiFallingLeaf } from "react-icons/gi";
 import { FaLeaf } from "react-icons/fa";
 
 Modal.setAppElement(`#___gatsby`);

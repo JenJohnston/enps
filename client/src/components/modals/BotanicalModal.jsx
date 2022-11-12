@@ -5,7 +5,6 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import { CgClose } from 'react-icons/cg'
 import { FaLeaf } from 'react-icons/fa'
 import { ModalContext } from '../../context/ModalContext'
-import { nextDay } from 'date-fns'
 
 export default function BotanicalModal() {
 

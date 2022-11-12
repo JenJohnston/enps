@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 
 import Seo from "../components/seo"

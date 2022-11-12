@@ -45,6 +45,9 @@ export default function About() {
                 gatsbyImageData
               }
             }
+            slug {
+                current
+            }
           }
         }
       }
@@ -141,10 +144,17 @@ export default function About() {
               <div className="container">
                     <aside className="boardmembers__executive">
                         <h3>Our ENPS Board</h3>
-                        <div className="boardmembers__container">
+                        <div 
+                            className="boardmembers__container"
+                            id="boardMembers"
+                        >                          
                             {boardExecutive.map((obj, index) => {
                                 return (
-                                    <div className="profilecard" key={obj.id}>
+                                    <Link 
+                                        className="profilecard" 
+                                        key={obj.id}
+                                        to={`/about/${obj.slug.current}`}
+                                    >
                                         <div className="img__container">
                                         <GatsbyImage 
                                             image={obj.profileImage.asset.gatsbyImageData}
@@ -156,9 +166,9 @@ export default function About() {
                                             <h5>{obj.title}</h5>
                                             <p>{obj.name}</p>
                                         </div>
-                                    </div>
+                                    </Link>
                                 )
-                            })}
+                            })}                        
                         </div>
                     </aside>
                     <aside className="boardmembers__icons">

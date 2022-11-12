@@ -172,8 +172,7 @@
     justify-content: center;
   }
 
-  &__executive,
-  &__directors {
+  &__executive {
     margin: 4rem 0;
 
     h3 {
@@ -187,6 +186,11 @@
       display: flex;
       align-items: center;
       gap: 2rem;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--color-primary-lt);
+      }
 
       &__img {
         max-width: 4rem;
@@ -231,14 +235,21 @@
   }
 
   &__container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 2rem;
 
     @include u.breakpoint-min(med) {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-around;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include u.breakpoint-min(lg) {
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 4rem;
+    }
+
+    @include u.breakpoint-min(xl) {
+      grid-template-columns: repeat(5, 1fr);
     }
   }
 

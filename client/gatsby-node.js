@@ -14,6 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const volunteerSingleTemplate = require.resolve('./src/templates/volunteerSingle.js')
     const indexModalTemplate = require.resolve('./src/templates/indexModal.js')
     const plantIndexCardTemplate = require.resolve('./src/templates/plantIndexCard.js')
+    const boardMemberTemplate = require.resolve('./src/templates/boardMember.js')
 
     const { createPage } = actions
     const result = await graphql(`{
@@ -109,6 +110,14 @@ exports.createPages = async ({ graphql, actions }) => {
               }
             }
           }
+          allSanityBoardExecutive {
+            nodes {
+              id
+              slug {
+                current
+              }
+            }
+          }
         }
     `)
 
@@ -120,7 +129,8 @@ exports.createPages = async ({ graphql, actions }) => {
     const events = result.data.allSanityEvent.nodes
     const volunteers = result.data.allSanityVolunteer.nodes
     const wfindex = result.data.allSanityWfIndex.edges
-    const plantCardIndex = result.data.allSanityPlantIndexCard.edges    
+    const plantCardIndex = result.data.allSanityPlantIndexCard.edges
+    const boardMembers = result.data.allSanityBoardExecutive.nodes    
 
     console.log(wfindex)
     // single blog page
@@ -190,6 +200,16 @@ exports.createPages = async ({ graphql, actions }) => {
          }
       })
     })
+
+    // single board member page
+
+    boardMembers.forEach((boardMember) => {
+      createPage({
+          path: `/about/${boardMember.slug.current}`,
+          component: boardMemberTemplate,
+          context: { id: boardMember.id }
+      })
+  })
 
     // news home page
 
