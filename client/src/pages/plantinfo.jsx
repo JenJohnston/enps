@@ -16,61 +16,59 @@ import { FaLongArrowAltRight } from 'react-icons/fa'
 import { MdOutlinePictureAsPdf } from 'react-icons/md'
 import { SiChainlink } from 'react-icons/si'
 
-export default function Plantinfo() {
-
-    const data = useStaticQuery(graphql`
-        query plantInfoQuery {
-            allSanityVendorInfo {
-            nodes {
-                url
-                title
-                phoneNumber
-                id
-                email
-                address
-                _rawBody
+export const PlantInfoQuery = graphql`
+query plantInfoQuery {
+    allSanityVendorInfo {
+    nodes {
+        url
+        title
+        phoneNumber
+        id
+        email
+        address
+        _rawBody
+    }
+    }
+    allSanityGrowSubDocuments {
+        nodes {
+          id
+          title
+          growSubDocumentPdfUpload {
+            asset {
+              url
             }
-            }
-            allSanityGrowSubDocuments {
-                nodes {
-                  id
-                  title
-                  growSubDocumentPdfUpload {
-                    asset {
-                      url
-                    }
-                  }
-                }
-              }
-              allSanityPlantIdentityPdf {
-                nodes {
-                  plantIdentityPdf
-                  id
-                  idendityPdfUpload {
-                    asset {
-                      url
-                    }
-                  }
-                }
-              }
-              allSanityExternalLink {
-                nodes {
-                  id
-                  linkName
-                  linkUrl
-                  _rawDescription
-                }
-              }
+          }
         }
-    `)
+      }
+      allSanityPlantIdentityPdf {
+        nodes {
+          plantIdentityPdf
+          id
+          idendityPdfUpload {
+            asset {
+              url
+            }
+          }
+        }
+      }
+      allSanityExternalLink {
+        nodes {
+          id
+          linkName
+          linkUrl
+          _rawDescription
+        }
+      }
+}
+`
+
+export default function Plantinfo({data}) {
 
     const vendorCards = data.allSanityVendorInfo.nodes
     const additionalReadingDocs = data.allSanityGrowSubDocuments.nodes
     const plantIdentification = data.allSanityPlantIdentityPdf.nodes
     const links = data.allSanityExternalLink.nodes
-
-    console.log(links)
-    
+ 
     const { openPlantDrModal } = useContext(ModalContext)
     const { openSeedGrowModal } = useContext(ModalContext)
     const { openSeedCollModal } = useContext(ModalContext)
