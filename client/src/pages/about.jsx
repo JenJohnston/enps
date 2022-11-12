@@ -187,6 +187,11 @@ export default function About() {
                             </Link>
                         </div>
                     </aside>
+                    <section className="reports">
+                        <div className="reports__header">
+                            <h3>Reports from the Board</h3>
+                        </div>
+                    </section>
               </div>
            </section>
         </>
