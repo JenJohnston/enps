@@ -51,7 +51,7 @@ query plantInfoQuery {
           }
         }
       }
-      allSanityExternalLink {
+      allSanityExternalLink(sort: {fields: linkName, order: ASC) {
         nodes {
           id
           linkName
