@@ -27,21 +27,6 @@ export default {
       ],
     },
     {
-      name: "blogs",
-      title: "Featured Blogs",
-      type: "array",
-      of: [
-        {
-          type: "reference",
-          to: [{ type: "blog" }],
-        },
-      ],
-      validation: (Rule) => [
-        Rule.error("Every Item should be unique").unique(),
-        Rule.required().error("At least one item is required"),
-      ],
-    },
-    {
       name: "events",
       title: "Featured Events",
       type: "array",

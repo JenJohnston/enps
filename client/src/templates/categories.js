@@ -1,4 +1,4 @@
-import React from "react";
+{% comment %} import React from "react";
 import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
@@ -72,4 +72,4 @@ export default function Categories({ data, pageContext }) {
       </section>
     </>
   );
-}
+} {% endcomment %}

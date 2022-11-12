@@ -6,10 +6,9 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 
 // document import
 
-import blog from "./documents/blog.js";
-import category from "./documents/category";
+
 import boardExecutive from "./documents/boardExecutive.js";
-import boardDirector from "./documents/boardDirector.js";
+import boardReports from "./documents/boardReports.js";
 import featured from "./documents/featured.js";
 import event from "./documents/event.js";
 import vendorCard from "././documents/vendorCard.js";
@@ -22,7 +21,6 @@ import springSeedGallery from "./documents/springSeedGallery.js";
 import wfIndex from "./documents/wfIndex.js";
 import plantIndexCard from "./documents/plantIndexCard.js";
 import externalLink from "./documents/externalLink.js";
-import additionalReading from "./documents/additionalReading.js";
 import plantIdentityDocuments from "./documents/plantIdentityDocuments.js";
 import growSubDocuments from "./documents/growSubDocuments.js";
 
@@ -59,13 +57,10 @@ export default createSchema({
     wfIndex,
     plantIndexCard,
     boardExecutive,
-    boardDirector,
-    blog,
-    category,
     externalLink,
     plantIdentityDocuments,
-    additionalReading,
     growSubDocuments,
+    boardReports,
 
     // object schemas
 

@@ -4,10 +4,10 @@ exports.createPages = async ({ graphql, actions }) => {
     const postsPerPage = parseInt(process.env.GATSBY_POST_PER_PAGE )
 
     const newsTemplate = require.resolve('./src/templates/news.js')
-    const blogsTemplate = require.resolve('./src/templates/blogs.js')
-    const blogSingleTemplate = require.resolve('./src/templates/blogSingle.js')
-    const categoriesTemplate = require.resolve('./src/templates/categories.js')
-    const categorySingleTemplate = require.resolve('./src/templates/categorySingle.js')
+    // const blogsTemplate = require.resolve('./src/templates/blogs.js')
+    // const blogSingleTemplate = require.resolve('./src/templates/blogSingle.js')
+    // const categoriesTemplate = require.resolve('./src/templates/categories.js')
+    // const categorySingleTemplate = require.resolve('./src/templates/categorySingle.js')
     const eventsTemplate = require.resolve('./src/templates/events.js')
     const eventSingleTemplate = require.resolve('./src/templates/eventSingle.js')
     const volunteersTemplate = require.resolve('./src/templates/volunteer.js')
@@ -16,16 +16,15 @@ exports.createPages = async ({ graphql, actions }) => {
     const plantIndexCardTemplate = require.resolve('./src/templates/plantIndexCard.js')
     const boardMemberTemplate = require.resolve('./src/templates/boardMember.js')
 
-    const { createPage } = actions
-    const result = await graphql(`{
-        allSanityBlog {
-            nodes {
-              id
-              slug {
-                current
-              }
-            }
-          }
+    /*
+          allSanityBlog {
+                  nodes {
+                    id
+                    slug {
+                      current
+                    }
+                  }
+                }
           allSanityCategory {
             nodes {
               id
@@ -34,6 +33,11 @@ exports.createPages = async ({ graphql, actions }) => {
               }
             }
           }
+    
+    */
+
+    const { createPage } = actions
+    const result = await graphql(`{
           allSanityEvent {
             nodes {
               id
@@ -124,8 +128,8 @@ exports.createPages = async ({ graphql, actions }) => {
     if (result.errors) throw result.errors
 
     const news = result.data.allSanityWildflowerNews.nodes
-    const blogs = result.data.allSanityBlog.nodes
-    const categories = result.data.allSanityCategory.nodes
+    // const blogs = result.data.allSanityBlog.nodes
+    // const categories = result.data.allSanityCategory.nodes
     const events = result.data.allSanityEvent.nodes
     const volunteers = result.data.allSanityVolunteer.nodes
     const wfindex = result.data.allSanityWfIndex.edges
@@ -135,23 +139,23 @@ exports.createPages = async ({ graphql, actions }) => {
     console.log(wfindex)
     // single blog page
 
-    blogs.forEach((blog) => {
-        createPage({
-            path: `/blogs/${blog.slug.current}`,
-            component: blogSingleTemplate,
-            context: { id: blog.id }
-        })
-    })
+    // blogs.forEach((blog) => {
+    //     createPage({
+    //         path: `/blogs/${blog.slug.current}`,
+    //         component: blogSingleTemplate,
+    //         context: { id: blog.id }
+    //     })
+    // })
 
     // single category pages
 
-    categories.forEach((category) => {
-        createPage({
-          path: `/categories/${category.slug.current}`,
-          component: categorySingleTemplate,
-          context: { id: category.id }
-        })
-    })
+    // categories.forEach((category) => {
+    //     createPage({
+    //       path: `/categories/${category.slug.current}`,
+    //       component: categorySingleTemplate,
+    //       context: { id: category.id }
+    //     })
+    // })
 
     // single event pages
 
@@ -261,34 +265,34 @@ exports.createPages = async ({ graphql, actions }) => {
 
      // blog home page
 
-     const totalBlogPages = Math.ceil(blogs.length / postsPerPage)
-     Array.from({ length: totalBlogPages }).forEach((_, index) => {
-       createPage({
-         path: index === 0 ? '/blogs' : `/blogs/${index + 1}`,
-         component: blogsTemplate,
-         context: {
-             limit: postsPerPage,
-             offset: index * postsPerPage,
-             numberOfPages: totalBlogPages,
-             currentPage: index + 1,
-         },
-       })
-     })
+    //  const totalBlogPages = Math.ceil(blogs.length / postsPerPage)
+    //  Array.from({ length: totalBlogPages }).forEach((_, index) => {
+    //    createPage({
+    //      path: index === 0 ? '/blogs' : `/blogs/${index + 1}`,
+    //      component: blogsTemplate,
+    //      context: {
+    //          limit: postsPerPage,
+    //          offset: index * postsPerPage,
+    //          numberOfPages: totalBlogPages,
+    //          currentPage: index + 1,
+    //      },
+    //    })
+    //  })
 
      // categories home page
 
-     const totalCategoryPages = Math.ceil(categories.length / postsPerPage)
-     Array.from({ length: totalCategoryPages}).forEach((_, index) => {
-        createPage({
-            path: index === 0 ? '/categories' : `/categories/${index + 1}`,
-            component: categoriesTemplate,
-            context: {
-            limit: postsPerPage,
-            offset: index * postsPerPage,
-            numberOfPages: totalCategoryPages,
-            currentPage: index + 1,
-            },
-        })
-     })
+    //  const totalCategoryPages = Math.ceil(categories.length / postsPerPage)
+    //  Array.from({ length: totalCategoryPages}).forEach((_, index) => {
+    //     createPage({
+    //         path: index === 0 ? '/categories' : `/categories/${index + 1}`,
+    //         component: categoriesTemplate,
+    //         context: {
+    //         limit: postsPerPage,
+    //         offset: index * postsPerPage,
+    //         numberOfPages: totalCategoryPages,
+    //         currentPage: index + 1,
+    //         },
+    //     })
+    //  })
 
 }
