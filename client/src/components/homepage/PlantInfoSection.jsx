@@ -45,7 +45,7 @@ export default function BlogsSection() {
                     </div>
                 </div>
                 <div className="plantInfo__link" data-aos="zoom-in-up">
-                  <Link to='/blogs'>View our Index</Link>
+                  <Link to='/wfindex'>View our Index</Link>
                   <GiFallingLeaf/>
                 </div>
             </div>
