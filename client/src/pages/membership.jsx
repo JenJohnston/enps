@@ -68,7 +68,7 @@ export default function Membership() {
                     <IoIosPeople className='membership__icon'/>
                     <div className="membership__body">
                         <h3>Be Part of a Growing and Active Community</h3>
-                        <p><span>For Only $20</span> Your lifetime membership gets you access to benefits, new friends and new opportunities.  Purchase yours today!</p>
+                        <p> Join ENPS with a <span>$20 lifetime membership</span> and reap the benefits. Meet new friends, participate in fulfilling activities and discover fascinating natural areas in the Edmonton region.</p>
                         <p>Please e-transfer your payment to enpssales@gmail.com or provide payment at an event.</p>
                         <ul className="membership__list">
                             <li><FaLeaf/> Make New Friends</li>
@@ -110,7 +110,7 @@ export default function Membership() {
                                 {...register("name")} 
                                 required
                             />
-                            <label htmlFor="name">Name (First, Last) </label>
+                            <label htmlFor="name">Name</label>
                         </div>
                         <div className="formGroup">
                             <input type="email" name="email" {...register("email")} required/>

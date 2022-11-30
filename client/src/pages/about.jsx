@@ -88,6 +88,7 @@ export default function About() {
                         <div className="mission__header">
                             <FaLeaf/>
                             <h2>Our Mission</h2>
+                            <h5>To promote the conservation of the genetic diversity of plants native to the Edmonton area.</h5>
                             <div className="dividerBar"></div>
                         </div>
                         <div className="mission__body">
@@ -152,7 +153,7 @@ export default function About() {
             </aside>   
               <div className="container">
                     <aside className="boardmembers__executive">
-                        <h3>Our ENPS Board</h3>
+                        <h3>Our Board</h3>
                         <div 
                             className="boardmembers__container"
                             id="boardMembers"
@@ -201,7 +202,7 @@ export default function About() {
            <section className="reports">
                <div className="container">
                     <div className="reports__header">
-                        <h3>Reports from the Board</h3>
+                        <h3>Board Reports</h3>
                     </div>
                     <div className="reports__content">
                         {boardReport.map((obj, idx) => {

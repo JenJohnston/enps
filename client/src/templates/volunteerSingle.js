@@ -61,12 +61,12 @@ export default function VolunteerSingle({ data }) {
           <PortableTextHandler value={volunteer._rawBody} />
           <aside className='volunteerSingle__menu'>
             <h5>Project Leader: {volunteer.projectLeader}</h5>
-            <Link to={volunteer.contactEmail}>
+            <a href={`mailto:${volunteer.contactEmail}`}>
               <IoMail />: {volunteer.contactEmail}
-            </Link>
-            <Link to={volunteer.contactPhone}>
+            </a>
+            <a href={`tel:${volunteer.contactPhone}`}>
               <FaPhoneAlt />: {volunteer.contactPhone}
-            </Link>
+            </a>
           </aside>
           <div className='volunteerSingle__link'>
             <Link to='/volunteer'>Return to Volunteer Page</Link>

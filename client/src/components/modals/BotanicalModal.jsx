@@ -54,26 +54,28 @@ export default function BotanicalModal() {
                     <div className='commonIndexContent__header'>
                         <FaLeaf />
                         <h2>Botanical Name Index</h2>
-                        <h5>Click On The Plant Link to Bring Up More Detailed Information</h5>
+                        <h5>Click on the plant name for detailed information</h5>
                         <div className='dividerBar'></div>
                     </div>
-                    {botanicalIndex.map((obj, index) => {
-                        return (
-                            <Link 
-                                to={`/wfindex/${obj.slug.current}`} 
-                                className="commonIndexContent__link" key={index}
-                                tabIndex={0}
-                            >
-                                <GatsbyImage
-                                    image={obj.wildflowerImage.asset.gatsbyImageData}
-                                    alt={obj.wildflowerImage.alt}
-                                    className="commonIndexContent__img"
-                                />
-                                {obj.botanicalName}
-                            </Link>
-                            
-                        )
-                    })}
+                    <div className="indexGrid">
+                        {botanicalIndex.map((obj, index) => {
+                            return (
+                                <Link 
+                                    to={`/wfindex/${obj.slug.current}`} 
+                                    className="commonIndexContent__link botanicalName" key={index}
+                                    tabIndex={0}
+                                >
+                                    <GatsbyImage
+                                        image={obj.wildflowerImage.asset.gatsbyImageData}
+                                        alt={obj.wildflowerImage.alt}
+                                        className="commonIndexContent__img"
+                                    />
+                                    {obj.botanicalName}
+                                </Link>
+                                
+                            )
+                        })}
+                    </div>
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ export default function EventCard({path, title, excerpt, date, location}) {
     
 
     return (
-        <aside className='card' data-aos="flip-up">
+        <aside className='card'>
             <div className="card__header">
                 <MdEventAvailable/>
                 {date && (
@@ -29,7 +29,6 @@ export default function EventCard({path, title, excerpt, date, location}) {
                     <PortableTextHandler value={excerpt}/>
                 </div>
                 <div className="card__links">
-                    <Link to={`/events/${path}#eventForm`}><AiOutlineForm className='mailIcon'/>Register</Link>
                     <Link to={`/events/${path}`}>View Event <FaLongArrowAltRight className='arrowIcon'/></Link>
                 </div>
             </div>

@@ -54,7 +54,7 @@ export default function Volunteer({ data, pageContext }) {
         <div className='volunteerHero__overlay'>
           <div className='container'>
             <h1>Volunteer</h1>
-            <h5>Get Involved in Some of Our Many Projects!</h5>
+            <h5>Get involved in some of our many projects!</h5>
           </div>
         </div>
       </section>
@@ -63,17 +63,17 @@ export default function Volunteer({ data, pageContext }) {
           <FaLeaf />
           <h2>Get Involved</h2>
           <h5>
-            We hope that you will join us in projects that will promote the
-            conservation of plants native to the Edmonton area. These projects
-            provide opportunities to learn lots about plants, hang out with a
-            lovely bunch of people and possibly take home free seedlings/seeds.
-            Also, we do have a gas allowance for projects outside of Edmonton
-            for those who need it.
+            We hope that you will join us in projects that promote the
+            conservation of plants native to the Edmonton area. You’ll learn
+            lots about plants, hang out with a lovely bunch of people, and may
+            sometimes get to take home free seedlings and seeds. We also offer a
+            gas allowance for volunteers working on projects outside Edmonton
+            City limits.
           </h5>
           <h5>
-            Please email us at{" "}
+            Contact us at{" "}
             <a href='mailto:enpsvolunteer@gmail.com'>enpsvolunteer@gmail.com</a>{" "}
-            for more information and to be added to our email list.
+            for more information and to be added to our volunteer email list.
           </h5>
           <div className='dividerBar'></div>
         </div>

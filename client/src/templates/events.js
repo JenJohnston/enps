@@ -11,7 +11,7 @@ import { FaLeaf } from "react-icons/fa";
 export const EventsQuery = graphql`
   query EventQuery($limit: Int!, $offset: Int!) {
     allSanityEvent(
-      sort: { fields: eventDate, order: ASC }
+      sort: { fields: eventDate, order: DESC }
       limit: $limit
       skip: $offset
     ) {
@@ -44,7 +44,7 @@ export default function Events({ data, pageContext }) {
         <div className='eventsHero__overlay'>
           <div className='container'>
             <h1>Events</h1>
-            <h5>Register Today! We Would Love To See You</h5>
+            <h5>Register today! We would love to see you</h5>
           </div>
         </div>
       </section>
@@ -52,7 +52,7 @@ export default function Events({ data, pageContext }) {
         <div className='events__header'>
           <FaLeaf />
           <h2>What's Happening</h2>
-          <h5>Growing our Community through Inspiration and Connection</h5>
+          <h5>Growing our community through connection</h5>
           <div className='dividerBar'></div>
         </div>
         <div className='events__content'>

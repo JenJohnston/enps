@@ -68,29 +68,31 @@ export default function CommonModal() {
             </button>
             <div className="commonIndexContent">
                 <div className="container">
-                <div className='commonIndexContent__header'>
-                    <FaLeaf />
-                    <h2>Common Name Index</h2>
-                    <h5>Click On The Plant Link to Bring Up More Detailed Information</h5>
-                    <div className='dividerBar'></div>
-                </div>
-                    {commonIndex.map((obj, index) => {
-                        return (
-                            
-                             <Link 
-                                to={`/wfindex/${obj.slug.current}`} 
-                                className="commonIndexContent__link" key={index}
-                                tabIndex={0}
-                            >
-                                <GatsbyImage
-                                    image={obj.wildflowerImage.asset.gatsbyImageData}
-                                    alt={obj.wildflowerImage.alt}
-                                    className="commonIndexContent__img"
-                                />
-                                {obj.commonName}
-                            </Link>                   
-                        )
-                    })}
+                    <div className='commonIndexContent__header'>
+                        <FaLeaf />
+                        <h2>Common Name Index</h2>
+                        <h5>Click on the plant name for detailed information</h5>
+                        <div className='dividerBar'></div>
+                    </div>
+                    <div className="indexGrid">
+                        {commonIndex.map((obj, index) => {
+                                return (
+                                    
+                                    <Link 
+                                        to={`/wfindex/${obj.slug.current}`} 
+                                        className="commonIndexContent__link" key={index}
+                                        tabIndex={0}
+                                    >
+                                        <GatsbyImage
+                                            image={obj.wildflowerImage.asset.gatsbyImageData}
+                                            alt={obj.wildflowerImage.alt}
+                                            className="commonIndexContent__img"
+                                        />
+                                        {obj.commonName}
+                                    </Link>                   
+                                )
+                        })}
+                    </div>
                 </div>
             </div>
         </div>

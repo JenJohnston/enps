@@ -86,6 +86,7 @@ export default function Footer() {
                         <input className='honeyPot' type="text" name="honey" id="honeyPot" value={honeyPot} onChange={event => setHoneyPot(event.target.value)}/>
                         <label className='honeyPot' htmlFor="honey"  aria-label='hidden' aria-hidden="true"></label>
                     </div>
+                    <input type="hidden" name="subject" value="Newsletter Subscription"></input>
                     <input placeholder="e.g. example@email.com" className='formInput' type="email" {...register("email")} required/>
                     <div className="formGroup footerSubmit">
                         

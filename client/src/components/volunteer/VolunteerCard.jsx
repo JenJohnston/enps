@@ -25,13 +25,12 @@ export default function VolunteerCard({title, path, image, excerpt, email, phone
                     <PortableTextHandler value={excerpt}/>
                 </div>
                 <div className="card__media">
-                    <p>Contact: {contact}</p>
+                    <p>Leader: {contact}</p>
                     <a href={`mailto:${email}`}><IoMail/>: {email}</a>
-                    <a href={`tel:${phoneNumber}`}><FaPhoneAlt/>: {phoneNumber}</a>
                 </div>
                 <div className="card__link">
                     <div className="linkbar"></div>
-                    <Link to={path}>Explore More <FaLongArrowAltRight/></Link>
+                    <Link to={path}>Project Details <FaLongArrowAltRight/></Link>
                 </div>
             </div>
         </aside>

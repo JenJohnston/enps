@@ -78,7 +78,7 @@ export default function Wfindex({data}) {
                 <div className="plantIndexHero__overlay">
                     <div className="container">
                         <h1>Plant Index</h1>
-                        <h5>Exploring native plants in Edmonton</h5>
+                        <h5> Explore plants native to the Edmonton area</h5>
                     </div>
                 </div>
             </section>
@@ -114,7 +114,7 @@ export default function Wfindex({data}) {
                     <h3>Rampant Wildflowers</h3>
                     <div className="dividerBar"></div>
                     <p>These native wildflowers are all beautiful with their own unique characteristics. However, they will spread rapidly and tend to take over large areas of the garden.</p>
-                    <p>These plants are usually those that send out underground runners, or rhizomes, which rapidly produce new plants. Some species do not spread by rhizomes but they do self-seed abundantly. However, there can still be a place for these plants; for example, in places where other plants have a hard time growing, where a mass planting is needed, or in areas (like schoolyards) where high traffic might eliminate some of the less robust plants. If you want to include these rampant wildflowers in your garden, but you don't want to deal with their wandering habits, contain the patch by encircling it with 15 cm (6") wide lawn edging. Bury the lawn edging so that only a couple of centimetres are above ground. Here is the list of plants and the methods by which they spread.</p>
+                    <p>Rampant growers are usually those that send out underground runners, or rhizomes, which rapidly produce new plants. Some species do not spread by rhizomes but they do self-seed abundantly. There can still be a place for these plants in the landscape. For example, in places where other plants have a hard time growing, where a mass planting is needed, or in areas (like schoolyards) where high traffic might eliminate some of the less robust plants. If you want to include these rampant wildflowers in your garden, but you don't want to deal with their wandering habits, contain the patch by encircling it with 15 cm (6") wide lawn edging. Bury the lawn edging so that only a couple of centimetres are above ground. See below for the list of plants and the methods by which they spread.</p>
                 </div>
                 <div className="wfRampant__content">
                     <div className="container wfRampant__gallery">

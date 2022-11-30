@@ -121,7 +121,7 @@ export default function Plantinfo({data}) {
                 <div className="container">
                     <div className="modalMenu__header">
                         <FaLeaf/>
-                        <h2>Growing Tips</h2>
+                        <h2>Grow</h2>
                         <div className="dividerBar"></div>
                     </div>
                     <div className="modalMenu__content">
@@ -173,32 +173,10 @@ export default function Plantinfo({data}) {
                     </div>
                 </div>
             </section>
-            <section className="additionalInfo">
-                <div className="container">
-                    <div className="additionalInfo__header">
-                        <h3>Additional Reading</h3>
-                    </div>
-                    <div className="additionalInfo__content">
-                        {additionalReadingDocs.map((obj, idx) => {
-                            return (
-                                <a 
-                                    href={obj.growSubDocumentPdfUpload.asset.url}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    key={obj.id}
-                                >
-                                    <MdOutlinePictureAsPdf/>
-                                    {obj.title}
-                                </a>
-                            )
-                        })}
-                    </div>
-                </div>
-            </section>
             <section className="plantIdentity">
                 <div className="container">
                     <div className="plantIdentity__header">
-                        <h3>Plant Identification</h3>
+                        <h3>Identify</h3>
                     </div>
                     <div className="plantIdentity__content">
                         {plantIdentification.map((obj, idx) => {
@@ -215,6 +193,28 @@ export default function Plantinfo({data}) {
                             )
                         })}    
                     </div>   
+                </div>
+            </section>
+            <section className="additionalInfo">
+                <div className="container">
+                    <div className="additionalInfo__header">
+                        <h3>Read</h3>
+                    </div>
+                    <div className="additionalInfo__content">
+                        {additionalReadingDocs.map((obj, idx) => {
+                            return (
+                                <a 
+                                    href={obj.growSubDocumentPdfUpload.asset.url}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    key={obj.id}
+                                >
+                                    <MdOutlinePictureAsPdf/>
+                                    {obj.title}
+                                </a>
+                            )
+                        })}
+                    </div>
                 </div>
             </section>
             <section className="links">
@@ -245,9 +245,9 @@ export default function Plantinfo({data}) {
                 <div className="container">
                     <div className="plantCards__header">
                         <FaLeaf/>
-                        <h3>Where To Source</h3>
+                        <h3>Source</h3>
                         <div className="dividerBar"></div>
-                        <p>Below is a list of some vendors in and around the Edmonton area where you can purchase wildflower seeds and products.  The Edmonton Native Plant Society does not endorse these vendors nor do we have any agreement with them. </p>
+                        <p>Below is a list of vendors in the Edmonton region where you can purchase locally-sourced seeds, plants, and/or ENPS products.</p>
                     </div>
                     <div className="plantCards__content">
                         {vendorCards.map((obj, index) => {
@@ -261,11 +261,6 @@ export default function Plantinfo({data}) {
                                         <div className="plantCard__content">
                                             <PortableTextHandler value={obj._rawBody}/>
                                         </div>
-                                        <a 
-                                            target="_blank"
-                                            rel="noreferrer" 
-                                            href={obj.url} className='plantCard__url'
-                                        >View Company Site <FaLongArrowAltRight/></a>
                                     </div>
                                 </article>
                             )

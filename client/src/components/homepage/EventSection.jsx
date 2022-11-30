@@ -32,7 +32,7 @@ export default function EventSection() {
         <section className='homeEvents'>
             <div className="container">
                 <div className="homeEvents__header">
-                    <h2>Upcoming Events</h2>
+                    <h2>Events</h2>
                 </div>
                 <div className="flexContainer">
                     <EventCards events={eventsFeature}/>

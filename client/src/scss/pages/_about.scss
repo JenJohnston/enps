@@ -75,6 +75,14 @@
       margin-bottom: var(--space-2xs);
     }
 
+    h5 {
+      margin: 0 auto;
+      margin-top: 0.35rem;
+      margin-bottom: 0.85rem;
+      max-width: 48rem;
+      text-align: center;
+    }
+
     .dividerBar {
       height: 4px;
       width: 6rem;
@@ -249,7 +257,11 @@
     }
 
     @include u.breakpoint-min(xl) {
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .profilecard {
+      justify-self: center;
     }
   }
 

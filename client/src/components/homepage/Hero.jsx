@@ -26,7 +26,7 @@ export default function Hero() {
                     </div>
                     <aside className="hero__about">
                         <h2 className='hero__aboutHeading'>Who we Are</h2>
-                        <p className='hero__subText'>The Edmonton Native Plant Group is an informal group of people in the Edmonton area who like to grow native plants and promote their use in gardening and landscaping to a wider public. We take part in a number of projects, in cooperation with the appropriate municipal authorities, which aim to enrich the natural flora of various parks and natural areas. </p>
+                        <p className='hero__subText'>The Edmonton Native Plant Society (ENPS) is a group of people in the Edmonton, Alberta area who like to grow native plants and promote their use in gardening and landscaping. ENPS members participate in restoration activities, sell native plants and seeds, and maintain several demonstration beds. </p>
                         <div className="hero__logoBar">
                             <div className="hero__logoContainer" data-aos="zoom-in">
                                 <GiPlantWatering className="hero__svg blue" />

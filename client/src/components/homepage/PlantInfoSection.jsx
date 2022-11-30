@@ -11,8 +11,8 @@ export default function BlogsSection() {
         <section className='plantInfo'>
             <div className="container">
                 <div className="plantInfo__header">
-                    <h2>Edmontons Native Plants</h2>
-                    <h5>Whether its discovering new plants or learning about plant care, we have you covered.</h5>
+                    <h2>Edmonton's Native Plants</h2>
+                    <h5>Whether it’s discovering new plants, or learning how to grow, we have you covered.</h5>
                 </div>
                 <div className="flexContainer">
                     <div className="plantInfo__images" >
@@ -41,7 +41,7 @@ export default function BlogsSection() {
                         />
                     </div>
                     <div className="plantInfo__content">
-                        <p>Our comprehensive index provides you with the latest information on native plants growing in and around the Edmonton area.  Also look at our <Link to="/plantinfo">Growing Tips</Link> For some detailed advice on everything from seeding, growing and purchashing native plants.</p>
+                        <p>Our comprehensive <Link to="/wfindex">plant index</Link> provides you with the latest information on a wide variety of local native plants that grow in the Edmonton area.  Be sure to explore our <Link to="/plantinfo">plant info</Link> for detailed advice on how to grow, identify and select locally sourced native plants.</p>
                     </div>
                 </div>
                 <div className="plantInfo__link" data-aos="zoom-in-up">
