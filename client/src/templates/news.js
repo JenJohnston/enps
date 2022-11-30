@@ -52,7 +52,7 @@ export default function News({ data, pageContext }) {
         <div className='newsHero__overlay'>
           <div className='container'>
             <h1>The WildFlower News</h1>
-            <h5>Growing Natures Garden</h5>
+            <h5>Growing nature's garden</h5>
           </div>
         </div>
       </section>
@@ -62,8 +62,7 @@ export default function News({ data, pageContext }) {
             <FaLeaf />
             <h2>Monthly Archives</h2>
             <h5>
-              Stay current on gardening tips for native plants, up-coming
-              events, news and articles
+              Catch up on what we’ve been doing, reading, and writing about.
             </h5>
             <div className='dividerBar'></div>
           </div>

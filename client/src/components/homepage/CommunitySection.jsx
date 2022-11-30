@@ -13,7 +13,7 @@ export default function CommunitySection(props) {
             <div className="container">
                 <div className="community__header">
                     <h2>Be A Part Of Our Community</h2>
-                    <h5>Join our growing community by purchasing a low cost lifetime membership {'(Only $20!!)'} or get involved and volunteer in some of our many projects.</h5>
+                    <h5>Join our growing community by purchasing a low cost lifetime membership or get involved and volunteer in some of our many projects.</h5>
                 </div>
                 <div className="flexContainer">
                     <div className="card card-l" data-aos="fade-right">
@@ -22,10 +22,10 @@ export default function CommunitySection(props) {
                                 <BsPersonPlusFill className='card__logo'/>
                             </div>
                             <div className="card__inner card-l-innerBG">
-                                <p>Become a <span>Life Time</span> Member</p>
+                                <p>Become a <span>Lifetime</span> Member</p>
                                 <ul className='card__list'>
                                     <li><FaLeaf/>Meet New Friends</li>
-                                    <li><FaLeaf/>Learn About Gardening</li>
+                                    <li><FaLeaf/>Discover Native Plants</li>
                                     <li><FaLeaf/>Attend Cool Events</li>
                                 </ul>
                                 <Link to="/membership" className='card__link'>Sign Up</Link>

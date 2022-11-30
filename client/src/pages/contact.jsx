@@ -49,6 +49,10 @@ export default function Contact() {
             return false
         }    
     }
+
+    const handleRefresh = () => {
+        window.location.reload()
+    }
     
 
     return (
@@ -62,8 +66,8 @@ export default function Contact() {
                 </div>
                 <div className="contact__content">
                     <div className="contact__body">
-                        <h3>Do You Have A Question?</h3>
-                        <p>Ask anything from native plant knowledge to advice, volunteering or memberships, reach out to our Board and we will be happy to help you.</p>
+                        <h3>Reach out to our Board with your questions!</h3>
+                        <p>We will be happy to help you with anything related to native plants, volunteering, stewardship, or the information you find on our website.</p>
                         <div className="contact__media">
                             <a href="https://www.facebook.com/groups/408066590219">
                                 <FaFacebook/>
@@ -101,7 +105,7 @@ export default function Contact() {
                         </div>
                         <div className="formGroup">
                             <span>{result}</span>
-                            <input type="submit"  className='formSubmit'/>
+                            <input type="submit" onClick={handleRefresh} className='formSubmit'/>
                         </div>
                     </form>
                 </div>

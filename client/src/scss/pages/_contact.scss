@@ -51,9 +51,15 @@
 
     h3 {
       margin-bottom: var(--space-l);
+      max-width: 34rem;
       text-align: center;
       margin-top: 2rem;
       font-family: var(--primary-font-stack);
+
+      @include u.breakpoint-min(xl) {
+        text-align: left;
+        max-width: 36rem;
+      }
     }
 
     p {
