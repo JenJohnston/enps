@@ -35,7 +35,7 @@ export default function About() {
             id
           }
         }
-        allSanityBoardExecutive {
+        allSanityBoardExecutive(sort: {fields: boardID, order: ASC}) {
           nodes {
             id
             name

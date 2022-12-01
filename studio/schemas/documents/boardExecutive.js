@@ -12,6 +12,11 @@ export default {
       type: "string",
     },
     {
+      name: "boardID",
+      title: "Board ID",
+      type: "number"
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",

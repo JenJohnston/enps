@@ -24,7 +24,9 @@ import plantIndexCard from "./documents/plantIndexCard.js";
 import externalLink from "./documents/externalLink.js";
 import plantIdentityDocuments from "./documents/plantIdentityDocuments.js";
 import growSubDocuments from "./documents/growSubDocuments.js";
-
+import ourHistory from "./documents/ourHistory.js";
+import ourMission from "./documents/ourMission.js";
+import memberDetails from "./documents/memberDetails.js";
 
 
 
@@ -60,6 +62,9 @@ export default createSchema({
     plantIndexCard,
     boardExecutive,
     boardReports,
+    ourMission,
+    ourHistory,
+    memberDetails,
     externalLink,
     plantIdentityDocuments,
     growSubDocuments,
