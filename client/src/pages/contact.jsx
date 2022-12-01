@@ -76,6 +76,7 @@ export default function Contact() {
                                 <IoMail/>
                             </a>
                         </div>
+                        <p>Address: P.O. Box 99561, Edmonton AB T5B 0E1</p>
                     </div>
                     <form onSubmit={handleSubmit(onSubmit)} className="contact__form">
                         <div className="formGroup honeyPot">
