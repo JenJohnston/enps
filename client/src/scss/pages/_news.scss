@@ -93,9 +93,19 @@
   }
 
   &__content {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     align-items: center;
     gap: 4rem;
+    width: min(100% - 32px, 1440px);
+    max-width: 1440px;
+    margin-inline: auto;
+    @include u.breakpoint-min(med) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include u.breakpoint-min(lg) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 }

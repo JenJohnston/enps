@@ -213,14 +213,14 @@ exports.createPages = async ({ graphql, actions }) => {
 
     // news home page
 
-    const totalNewsPages = Math.ceil(news.length / postsPerPage )
+    const totalNewsPages = Math.ceil(news.length / 12 )
     Array.from({ length: totalNewsPages }).forEach((_, index) => {
         createPage({
             path: index === 0 ? '/news' : `/news/${index + 1}`,
             component: newsTemplate,
             context: {
-                limit: postsPerPage,
-                offset: index * postsPerPage,
+                limit: 12,
+                offset: index * 12,
                 numberOfPages: totalNewsPages,
                 currentPage: index + 1,
             },

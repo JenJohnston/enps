@@ -74,7 +74,7 @@ export default function News({ data, pageContext }) {
             baseURL='/news'
           />
         )}
-        <div className='news__content container'>
+        <div className='news__content'>
           <WFCards wfcards={wfNews} />
         </div>
         {numberOfPages > 1 && (

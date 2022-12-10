@@ -90,31 +90,43 @@
     position: relative;
     color: var(--background-color);
     border: none;
-    max-width: 28rem;
+    width: 20rem;
+    aspect-ratio: 1;
     &__img {
-      max-width: 28rem;
+      max-width: 6.75rem;
       aspect-ratio: 1;
       margin-bottom: -2rem;
+      border-radius: 0.85rem;
+      box-shadow: var(--txt-shadow-dk);
     }
 
     &__header {
       position: relative;
-      width: fit-content;
-      margin-bottom: 2rem;
+      top: 15%;
+      left: -8%;
     }
 
     &__title {
       font-family: var(--primary-font-stack);
-      font-size: var(--step-2);
+      font-size: var(--step-0);
       background-color: var(--color-primary);
       display: block;
       padding: var(--space-2xs) 1.5rem;
       position: absolute;
-      right: 5%;
+      width: 80%;
+      right: 2%;
+      bottom: 15%;
     }
 
     &__content {
-      padding: 1rem;
+      padding: 8rem 1rem;
+      width: 20rem;
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-height: fit-content;
+
       background: rgb(155, 155, 33);
       background-image: linear-gradient(
         347deg,
@@ -123,10 +135,13 @@
         rgba(84, 104, 81, 1) 100%
       );
       p {
-        font-size: var(--step-0);
+        font-size: var(--step--1);
         line-height: 1.15;
-        margin-bottom: 4rem;
         text-shadow: var(--txt-shadow-dk);
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
       }
     }
 
@@ -135,7 +150,9 @@
       grid-template-columns: 1;
       grid-template-rows: 1;
       align-items: center;
-
+      align-self: flex-end;
+      position: absolute;
+      bottom: 5%;
       .linkbar {
         height: var(--step-0);
         width: 3.4rem;
@@ -150,28 +167,6 @@
         grid-column: 1;
         margin-left: 0.5rem;
         text-shadow: var(--txt-shadow-dk);
-      }
-    }
-
-    @include u.breakpoint-min(xl) {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      max-width: 100%;
-
-      &__title {
-        top: 3rem;
-        right: -30%;
-        height: fit-content;
-        z-index: 5;
-      }
-
-      &__content {
-        position: relative;
-        padding-left: 2rem;
-        top: 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
       }
     }
   }

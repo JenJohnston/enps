@@ -195,6 +195,28 @@
       }
     }
   }
+
+  .card {
+    @include u.breakpoint-min(lg) {
+      flex-direction: row;
+      gap: 2rem;
+      justify-content: flex-start;
+    }
+
+    @include u.breakpoint-min(xl) {
+      display: flex;
+    }
+    &__header {
+      justify-content: center;
+    }
+
+    &__img {
+      aspect-ratio: 1;
+      max-width: 28rem;
+      border-radius: 0.85rem;
+      box-shadow: var(--txt-shadow-dk);
+    }
+  }
 }
 
 //Events Section

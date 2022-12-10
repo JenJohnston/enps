@@ -104,8 +104,9 @@
     @include u.breakpoint-min(xl) {
       flex-direction: row;
       align-items: start;
+      justify-content: center;
 
-      p {
+      div {
         flex: 1;
       }
     }
