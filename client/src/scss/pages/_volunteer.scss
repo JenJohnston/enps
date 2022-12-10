@@ -102,5 +102,11 @@
     flex-direction: column;
     align-items: center;
     gap: 4rem;
+
+    @include u.breakpoint-min(lg) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 }

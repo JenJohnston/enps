@@ -614,7 +614,11 @@
   .card {
     background-color: transparent;
     border: none;
-    max-width: 32rem;
+    max-width: 36rem;
+
+    @include u.breakpoint-min(med) {
+      width: 36rem;
+    }
     &__header {
       max-width: 32rem;
     }
@@ -622,6 +626,10 @@
     &__img {
       aspect-ratio: 1;
       width: 100%;
+
+      @include u.breakpoint-min(med) {
+        max-width: 16rem;
+      }
     }
 
     &__body {
@@ -648,9 +656,19 @@
 
     &__content {
       margin: 2rem 0;
+      @include u.breakpoint-min(med) {
+        padding-top: 2rem;
+      }
 
       p {
         font-size: var(--step-0);
+
+        @include u.breakpoint-min(med) {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 4;
+          overflow: hidden;
+        }
       }
     }
 
@@ -709,7 +727,7 @@
       }
     }
 
-    @include u.breakpoint-min(lg) {
+    @include u.breakpoint-min(med) {
       display: grid;
       grid-template-columns: 0.75fr 1fr;
       max-width: 100%;
