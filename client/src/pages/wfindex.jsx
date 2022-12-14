@@ -108,20 +108,6 @@ export default function Wfindex({data}) {
                     </div>
                 </div>
             </section>
-            <section className='wfRampant'> 
-                <div className="wfRampant__header container">
-                    <FaLeaf/>
-                    <h3>Rampant Wildflowers</h3>
-                    <div className="dividerBar"></div>
-                    <p>These native wildflowers are all beautiful with their own unique characteristics. However, they will spread rapidly and tend to take over large areas of the garden.</p>
-                    <p>Rampant growers are usually those that send out underground runners, or rhizomes, which rapidly produce new plants. Some species do not spread by rhizomes but they do self-seed abundantly. There can still be a place for these plants in the landscape. For example, in places where other plants have a hard time growing, where a mass planting is needed, or in areas (like schoolyards) where high traffic might eliminate some of the less robust plants. If you want to include these rampant wildflowers in your garden, but you don't want to deal with their wandering habits, contain the patch by encircling it with 15 cm (6") wide lawn edging. Bury the lawn edging so that only a couple of centimetres are above ground. See below for the list of plants and the methods by which they spread.</p>
-                </div>
-                <div className="wfRampant__content">
-                    <div className="container wfRampant__gallery">
-                    <WFRampantCards wfRampantCards={wfIndex}/>
-                    </div>  
-                </div>  
-            </section>
         </>
     )
 }
