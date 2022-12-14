@@ -51,7 +51,9 @@ export default function Footer() {
         }    
     }
     
-
+    const handleRefresh = () => {
+        window.location.reload()
+    }
     return (
         <footer className='footer'>
             <div className='footer__bgContainer'>
@@ -90,7 +92,7 @@ export default function Footer() {
                     <input placeholder="e.g. example@email.com" className='formInput' type="email" {...register("email")} required/>
                     <div className="formGroup footerSubmit">
                         
-                        <input className='formSubmit' type="submit" aria-label='Submit Button' />
+                        <input className='formSubmit' type="submit" onClick={handleRefresh} aria-label='Submit Button' />
                     </div>   
                 </form>
                 <div className="container__contact">

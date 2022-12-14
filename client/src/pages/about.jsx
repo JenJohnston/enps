@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
+import useCollapse from 'react-collapsed';
 
 import Seo from "../components/seo"
 import PortableTextHandler from "../components/PortableTextHandler.jsx";
@@ -103,13 +104,11 @@ export default function About() {
                             <div className="dividerBar"></div>
                         </div>
                         <div className="mission__body">
-                        {ourMission.map((obj, idx) => {
-                            return (
-                                
-                                    <PortableTextHandler key={idx} value={obj._rawBody} />
-                               
-                            )
-                        })}
+                            {ourMission.map((obj, idx) => {
+                                return (
+                                    <PortableTextHandler key={idx} value={obj._rawBody} /> 
+                                )
+                            })}
                         </div>
                     </div>
                 </div>
@@ -123,10 +122,11 @@ export default function About() {
                             <div className="dividerBar"></div>
                         </div>
                         <div className="history__body">
+                            
                         {ourHistory.map((obj, idx) => {
                             return (
-                                <article key={idx}>
-                                    <PortableTextHandler value={obj._rawBody} />
+                                <article key={idx}>                            
+                                    <PortableTextHandler value={obj._rawBody} />                                 
                                 </article>
                             )
                         })}
