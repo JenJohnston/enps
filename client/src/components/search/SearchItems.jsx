@@ -115,8 +115,8 @@ function WfIndexResultItems({ wfindex }) {
                 className="modalSearch__img"
             />
             <div className="modalSearch__searchContent">
-                <h5 className='modalSearch__wfIndexName'>{wfindex.commonName}</h5>
-                <p>{wfindex.botanicalName}</p>
+                <h5 className='modalSearch__wfIndexName'><span className='plantSearchTitle'>Common Name: </span>{wfindex.commonName}</h5>
+                <p className='botanicalName'><span className='botanicalSearchTitle'>Botanical Name: </span>{wfindex.botanicalName}</p>
             </div>
         </Link>
     )
@@ -126,21 +126,24 @@ function WfIndexResultItems({ wfindex }) {
 function PlantCardResultItems({ plantCard }) {
     const { closeSearchModal } = useContext(ModalContext);
     return (
-        <Link
-        to={`/wfindex/${plantCard.slug.current}`}
-        onClick={() => closeSearchModal()}
-        className="modalSearch"
-        >
-            <GatsbyImage
-                image={plantCard.featureImage.asset.gatsbyImageData}
-                alt={plantCard.featureImage.alt}
-                className="modalSearch__img"
-            />
-            <div className="modalSearch__searchContent">
-                <h5 className='modalSearch__wfIndexName'>{plantCard.commonName}</h5>
-                <p>{plantCard.botanicalName}</p>
-            </div>
-        </Link>
+        <>
+            
+            <Link
+            to={`/wfindex/${plantCard.slug.current}`}
+            onClick={() => closeSearchModal()}
+            className="modalSearch"
+            >
+                <GatsbyImage
+                    image={plantCard.featureImage.asset.gatsbyImageData}
+                    alt={plantCard.featureImage.alt}
+                    className="modalSearch__img"
+                />
+                <div className="modalSearch__searchContent">
+                    <h5 className='modalSearch__wfIndexName'>Common Name:{plantCard.commonName}</h5>
+                    <p>{plantCard.botanicalName}</p>
+                </div>
+            </Link>
+        </>
     )
     
 }

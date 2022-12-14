@@ -346,3 +346,23 @@
     }
   }
 }
+
+.searchContent {
+  background-color: transparent;
+  h2 {
+    color: var(--svg-fill);
+    text-shadow: var(--txt-shadow-dk);
+  }
+  p {
+    color: var(--background-color);
+    text-shadow: var(--txt-shadow-dk);
+  }
+
+  .plantSearchTitle {
+    color: var(--svg-fill);
+  }
+
+  .botanicalSearchTitle {
+    color: var(--svg-fill-lt);
+  }
+}

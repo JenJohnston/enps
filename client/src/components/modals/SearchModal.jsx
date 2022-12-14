@@ -173,7 +173,7 @@ export default function SearchModal() {
             >
                 <CgClose/>
             </button>
-            <div className="modalOverlay__content">
+            <div className="modalOverlay__content searchContent">
                 <div className="container">
                     <SearchField
                         value={searchQuery}
