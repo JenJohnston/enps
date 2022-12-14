@@ -59,15 +59,7 @@ export default function VolunteerSingle({ data }) {
             <GiFallingLeaf />
           </div>
           <PortableTextHandler value={volunteer._rawBody} />
-          <aside className='volunteerSingle__menu'>
-            <h5>Project Leader: {volunteer.projectLeader}</h5>
-            <a href={`mailto:${volunteer.contactEmail}`}>
-              <IoMail />: {volunteer.contactEmail}
-            </a>
-            <a href={`tel:${volunteer.contactPhone}`}>
-              <FaPhoneAlt />: {volunteer.contactPhone}
-            </a>
-          </aside>
+
           <div className='volunteerSingle__link'>
             <Link to='/volunteer'>Return to Volunteer Page</Link>
             <GiFallingLeaf />

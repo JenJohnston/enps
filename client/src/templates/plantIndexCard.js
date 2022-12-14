@@ -138,24 +138,9 @@ export default function PlantIndexCard({ data, pageContext }) {
                   placeholder='none'
                 />
                 <div className='plantIndexCard__title'>
-                  <h5>
-                    <span>
-                      <FaLeaf />
-                    </span>
-                    {plantCard.commonName}
-                  </h5>
-                  <h5 className='botanicalName'>
-                    <span>
-                      <FaLeaf />
-                    </span>
-                    {plantCard.botanicalName}
-                  </h5>
-                  <h5 className='plantFamily'>
-                    <span>
-                      <FaLeaf />
-                    </span>
-                    {plantCard.plantFamily}
-                  </h5>
+                  <h5>{plantCard.commonName}</h5>
+                  <h5 className='botanicalName'>{plantCard.botanicalName}</h5>
+                  <h5 className='plantFamily'>{plantCard.plantFamily}</h5>
                   <div className='dividerBar'></div>
                 </div>
               </div>

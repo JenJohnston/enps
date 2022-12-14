@@ -30,7 +30,7 @@ export default function VolunteerCard({title, path, image, excerpt, email, phone
                 </div>
                 <div className="card__link">
                     <div className="linkbar"></div>
-                    <Link to={path}>Project Details <FaLongArrowAltRight/></Link>
+                    <Link to={`/volunteer/${path}`}>Project Details <FaLongArrowAltRight/></Link>
                 </div>
             </div>
         </aside>

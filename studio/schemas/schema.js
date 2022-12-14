@@ -70,8 +70,7 @@ export default createSchema({
     growSubDocuments,
     blog,
     category,
-    boardDirector,
-
+    
     // object schemas
 
     customFile,

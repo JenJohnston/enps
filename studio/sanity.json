@@ -1,5 +1,9 @@
 {
   "root": true,
+  "api": {
+    "projectId": "d59screl",
+    "dataset": "production"
+  },
   "project": {
     "name": "enps"
   },
