@@ -9,23 +9,20 @@ export default function CommonModal() {
 
     const data = useStaticQuery(graphql`
         query CommonIndexQuery {
-            allSanityWfIndex(
-                filter: { indexID: {eq: "pi"} }
-                sort: { fields: commonName, order: ASC }
-          ) {
-            nodes {
-                commonName
-                slug {
-                current
+            allSanityPlantIndexCard(sort: {fields: commonName, order: ASC}) {
+                nodes {
+                    commonName
+                    slug {
+                    current
+                    }
+                    featureImage {
+                    alt
+                    asset {
+                        gatsbyImageData
+                    }
+                    }
                 }
-                wildflowerImage {
-                alt
-                asset {
-                    gatsbyImageData
-                }
-                }
-            }
-            }
+                } 
         }
     `)
 
@@ -47,7 +44,7 @@ export default function CommonModal() {
             } 
     */
     
-    const commonIndex = data.allSanityWfIndex.nodes;
+    const commonIndex = data.allSanityPlantIndexCard.nodes;
 
     const { isCommonModalOpen, closeCommonModal } = useContext(ModalContext)
 
@@ -84,8 +81,8 @@ export default function CommonModal() {
                                         tabIndex={0}
                                     >
                                         <GatsbyImage
-                                            image={obj.wildflowerImage.asset.gatsbyImageData}
-                                            alt={obj.wildflowerImage.alt}
+                                            image={obj.featureImage.asset.gatsbyImageData}
+                                            alt={obj.featureImage.alt}
                                             className="commonIndexContent__img"
                                         />
                                         {obj.commonName}

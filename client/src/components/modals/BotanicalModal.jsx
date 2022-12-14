@@ -10,27 +10,24 @@ export default function BotanicalModal() {
 
     const data = useStaticQuery(graphql`
         query BotanicalIndexQuery {
-            allSanityWfIndex(
-                filter: { indexID: {eq: "pi"} }
-                sort: { fields: botanicalName, order: ASC }
-          ) {
-            nodes {
-                botanicalName
-                slug {
-                current
+            allSanityPlantIndexCard(sort: {fields: botanicalName, order: ASC}) {
+                nodes {
+                    botanicalName
+                    slug {
+                    current
+                    }
+                    featureImage {
+                    alt
+                    asset {
+                        gatsbyImageData
+                    }
+                    }
                 }
-                wildflowerImage {
-                alt
-                asset {
-                    gatsbyImageData
-                }
-                }
-            }
-            }
+                } 
         }
     `)
     
-    const botanicalIndex = data.allSanityWfIndex.nodes;
+    const botanicalIndex = data.allSanityPlantIndexCard.nodes;
 
     const { isBotanicalModalOpen, closeBotanicalModal } = useContext(ModalContext)
 
@@ -66,8 +63,8 @@ export default function BotanicalModal() {
                                     tabIndex={0}
                                 >
                                     <GatsbyImage
-                                        image={obj.wildflowerImage.asset.gatsbyImageData}
-                                        alt={obj.wildflowerImage.alt}
+                                        image={obj.featureImage.asset.gatsbyImageData}
+                                        alt={obj.featureImage.alt}
                                         className="commonIndexContent__img"
                                     />
                                     {obj.botanicalName}
