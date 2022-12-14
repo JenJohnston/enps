@@ -139,8 +139,8 @@ function PlantCardResultItems({ plantCard }) {
                     className="modalSearch__img"
                 />
                 <div className="modalSearch__searchContent">
-                    <h5 className='modalSearch__wfIndexName'>Common Name:{plantCard.commonName}</h5>
-                    <p>{plantCard.botanicalName}</p>
+                    <h5 className='modalSearch__wfIndexName'><span className='plantSearchTitle'>Common Name: </span>{plantCard.commonName}</h5>
+                    <p className='botanicalName'><span className='botanicalSearchTitle'>Botanical Name: </span>{plantCard.botanicalName}</p>
                 </div>
             </Link>
         </>
@@ -154,7 +154,6 @@ export {
     NewsResultItems,
     VolunteerResultItems,
     EventResultItems,
-    WfIndexResultItems,
     PlantCardResultItems,
 }
 
