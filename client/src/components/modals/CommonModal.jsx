@@ -83,6 +83,7 @@ export default function CommonModal() {
                                         <GatsbyImage
                                             image={obj.featureImage.asset.gatsbyImageData}
                                             alt={obj.featureImage.alt}
+                                            imgStyle={{ borderRadius: '50%' }}
                                             className="commonIndexContent__img"
                                         />
                                         {obj.commonName}
