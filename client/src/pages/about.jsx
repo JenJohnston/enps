@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
 import useCollapse from 'react-collapsed';
@@ -78,6 +78,14 @@ export default function About() {
     const boardReport = data.allSanityBoardReport.nodes
     const ourMission = data.allSanityOurMission.nodes
     const ourHistory = data.allSanityOurHistory.nodes
+
+     const [isCollapsed, setIsCollapsed] = useState(true)  
+
+     const handleCollapse = () => {
+         isCollapsed ? setIsCollapsed(false) : setIsCollapsed(true)
+         
+     }
+
     return (
         <>
             <Seo title="About"/>
@@ -121,8 +129,7 @@ export default function About() {
                             <h3>Our History</h3>
                             <div className="dividerBar"></div>
                         </div>
-                        <div className="history__body">
-                            
+                        <div className={isCollapsed ? "history__body collapsed" : "history__body expanded"}>    
                         {ourHistory.map((obj, idx) => {
                             return (
                                 <article key={idx}>                            
@@ -131,6 +138,7 @@ export default function About() {
                             )
                         })}
                         </div>
+                        <button className='collapseButton' onClick={handleCollapse}>EXPAND TEXT...</button>
                   </div>
               </div>                     
            </section>
