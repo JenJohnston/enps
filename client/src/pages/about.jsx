@@ -177,6 +177,7 @@ export default function About() {
                                         <GatsbyImage 
                                             image={obj.profileImage.asset.gatsbyImageData}
                                             alt={obj.profileImage.alt}
+                                            imgStyle={{ borderRadius: '50%' }}
                                             className="profilecard__img"
                                         />
                                         </div>

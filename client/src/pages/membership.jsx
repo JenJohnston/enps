@@ -24,7 +24,7 @@ export default function Membership() {
 
             const formData = new FormData()
 
-            formData.append("access_key", process.env.GATSBY_WEB_THREE_ACCESS_KEY)
+            formData.append("access_key", process.env.GATSBY_MEMBERFORM_ACCESS_KEY)
 
             for ( const key in data ) {
                 if (key === "file" ) {
